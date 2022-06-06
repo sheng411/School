@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int fre=5;              //跑的次數
+int fre=2048;              //跑的次數
 
 struct score{
     string name;
