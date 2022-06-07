@@ -30,7 +30,7 @@ def drawghost(xy,color,gh):
     gh[7]=w.create_arc(x+20,y+26,x+24,y+34, start=0, extent=180, fill="black", width=1)
 
 def drawpac(xy,color,pac):
-        x=xy[0]*30; y=xy[1]*30;
+        x=xy[0]*30; y=xy[1]*30
         pac[0]=w.create_arc(x,y,x+30,y+30, start=30, extent=300, fill="yellow", width=3)
 
 def Ghost(xy,di1,gh):
@@ -60,7 +60,7 @@ def Ghost(xy,di1,gh):
     w.coords(gh[7],x+abs(sw*1)+20,y+26,x+abs(sw*1)+24,y+34) #leg
         
 def pacman(xy,di,pac):
-    global sw; pacd;
+    global sw; pacd
     global score 
     global flag
     pstart = [30,0,-60,-90,150,180,60,90]; pexten = [300,359,300,359,-300,-359,-300,-359] 
@@ -68,7 +68,7 @@ def pacman(xy,di,pac):
     if pacd==0 and map[xy[1]][xy[0]+1]%2==0: xy[0]=xy[0]+1; di[0]=0;  
     if pacd==1 and map[xy[1]+1][xy[0]]%2==0: xy[1]=xy[1]+1; di[0]=1;  
     if pacd==2 and map[xy[1]][xy[0]-1]%2==0: xy[0]=xy[0]-1; di[0]=2;  
-    if pacd==3 and map[xy[1]-1][xy[0]]%2==0: xy[1]=xy[1]-1; di[0]=3;
+    if pacd==3 and map[xy[1]-1][xy[0]]%2==0: xy[1]=xy[1]-1; di[0]=3
     if (map[xy[1]][xy[0]]==0):
         map[xy[1]][xy[0]]=2
         score= score+1
@@ -78,13 +78,13 @@ def pacman(xy,di,pac):
             w.create_text(300,180,fill="blue",font="Times 35 italic bold",text="Your winner")
             flag=0        
         
-    x=xy[0]*30; y=xy[1]*30;
+    x=xy[0]*30; y=xy[1]*30
     w.coords(pac[0],x,y,x+30,y+30)  
     w.itemconfig(pac[0], start=pstart[di[0]*2+abs(sw)], extent=pexten[di[0]*2+abs(sw)])
     sw=~sw  
 
 def draw():
-    global score;
+    global score
     global flag
     #--Pacman positions and directions
     pac = [0]; xy=[1,1];di=[0] 
@@ -92,20 +92,23 @@ def draw():
     gh1 = [0]*8; xy1=[1,10];di1=[0]
     #--Ghost blue positions and directions
     gh2 = [0]*8; xy2=[1,10];di2=[0]
-    gh3 = [0]*8; xy3=[1,10];di3=[0]   
+    gh3 = [0]*8; xy3=[1,10];di3=[0]
+    gh4 = [0]*8; xy4=[1,10];di4=[0]
     drawmap(img)
     drawpac(xy,'yellow',pac)
     drawghost(xy1,'red',gh1)
     drawghost(xy2,'blue',gh2)
     drawghost(xy3,'white',gh3)
+    drawghost(xy4,'green',gh4)
     flag = 1
     while flag:
             pacman(xy,di,pac)        
             Ghost(xy1,di1,gh1)
             Ghost(xy2,di2,gh2)
             Ghost(xy3,di3,gh3)
+            Ghost(xy4,di4,gh4)
             if (xy[0]==xy1[0] and xy[1]==xy1[1]) or (xy[0]==xy2[0] and xy[1]==xy2[1] or (xy[0]==xy3[0] and xy[1]==xy3[1])) :
-                w.create_text(300,180,fill="blue",font="Times 35 italic bold",text="Game Over!"); break;
+                w.create_text(300,180,fill="blue",font="Times 35 italic bold",text="Game Over!"); break
             time.sleep(0.3)
 
 #main program
