@@ -24,12 +24,3 @@ template <class A>
     A add(A i,A j){ 		   
         return i+j;
     }
-
-
-//設m=math
-for(int i=0;i<fre;i++){
-    int max;
-    if(m[i]>max){
-        max=m[i]
-    }
-}
