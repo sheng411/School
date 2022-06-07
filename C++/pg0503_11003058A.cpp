@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int fre=10;
+int fre=20;
 
 class Mystudent{
     private:
@@ -19,14 +19,19 @@ class Mystudent{
 
 template <class f>
     f findmax(f meam){
+        int max=0;
+        f maax;
         for(int i=0;i<fre;i++){
-        int max;
-        if(m[i]>max){
-            max=m[i]
+            if(meam[i]>meam[max]){
+                //maax=meam[i];
+                max=i;
             }
         }
+        /*for(int i=0;i<fre;i++){
+            cout<<meam[i]<<endl;
+        }*/
+        cout<<"\n\ntop-->"<<"index="<<max;
     }
-
 
 void Mystudent::student(){
     vector <Mystudent> rw;
@@ -50,6 +55,7 @@ void Mystudent::student(){
 }
 
 int main(){
-    
+    vector <Mystudent> rw;
+    findmax(rw);
     return 0;
 }
