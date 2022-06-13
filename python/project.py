@@ -1,4 +1,3 @@
-from enum import auto
 from logging import root
 from tkinter import *
 import time
@@ -7,8 +6,12 @@ import random
 
 
 #Tkinter code
-window=Tk()
-window.title("welcome to my project")    #標題名稱
-c=Canvas(window, width=800, height=600, bg="white")
+root=Tk()
+root.title("welcome to my project")    #標題名稱
+c=Canvas(root, width=800, height=600, bg="white")
+b1=Button(root,text='click me')
+b1.pack()
+
 c.pack()
-window.mainloop()
+root.mainloop()
+print (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
