@@ -9,7 +9,7 @@ def points():
         canvas.create_text(x,y,text=i,width=0)      #顯示1~12
 
 
-def createline(radius,line_width,rad):
+def cr(radius,line_width,rad):
     global llist,i,o
     llist=[]
     x=250+radius*math.sin(rad)
@@ -23,8 +23,7 @@ def createline(radius,line_width,rad):
 root = Tk()
 root.title("派去ㄟ時鐘")    #標題名稱
 root.resizable(0,0)
-canvas = Canvas(root,width=500,height=600,bg="BlueViolet")  #底色
-
+canvas = Canvas(root,width=500,height=500,bg="BlueViolet")  #底色
 canvas.pack()
 canvas.create_oval(105,105,395,395,fill="Aqua",width=3)   #圓
 
@@ -41,18 +40,18 @@ while 1:
     radh=2*math.pi*(t_hour+tm.tm_min/60)/12     #時計算
     radm=2*math.pi*(tm.tm_min+tm.tm_sec/60)/60  #分計算
     rads=2*math.pi*tm.tm_sec/60                 #秒計算
-    print("tm:",tm," t:",t)
-    createline(40,5,radh)   #長度,粗度,計算值
-    createline(80,3,radm)
-    createline(120,1,rads)
+    print("tm:",tm," t:",t)         #test
+    cr(40,5,radh)   #長度,粗度,計算值
+    cr(80,3,radm)
+    cr(120,1,rads)
     print(radh," ",radm," ",rads)   #test
     l=canvas.create_text(250,450,text=t,fill="white")   #下方顯示字
     root.update()   #若有重複則忽略
-    time.sleep(1)   #休1s
+    time.sleep(0.5)   #休0.5s
     for item in llist:
         canvas.delete(item)
         canvas.delete(l)
-        print("*****",item," ",l)
+        print("*****",item," ",l)   #test
         root.update()
 
-mainloop()
+root.mainloop()
