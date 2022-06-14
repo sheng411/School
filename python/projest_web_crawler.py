@@ -13,21 +13,24 @@ request=req.Request(url,headers={
 with req.urlopen(request) as response:
     aa_data=response.read().decode("utf-8")
 root=bs4.BeautifulSoup(aa_data,"html.parser")
+titles=root.find_all("div",class_="piece clearfix")
 
-titles=root.find("p",class_="summary")
-titles1=root.find_all("div",class_="piece clearfix")
-titless=titles.string
+fre=int(input("所需新聞量:"))   #用輸入改掉
+
 a=1
-fre=int(input("所需新聞量:"))
-for tit in titles1:
+for tit in titles:
     if tit.h3.a!=None and a<=fre:
-        print(a,".",tit.h3.a.string)
+        print(a,".",tit.h3.a.string,"---",tit.span.string)
         a+=1
-        new=tit.append
+        #new=tit.append
         #print(new)
 
 
 #tkinter
 window=Tk()
-window.title("")
+window.title("ETtoday熱門新聞")
+c=Canvas(window,width=500,height=500,bg="MidnightBlue") #紫色
+c.pack()
 
+
+window.mainloop()
