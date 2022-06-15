@@ -4,6 +4,10 @@ from tkinter import *
 import math
 import time
 
+#時間
+tm=time.localtime()
+print(tm)   #查看所有時間
+
 #爬蟲
 new=[]
 url="https://www.ettoday.net/news/realtime-hot.htm" #ETtoday即時人氣
@@ -14,8 +18,13 @@ with req.urlopen(request) as response:
     aa_data=response.read().decode("utf-8")
 root=bs4.BeautifulSoup(aa_data,"html.parser")
 titles=root.find_all("div",class_="piece clearfix")
+titles_num=len(root.find_all("em",class_="number"))
+print(titles_num)
+
 
 fre=int(input("所需新聞量:"))   #用輸入改掉
+if fre>titles_num:             #輸入數大於新聞量則使用新聞最大量
+    fre=titles_num
 
 a=1
 for tit in titles:
@@ -33,4 +42,4 @@ c=Canvas(window,width=500,height=500,bg="MidnightBlue") #紫色
 c.pack()
 
 
-window.mainloop()
+#window.mainloop()
