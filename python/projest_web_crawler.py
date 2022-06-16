@@ -1,8 +1,8 @@
 import urllib.request as req
 import bs4
 from tkinter import *
-import math
 import time
+import os
 
 #時間
 tm=time.localtime()
@@ -48,3 +48,4 @@ c.pack()
 
 
 #window.mainloop()
+os.system("pause")  #執行完等待
