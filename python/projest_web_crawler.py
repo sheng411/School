@@ -18,18 +18,23 @@ with req.urlopen(request) as response:
     aa_data=response.read().decode("utf-8")
 root=bs4.BeautifulSoup(aa_data,"html.parser")
 titles=root.find_all("div",class_="piece clearfix")
+titles_cont=root.find_all("p",class_="summary")
 titles_num=len(root.find_all("em",class_="number"))
 print(titles_num)
 
 
 fre=int(input("所需新聞量:"))   #用輸入改掉
+cont=str(input("是否需要顯示內文(y/n):"))
 if fre>titles_num:             #輸入數大於新聞量則使用新聞最大量
     fre=titles_num
+print("**************")
 
 a=1
 for tit in titles:
     if tit.h3.a!=None and a<=fre:
         print(a,".",tit.h3.a.string,"---",tit.span.string)
+        if cont=='y' or cont=='Y':
+            print(tit.p.string,"\n")
         a+=1
         #new=tit.append
         #print(new)
