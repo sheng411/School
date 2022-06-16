@@ -38,6 +38,7 @@ for tit in titles:
         #new=tit.append
         #print(new)
 print("*******************")
+print(str(tm.tm_mon)+"/"+str(tm.tm_mday)+"---"+str(tm.tm_hour)+":"+str(tm.tm_min)+":"+str(tm.tm_sec))
 
 #tkinter
 window=Tk()
