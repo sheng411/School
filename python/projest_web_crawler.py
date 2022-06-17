@@ -11,6 +11,7 @@ print(tm)   #查看所有時間
 #爬蟲
 #new=[]
 url="https://www.ettoday.net/news/realtime-hot.htm" #ETtoday即時人氣
+print("ETtoday新聞網址:",url)
 request=req.Request(url,headers={
     "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36"
 })
@@ -23,7 +24,7 @@ print("總報導數:",titles_num,"\n")
 
 
 fre=int(input("所需新聞量:"))   #用輸入改掉
-cont=str(input("是否需要顯示內文(y/n):"))
+cont=str(input("是否顯示內文(y/n):"))
 if fre>titles_num:             #輸入數大於新聞量則使用新聞最大量
     fre=titles_num
 print("*******************")
@@ -41,11 +42,13 @@ print("*******************")
 print(str(tm.tm_mon)+"/"+str(tm.tm_mday)+"---"+str(tm.tm_hour)+":"+str(tm.tm_min)+":"+str(tm.tm_sec))
 
 #tkinter
+'''
 window=Tk()
 window.title("ETtoday熱門新聞")
 c=Canvas(window,width=500,height=500,bg="MidnightBlue")
 c.pack()
 
 
-#window.mainloop()
+window.mainloop()
+'''
 os.system("pause")  #執行完等待
