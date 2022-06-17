@@ -30,7 +30,7 @@ if fre>titles_num:             #輸入數大於新聞量則使用新聞最大量
 
 ok=0
 while(ok==0):
-    cont=str(input("是否顯示內文(y/n):"))
+    cont=str(input("是否顯示部分內文(y/n):"))
     if cont=='y' or cont=='Y' or cont=='n' or cont=='N':
         ok+=1
     else:
@@ -41,7 +41,10 @@ print("*******************")
 a=1
 for tit in titles:
     if tit.h3.a!=None and a<=fre:
-        print(a,".",tit.h3.a.string,"---",tit.span.string)
+        if(a<10):
+            print(" "+str(a),".",tit.h3.a.string+"---"+tit.span.string)
+        else:
+            print(a,".",tit.h3.a.string,"---",tit.span.string)
         if cont=='y' or cont=='Y':
             print(tit.p.string,"\n")
         a+=1
