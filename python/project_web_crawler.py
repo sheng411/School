@@ -4,6 +4,8 @@ from tkinter import *
 import time
 import os
 
+#優化三
+
 #時間
 tm=time.localtime()
 print(tm)   #查看所有時間
@@ -22,11 +24,18 @@ titles=root.find_all("div",class_="piece clearfix")
 titles_num=len(root.find_all("em",class_="number"))
 print("總報導數:",titles_num,"\n")
 
-
-fre=int(input("所需新聞量:"))   #用輸入改掉
-cont=str(input("是否顯示內文(y/n):"))
+fre=int(input("所需新聞量:"))
 if fre>titles_num:             #輸入數大於新聞量則使用新聞最大量
     fre=titles_num
+
+ok=0
+while(ok==0):
+    cont=str(input("是否顯示內文(y/n):"))
+    if cont=='y' or cont=='Y' or cont=='n' or cont=='N':
+        ok+=1
+    else:
+        print("不符合規定，請重新輸入！\n")
+
 print("*******************")
 
 a=1
