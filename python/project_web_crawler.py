@@ -4,7 +4,7 @@ from tkinter import *
 import time
 import os
 
-#優化三
+#優化四
 
 #時間
 tm=time.localtime()
