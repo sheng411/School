@@ -4,7 +4,7 @@ from tkinter import *
 import time
 import os
 
-#優化四
+#優化五
 
 #時間
 tm=time.localtime()
@@ -42,7 +42,7 @@ a=1
 for tit in titles:
     if tit.h3.a!=None and a<=fre:
         if(a<10):
-            print(" "+str(a),".",tit.h3.a.string+"---"+tit.span.string)
+            print(" "+str(a),".",str(tit.h3.a.string)+"---"+str(tit.span.string))
         else:
             print(a,".",tit.h3.a.string,"---",tit.span.string)
         if cont=='y' or cont=='Y':
