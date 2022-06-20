@@ -75,12 +75,8 @@ int main(){
         }
         s.push_back(na);
     }
-
     student(rw);
-    
     myoutput <int>(i);
     findmax <int>(i);
-
-
     return 0;
 }
