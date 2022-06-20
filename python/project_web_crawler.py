@@ -1,17 +1,15 @@
 import urllib.request as req
 import bs4
-from tkinter import *
 import time
 import os
 
-#優化五
+#優化六
 
 #時間
 tm=time.localtime()
 print(tm)   #查看所有時間
 
 #爬蟲
-#new=[]
 url="https://www.ettoday.net/news/realtime-hot.htm" #ETtoday即時人氣
 print("ETtoday新聞網址:",url)
 request=req.Request(url,headers={
@@ -48,19 +46,8 @@ for tit in titles:
         if cont=='y' or cont=='Y':
             print(tit.p.string,"\n")
         a+=1
-        #new=tit.append
-        #print(new)
+
 print("*******************")
 print(str(tm.tm_mon)+"/"+str(tm.tm_mday)+"---"+str(tm.tm_hour)+":"+str(tm.tm_min)+":"+str(tm.tm_sec))
 
-#tkinter
-'''
-window=Tk()
-window.title("ETtoday熱門新聞")
-c=Canvas(window,width=500,height=500,bg="MidnightBlue")
-c.pack()
-
-
-window.mainloop()
-'''
 os.system("pause")  #執行完等待
