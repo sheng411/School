@@ -2,10 +2,10 @@
 using namespace std;
 
 void f(int a){
-    cout<<"è¼¸å…¥å­¸è™Ÿ:";
+    cout<<"¿é¤J¾Ç¸¹:";
     cin>>a;
     a=sqrt(a)*10;
-    cout<<"11003058A_æž—ç¥é™ž-"<<a;
+    cout<<"11003058A_ªL¯§°¥-"<<a;
 }
 
 int main(){
