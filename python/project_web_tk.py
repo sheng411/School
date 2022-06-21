@@ -3,6 +3,8 @@ import urllib.request as req
 import bs4
 import time
 
+#優化1
+
 #時間
 tm=time.localtime()
 
@@ -36,7 +38,7 @@ def bt_brk():
         fre=titles_num
     else:
         fre=int(infre.get())
-
+    tt.delete("1.0","end")
     tt.insert(END,"現在時間:"+str(tm.tm_mon)+"/"+str(tm.tm_mday)+"---"+str(tm.tm_hour)+":"+str(tm.tm_min)+":"+str(tm.tm_sec))
     tt.insert(INSERT,"\n\n")
     a=1
