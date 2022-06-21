@@ -21,7 +21,6 @@ titles_num=len(root.find_all("em",class_="number"))
 print("總報導數:",titles_num,"\n")
 
 
-
 #tkinter
 
 
