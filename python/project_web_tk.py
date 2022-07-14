@@ -34,12 +34,16 @@ c=Canvas(window,width=550,height=550,bg="BlueViolet")   #MidnightBlue
 
 def bt_brk():
     global fre
+    if infre.get()=='':
+        tt.insert(END,"Now time:"+str(tm.tm_mon)+"/"+str(tm.tm_mday)+"---"+str(tm.tm_hour)+":"+str(tm.tm_min)+":"+str(tm.tm_sec))
+        tt.insert(END,"\n404 Error,you did not enter a number!")
+        tt.insert(INSERT,"\n\n")
     if int(infre.get())>titles_num:
         fre=titles_num
     else:
         fre=int(infre.get())
     tt.delete("1.0","end")
-    tt.insert(END,"現在時間:"+str(tm.tm_mon)+"/"+str(tm.tm_mday)+"---"+str(tm.tm_hour)+":"+str(tm.tm_min)+":"+str(tm.tm_sec))
+    tt.insert(END,"Now time:"+str(tm.tm_mon)+"/"+str(tm.tm_mday)+"---"+str(tm.tm_hour)+":"+str(tm.tm_min)+":"+str(tm.tm_sec))
     tt.insert(INSERT,"\n\n")
     a=1
     for tit in titles:
@@ -63,7 +67,7 @@ def de():
     tm=time.localtime()
 
 #fre
-myfrebel=Label(window,text="所需新聞量:",width=35,font=10)
+myfrebel=Label(window,text="所需新聞量:",width=33,font=10)
 infre=StringVar()
 myfre=Entry(window,width=10,textvariable=infre)
 
@@ -78,7 +82,7 @@ gobtn=Button(window,width=10,height=1,text="GO",command=bt_brk,bg="Cyan",fg="bla
 debtn=Button(window,width=10,height=1,text="DELETE",command=de,bg="red")
 
 #output
-tt=Text(window,height=30,width=60,font=8)
+tt=Text(window,height=25,width=55,font=8)
 
 
 myfrebel.grid(row=0,column=0,sticky='w')
