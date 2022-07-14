@@ -36,7 +36,7 @@ def bt_brk():
     global fre
     if infre.get()=='':
         tt.insert(END,"Now time:"+str(tm.tm_mon)+"/"+str(tm.tm_mday)+"---"+str(tm.tm_hour)+":"+str(tm.tm_min)+":"+str(tm.tm_sec))
-        tt.insert(END,"\n404 Error,you did not enter a number!")
+        tt.insert(END,"\n404 Error,you did not enter the number!")
         tt.insert(INSERT,"\n\n")
     if int(infre.get())>titles_num:
         fre=titles_num
