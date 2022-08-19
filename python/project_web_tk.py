@@ -82,7 +82,7 @@ gobtn=Button(window,width=10,height=1,text="GO",command=bt_brk,bg="Cyan",fg="bla
 debtn=Button(window,width=10,height=1,text="DELETE",command=de,bg="red")
 
 #output
-tt=Text(window,height=25,width=55,font=8)
+tt=Text(window,height=33,width=65,font=8)
 
 
 myfrebel.grid(row=0,column=0,sticky='w')
