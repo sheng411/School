@@ -9,7 +9,6 @@ import time
 tm=time.localtime()
 
 #爬蟲
-
 url="https://www.ettoday.net/news/realtime-hot.htm" #ETtoday即時人氣
 print("ETtoday新聞網址:",url)
 request=req.Request(url,headers={
