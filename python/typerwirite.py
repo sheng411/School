@@ -7,9 +7,9 @@ import winsound
 table=[261,293,329,349,392,440,494,548,602]
 
 def job():
-    global go; global right; global error;
-    while True:
-         if go==-1:
+      global go; global right; global error;
+      while True:
+            if go==-1:
                 i=randint(0,8)
                 texta[i].place(x=i*w/9+10,y=y[i])
                 y[i]=y[i]+30
