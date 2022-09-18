@@ -10,8 +10,8 @@ def job():
       global go; global right; global error;
       while True:
             if go==-1:
-                i=randint(0,8)
-                texta[i].place(x=i*w/9+10,y=y[i])
+                  i=randint(0,8)
+                  texta[i].place(x=i*w/9+10,y=y[i])
                 y[i]=y[i]+30
                 if y[i]>=650:
                       y[i]=50
