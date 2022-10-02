@@ -1,14 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int fre=10;       //quantity of data
+int fre=100000;       //quantity of data
 int smfre=0;     //Use of small data
 
+/*
+input 1--> is sel bub merg 
 
+
+*/
 template <class ins>
     ins is(ins in,int n){
-        int temp;
-        int j=0;
+        int temp,j=0;
         for(int i=0;i<n;i++){
             temp=in[i];
             j=i-1;
@@ -91,6 +94,8 @@ template <class mers>
 
 template <class out>
     void output(out st){
+        double sta,end,ti;
+        sta=clock();        //timing start
         for(int c=0;c<fre;c++){
             cout<<st[c]<<"\t";
         if(c>=10 && c%10==0){
@@ -99,48 +104,92 @@ template <class out>
         }
     }
 
+template <class go>
+    void gogo(go fun){
+        double sta,end,ti=999;
+        sta=clock();        //timing start
+        if(smfre!=0 && smfre!=1){
+            for(int i=0;i<smfre;i++){
+            fun;
+            }
+            end=clock();    //timing end
+        }
+        else{
+            fun;
+            end=clock();    //timing end
+        }
+        
+        if(smfre!=0 && smfre!=1){
+            ti=(end-sta);//smfre;
+        }
+        else{
+            ti=end-sta;
+        }
+        cout<<"usage time-->"<<ti<<"ms"<<endl;
+        //return ti;
+    }
+
 
 int main(){
-    vector <int>a;
-    vector <float>f;
-    int len,len1;
-    double sta,end,ti;
+    cout<<"132";
+    /*
+    string as[fre];
+    int ai[fre],pi;
+    long alo[fre],plo;
+    double ad[fre],pd;
+    float af[fre],pf;
+    */
+    vector <string>vs;
+    vector <int>vi;
+    vector <long>vlo;
+    vector <double>vd;
+    vector <float>vf;
     
-    srand(time(NULL));
-    
+    /*
+    array <string>vs;
+    array <int>vi;
+    array <long>vlo;
+    array <double>vd;
+    array <float>vf;
+    */
+
     // open file
     fstream myfile;
-    myfile.open("count.txt",ios::app);
-    myfile<<"data\n";
+    myfile.open("count.txt",ios::out);      //改app
+    myfile<<"type\t";
+    myfile<<"sort\t";
+    myfile<<"time\t";
     myfile.close();
     
+    cout<<"1259";
+
+    int num;
+    srand(time(NULL));
     for(int i=0;i<fre;i++){
-        a.push_back(rand()%100);
-        //f.push_back(rand()%100);
-    }
-    len=a.size();
-
-    //timing start
-    sta=clock();
-    if(smfre!=0){
-        for(int i=0;i<smfre;i++){
-            sel(a,len);
+        vi.push_back(rand()%100);
+        vlo.push_back(rand()%100);
+        vd.push_back(rand()%100);
+        vf.push_back(rand()%100);
+        string na="aaaaaa";
+        for(int x=0;x<6;x++){
+            na[x]+=rand()%26;
         }
+        vs.push_back(na);
+        /*
+        pi=rand()%100;
+        plo=rand()%100;
+        pd=rand()%100;
+        pf=rand()%100;
+        as[i]=na;
+        ai[i]=pi;
+        alo[i]=plo;
+        ad[i]=pd;
+        af[i]=pf;
+        */
     }
-    else{
-        sel(a,len);
 
-    }
-    end=clock();
-    //timing end
-    if(smfre!=0){
-        ti=(end-sta)/smfre;
-    }
-    else{
-        ti=(end-sta);
-    }
-    output(sel(a,len));
-    cout<<"\nlen-->"<<len<<endl;
-    cout<<"usage time-->"<<ti<<"ms"<<endl;
+    gogo(bub(vi,fre));
+    //output(sel(vi,fre));
+    //cout<<"usage time-->"<<ti<<"ms"<<endl;
     return 0;
 }
