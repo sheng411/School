@@ -108,17 +108,18 @@ template <class go>
     void gogo(go fun){
         double sta,end,ti=999;
         sta=clock();        //timing start
+        //cout<<"\nsta "<<sta<<endl;    test
         if(smfre!=0 && smfre!=1){
             for(int i=0;i<smfre;i++){
             fun;
             }
-            end=clock();    //timing end
         }
         else{
             fun;
-            end=clock();    //timing end
         }
-        
+        end=clock();    //timing end
+        //cout<<"\n1end "<<end<<endl;
+        //cout<<"\n1usage time-->"<<ti<<"ms"<<endl; test
         if(smfre!=0 && smfre!=1){
             ti=(end-sta);//smfre;
         }
