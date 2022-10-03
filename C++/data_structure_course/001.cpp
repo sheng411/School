@@ -11,11 +11,12 @@ input 1--> is sel bub merg
 */
 template <class ins>
     ins is(ins in,int n){
-        int temp,j=0;
+        ins temp;
+        int j=0;
         for(int i=0;i<n;i++){
-            temp=in[i];
+            ins temp=in[i];
             j=i-1;
-            while((temp<in[j]) && (j>=0)){
+            while(temp<in[j] && j>=0){
                 in[j+1]=in[j];
                 j--;
             }
@@ -105,11 +106,11 @@ template <class out>
     }
 
 template <class go>
-    void gogo(go fun){
+    void gogo(go fun,int stn,int dt){  //dt is data type
         double sta,end,ti=999;
         sta=clock();        //timing start
-        //cout<<"\nsta "<<sta<<endl;    test
-        if(smfre!=0 && smfre!=1){
+        cout<<"\nsta "<<sta<<endl;    //test
+        if(smfre>=2){
             for(int i=0;i<smfre;i++){
             fun;
             }
@@ -118,23 +119,26 @@ template <class go>
             fun;
         }
         end=clock();    //timing end
-        //cout<<"\n1end "<<end<<endl;
+        cout<<"\n1end "<<end<<endl;
         //cout<<"\n1usage time-->"<<ti<<"ms"<<endl; test
-        if(smfre!=0 && smfre!=1){
-            ti=(end-sta);//smfre;
+        if(smfre>=2){
+            ti=(end-sta)/smfre;
         }
         else{
             ti=end-sta;
         }
-        cout<<"usage time-->"<<ti<<"ms"<<endl;
+        string st[4] {"insertion","selection","bubble","merge"};
+        string dtl[5] {"string","int","long","double","float"};
+        cout<<"Sort: \""<<st[stn]<<" \",data type is \" "<<dtl[dt]<<" \""<<endl;
+        cout<<"usage time-->"<<ti<<"ms\n"<<endl;
         //return ti;
     }
 
 
 int main(){
-    cout<<"132";
+    cout<<"start"<<endl;
     /*
-    string as[fre];
+    list<string> as[fre];
     int ai[fre],pi;
     long alo[fre],plo;
     double ad[fre],pd;
@@ -162,7 +166,7 @@ int main(){
     myfile<<"time\t";
     myfile.close();
     
-    cout<<"1259";
+    cout<<"file 200OK"<<endl;
 
     int num;
     srand(time(NULL));
@@ -189,7 +193,40 @@ int main(){
         */
     }
 
-    gogo(bub(vi,fre));
+    //sort choose
+    int sc;
+    cout<<"sort choose-->";
+    cin>>sc;
+    switch (sc){
+    case 1:
+        gogo(is(vs,fre),1,0);
+        gogo(is(vi,fre),1,1);
+        gogo(is(vlo,fre),1,2);
+        gogo(is(vd,fre),1,3);
+        gogo(is(vf,fre),1,4);
+        break;
+    case 2:
+        gogo(sel(vs,fre),2,0);
+        gogo(sel(vi,fre),2,1);
+        gogo(sel(vlo,fre),2,2);
+        gogo(sel(vd,fre),2,3);
+        gogo(sel(vf,fre),2,4);
+        break;
+    case 3:
+        gogo(bub(vs,fre),3,0);
+        gogo(bub(vi,fre),3,1);
+        gogo(bub(vlo,fre),3,2);
+        gogo(bub(vd,fre),3,3);
+        gogo(bub(vf,fre),3,4);
+        break;
+    case 4:
+
+        break;
+    default:
+        cout<<"404 error"<<endl;
+        break;
+    }
+
     //output(sel(vi,fre));
     //cout<<"usage time-->"<<ti<<"ms"<<endl;
     return 0;
