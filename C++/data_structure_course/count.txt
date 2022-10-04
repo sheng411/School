@@ -1,1 +1,28 @@
-type	sort	time	
+sort		type	time	data num
+
+selection	string	1ms		100000
+
+selection	int		1ms		100000
+
+selection	long	1ms		100000
+
+selection	double	0ms		100000
+
+selection	float	0ms		100000
+
+All time-->101.959s
+
+sort		type	time	data num
+
+bubble	string	0ms		100000
+
+bubble	int		1ms		100000
+
+bubble	long	1ms		100000
+
+bubble	double	1ms		100000
+
+bubble	float	1ms		100000
+
+All time-->264.788s
+

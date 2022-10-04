@@ -9,7 +9,7 @@ input 1--> is sel bub merg
 
 
 */
-template <class ins>
+/*template <class ins>
     ins is(ins in,int n){
         ins temp;
         int j=0;
@@ -23,7 +23,7 @@ template <class ins>
             in[j+1]=temp;
         }
         return in;
-    }
+    }*/
 
 template <class se>
     se sel(se s,int n){
@@ -107,6 +107,8 @@ template <class out>
 
 template <class go>
     void gogo(go fun,int stn,int dt){  //dt is data type
+        fstream myfile;
+        myfile.open("count.txt",ios::out);      //改app
         double sta,end,ti=999;
         sta=clock();        //timing start
         cout<<"\nsta "<<sta<<endl;    //test
@@ -128,15 +130,22 @@ template <class go>
             ti=end-sta;
         }
         string st[4] {"insertion","selection","bubble","merge"};
-        string dtl[5] {"string","int","long","double","float"};
+        string dtl[5] {"string","int\t","long","double","float"};
         cout<<"Sort: \""<<st[stn]<<" \",data type is \" "<<dtl[dt]<<" \""<<endl;
         cout<<"usage time-->"<<ti<<"ms\n"<<endl;
+        myfile<<st[stn]<<"\t"
+                <<dtl[dt]<<"\t"
+                <<ti<<"ms\t\t"
+                <<fre<<"\n"
+                <<endl;
+        myfile.close();
         //return ti;
     }
 
 
 int main(){
     cout<<"start"<<endl;
+    double asta,aend,ati=999;
     /*
     list<string> as[fre];
     int ai[fre],pi;
@@ -160,31 +169,35 @@ int main(){
 
     // open file
     fstream myfile;
-    myfile.open("count.txt",ios::out);      //改app
+    myfile.open("count.txt",ios::app);      //改app
+    myfile<<"sort\t\t";
     myfile<<"type\t";
-    myfile<<"sort\t";
     myfile<<"time\t";
+    myfile<<"data num\n\n";
     myfile.close();
     
     cout<<"file 200OK"<<endl;
 
-    int num;
+    int num,rdn;
     srand(time(NULL));
+
+    rdn=1000;
+
     for(int i=0;i<fre;i++){
-        vi.push_back(rand()%100);
-        vlo.push_back(rand()%100);
-        vd.push_back(rand()%100);
-        vf.push_back(rand()%100);
+        vi.push_back(rand()%rdn);
+        vlo.push_back(rand()%rdn);
+        vd.push_back(rand()%rdn);
+        vf.push_back(rand()%rdn);
         string na="aaaaaa";
         for(int x=0;x<6;x++){
             na[x]+=rand()%26;
         }
         vs.push_back(na);
         /*
-        pi=rand()%100;
-        plo=rand()%100;
-        pd=rand()%100;
-        pf=rand()%100;
+        pi=rand()%rdn;
+        plo=rand()%rdn;
+        pd=rand()%rdn;
+        pf=rand()%rdn;
         as[i]=na;
         ai[i]=pi;
         alo[i]=plo;
@@ -197,27 +210,28 @@ int main(){
     int sc;
     cout<<"sort choose-->";
     cin>>sc;
+    asta=clock();        //timing start
     switch (sc){
     case 1:
-        gogo(is(vs,fre),1,0);
-        gogo(is(vi,fre),1,1);
-        gogo(is(vlo,fre),1,2);
-        gogo(is(vd,fre),1,3);
-        gogo(is(vf,fre),1,4);
+        /*gogo(is(vs,fre),0,0);
+        gogo(is(vi,fre),0,1);
+        gogo(is(vlo,fre),0,2);
+        gogo(is(vd,fre),0,3);
+        gogo(is(vf,fre),0,4);*/
         break;
     case 2:
-        gogo(sel(vs,fre),2,0);
-        gogo(sel(vi,fre),2,1);
-        gogo(sel(vlo,fre),2,2);
-        gogo(sel(vd,fre),2,3);
-        gogo(sel(vf,fre),2,4);
+        gogo(sel(vs,fre),1,0);
+        gogo(sel(vi,fre),1,1);
+        gogo(sel(vlo,fre),1,2);
+        gogo(sel(vd,fre),1,3);
+        gogo(sel(vf,fre),1,4);
         break;
     case 3:
-        gogo(bub(vs,fre),3,0);
-        gogo(bub(vi,fre),3,1);
-        gogo(bub(vlo,fre),3,2);
-        gogo(bub(vd,fre),3,3);
-        gogo(bub(vf,fre),3,4);
+        gogo(bub(vs,fre),2,0);
+        gogo(bub(vi,fre),2,1);
+        gogo(bub(vlo,fre),2,2);
+        gogo(bub(vd,fre),2,3);
+        gogo(bub(vf,fre),2,4);
         break;
     case 4:
 
@@ -226,8 +240,15 @@ int main(){
         cout<<"404 error"<<endl;
         break;
     }
-
+    
     //output(sel(vi,fre));
-    //cout<<"usage time-->"<<ti<<"ms"<<endl;
+
+
+    aend=clock();    //timing end
+    ati=(aend-asta)/1000;
+    cout<<"\nAll time-->"<<ati<<"s"<<endl;
+    myfile.open("count.txt",ios::app);      //改app
+    myfile<<"All time-->"<<ati<<"s\n\n";
+    myfile.close();
     return 0;
 }
