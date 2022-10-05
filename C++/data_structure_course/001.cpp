@@ -9,7 +9,7 @@ input 1--> is sel bub merg
 
 
 */
-/*template <class ins>
+template <class ins>
     ins is(ins in,int n){
         ins temp;
         int j=0;
@@ -23,7 +23,7 @@ input 1--> is sel bub merg
             in[j+1]=temp;
         }
         return in;
-    }*/
+    }
 
 template <class se>
     se sel(se s,int n){
@@ -169,7 +169,7 @@ int main(){
 
     // open file
     fstream myfile;
-    myfile.open("count.txt",ios::app);      //改app
+    myfile.open("count.txt",ios::out);      //改app
     myfile<<"sort\t\t";
     myfile<<"type\t";
     myfile<<"time\t";
@@ -213,11 +213,11 @@ int main(){
     asta=clock();        //timing start
     switch (sc){
     case 1:
-        /*gogo(is(vs,fre),0,0);
+        gogo(is(vs,fre),0,0);
         gogo(is(vi,fre),0,1);
         gogo(is(vlo,fre),0,2);
         gogo(is(vd,fre),0,3);
-        gogo(is(vf,fre),0,4);*/
+        gogo(is(vf,fre),0,4);
         break;
     case 2:
         gogo(sel(vs,fre),1,0);
