@@ -2,18 +2,18 @@
 using namespace std;
 
 int fre=100000;       //quantity of data
-int smfre=0;     //Use of small data
+int smfre=1000;     //Use of small data
 
 /*
 input 1--> is sel bub merg 
 
 
 */
-template <class ins>
+/*template <class ins>
     ins is(ins in,int n){
-        ins temp;
+        //ins temp;
         int j=0;
-        for(int i=0;i<n;i++){
+        for(int i=1;i<n;i++){
             ins temp=in[i];
             j=i-1;
             while(temp<in[j] && j>=0){
@@ -23,11 +23,11 @@ template <class ins>
             in[j+1]=temp;
         }
         return in;
-    }
+    }*/
 
 template <class se>
     se sel(se s,int n){
-        for(int i=0;i<n;i++){
+        for(int i=0;i<n-1;i++){
             int mins=i;
             for(int j=i+1;j<n;j++){
                 if(s[j]<s[mins]){
@@ -56,7 +56,7 @@ template <class bu>
 
 /*
 int Mx=1000;
-template <class mer>
+template <typename mer>
     void merg(mer mr,int sn,int md,int en){
         mer l(mr.begin()+sn,mr.begin()+md+1),
             r(mr.begin()+md,mr.begin()+en+1);
@@ -108,7 +108,7 @@ template <class out>
 template <class go>
     void gogo(go fun,int stn,int dt){  //dt is data type
         fstream myfile;
-        myfile.open("count.txt",ios::out);      //改app
+        myfile.open("count.txt",ios::app);      //改app
         double sta,end,ti=999;
         sta=clock();        //timing start
         cout<<"\nsta "<<sta<<endl;    //test
@@ -146,13 +146,14 @@ template <class go>
 int main(){
     cout<<"start"<<endl;
     double asta,aend,ati=999;
+    
     /*
-    list<string> as[fre];
+    string as[fre];
     int ai[fre],pi;
     long alo[fre],plo;
     double ad[fre],pd;
-    float af[fre],pf;
-    */
+    float af[fre],pf;*/
+    
     vector <string>vs;
     vector <int>vi;
     vector <long>vlo;
@@ -160,12 +161,13 @@ int main(){
     vector <float>vf;
     
     /*
-    array <string>vs;
-    array <int>vi;
-    array <long>vlo;
-    array <double>vd;
-    array <float>vf;
+    array <string,500000> aas;
+    array <int,500000> aai;
+    array <long,500000> aalo;
+    array <double,500000> aad;
+    array <float,500000> aaf;
     */
+
 
     // open file
     fstream myfile;
@@ -193,6 +195,7 @@ int main(){
             na[x]+=rand()%26;
         }
         vs.push_back(na);
+        
         /*
         pi=rand()%rdn;
         plo=rand()%rdn;
@@ -212,12 +215,12 @@ int main(){
     cin>>sc;
     asta=clock();        //timing start
     switch (sc){
-    case 1:
+    case 1:/*
         gogo(is(vs,fre),0,0);
         gogo(is(vi,fre),0,1);
         gogo(is(vlo,fre),0,2);
         gogo(is(vd,fre),0,3);
-        gogo(is(vf,fre),0,4);
+        gogo(is(vf,fre),0,4);*/
         break;
     case 2:
         gogo(sel(vs,fre),1,0);
