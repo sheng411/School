@@ -7,23 +7,25 @@ int smfre=1000;     //Use of small data
 /*
 input 1--> is sel bub merg 
 
-
+更改時間:2022/10/07 02:37
 */
-/*template <class ins>
+
+//insertion sort經更改過仍會出現錯誤
+template <class ins>
     ins is(ins in,int n){
-        //ins temp;
+        ins temp;
         int j=0;
         for(int i=1;i<n;i++){
-            ins temp=in[i];
+            temp=in[i];
             j=i-1;
-            while(temp<in[j] && j>=0){
+            while(j>=0 && temp<in[j]){
                 in[j+1]=in[j];
                 j--;
             }
-            in[j+1]=temp;
+            in[j+1]=temp[i];
         }
         return in;
-    }*/
+    }
 
 template <class se>
     se sel(se s,int n){
@@ -215,12 +217,12 @@ int main(){
     cin>>sc;
     asta=clock();        //timing start
     switch (sc){
-    case 1:/*
+    case 1:
         gogo(is(vs,fre),0,0);
         gogo(is(vi,fre),0,1);
         gogo(is(vlo,fre),0,2);
         gogo(is(vd,fre),0,3);
-        gogo(is(vf,fre),0,4);*/
+        gogo(is(vf,fre),0,4);
         break;
     case 2:
         gogo(sel(vs,fre),1,0);
