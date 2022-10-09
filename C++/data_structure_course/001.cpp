@@ -7,7 +7,7 @@ long double smfre=10000;     //Use of small data
 /*
 input 1--> is sel bub merg 
 
-更改時間:2022/10/10 02:34
+更改時間:2022/10/10 02:46
 */
 
 //insertion sort經更改過仍會出現錯誤
