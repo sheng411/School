@@ -1,24 +1,24 @@
-sort		type		time		data num		data structure
+sort		type		time		data num	rep ti		data str
 
-bubble		string		3.69ns		10		C array
+bubble		string		1.64ns		10		10000		C array
 
-bubble		int			1.79ns		10		C array
+bubble		int			1.68ns		10		10000		C array
 
-bubble		long		1.65ns		10		C array
+bubble		long		1.64ns		10		10000		C array
 
-bubble		double		3.8ns		10		C array
+bubble		double		2.1ns		10		10000		C array
 
-bubble		float		1.65ns		10		C array
+bubble		float		1.64ns		10		10000		C array
 
-bubble		string		1.64ns		10		vector
+bubble		string		3.71ns		10		10000		vector
 
-bubble		int			1.64ns		10		vector
+bubble		int			1.64ns		10		10000		vector
 
-bubble		long		1.68ns		10		vector
+bubble		long		1.64ns		10		10000		vector
 
-bubble		double		1.64ns		10		vector
+bubble		double		3.6ns		10		10000		vector
 
-bubble		float		1.64ns		10		vector
+bubble		float		1.65ns		10		10000		vector
 
-All time-->16704300ns
+All time-->18040900ns
 
