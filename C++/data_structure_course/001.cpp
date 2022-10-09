@@ -1,17 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int fre=100000;       //quantity of data
-int smfre=1000;     //Use of small data
+int fre=10;       //quantity of data
+long double smfre=10000;     //Use of small data
 
 /*
 input 1--> is sel bub merg 
 
-更改時間:2022/10/07 02:37
+更改時間:2022/10/10 02:34
 */
 
 //insertion sort經更改過仍會出現錯誤
-template <class ins>
+/*template <class ins>
     ins is(ins in,int n){
         ins temp;
         int j=0;
@@ -25,7 +25,7 @@ template <class ins>
             in[j+1]=temp[i];
         }
         return in;
-    }
+    }*/
 
 template <class se>
     se sel(se s,int n){
@@ -58,7 +58,7 @@ template <class bu>
 
 /*
 int Mx=1000;
-template <typename mer>
+template <class mer>
     void merg(mer mr,int sn,int md,int en){
         mer l(mr.begin()+sn,mr.begin()+md+1),
             r(mr.begin()+md,mr.begin()+en+1);
@@ -108,12 +108,11 @@ template <class out>
     }
 
 template <class go>
-    void gogo(go fun,int stn,int dt){  //dt is data type
+    void gogo(go fun,int stn,int dt,int dsn){  //dt is data type
         fstream myfile;
         myfile.open("count.txt",ios::app);      //改app
-        double sta,end,ti=999;
-        sta=clock();        //timing start
-        cout<<"\nsta "<<sta<<endl;    //test
+        auto gst=chrono::steady_clock::now();
+        //cout<<"\nsta "<<gst<<endl;    //test
         if(smfre>=2){
             for(int i=0;i<smfre;i++){
             fun;
@@ -122,23 +121,21 @@ template <class go>
         else{
             fun;
         }
-        end=clock();    //timing end
-        cout<<"\n1end "<<end<<endl;
+        auto gend=chrono::steady_clock::now();
+        //cout<<"\n1end "<<gend<<endl;
         //cout<<"\n1usage time-->"<<ti<<"ms"<<endl; test
-        if(smfre>=2){
-            ti=(end-sta)/smfre;
-        }
-        else{
-            ti=end-sta;
-        }
+
+        long double ti=chrono::duration_cast<chrono::nanoseconds>(gend-gst).count()/smfre;
         string st[4] {"insertion","selection","bubble","merge"};
         string dtl[5] {"string","int\t","long","double","float"};
-        cout<<"Sort: \""<<st[stn]<<" \",data type is \" "<<dtl[dt]<<" \""<<endl;
-        cout<<"usage time-->"<<ti<<"ms\n"<<endl;
-        myfile<<st[stn]<<"\t"
-                <<dtl[dt]<<"\t"
-                <<ti<<"ms\t\t"
-                <<fre<<"\n"
+        string ds[3] {"C array","vector","std array"};
+        cout<<"Sort: \""<<st[stn]<<" \",data type is \" "<<dtl[dt]<<" \""<<"data str"<<ds[dsn]<<endl;
+        cout<<"usage time-->"<<ti<<"ns\n"<<endl;
+        myfile<<st[stn]<<"\t\t"
+                <<dtl[dt]<<"\t\t"
+                <<ti<<"ns\t\t"
+                <<fre<<"\t\t"
+                <<ds[dsn]<<"\n"
                 <<endl;
         myfile.close();
         //return ti;
@@ -147,14 +144,12 @@ template <class go>
 
 int main(){
     cout<<"start"<<endl;
-    double asta,aend,ati=999;
     
-    /*
-    string as[fre];
-    int ai[fre],pi;
-    long alo[fre],plo;
-    double ad[fre],pd;
-    float af[fre],pf;*/
+    string as[100];
+    int ai[100],pi;
+    long alo[100],plo;
+    double ad[100],pd;
+    float af[100],pf;
     
     vector <string>vs;
     vector <int>vi;
@@ -163,11 +158,11 @@ int main(){
     vector <float>vf;
     
     /*
-    array <string,500000> aas;
-    array <int,500000> aai;
-    array <long,500000> aalo;
-    array <double,500000> aad;
-    array <float,500000> aaf;
+    array <string,100> aas;
+    array <int,100> aai;
+    array <long,100> aalo;
+    array <double,100> aad;
+    array <float,100> aaf;
     */
 
 
@@ -175,9 +170,10 @@ int main(){
     fstream myfile;
     myfile.open("count.txt",ios::out);      //改app
     myfile<<"sort\t\t";
-    myfile<<"type\t";
-    myfile<<"time\t";
-    myfile<<"data num\n\n";
+    myfile<<"type\t\t";
+    myfile<<"time\t\t";
+    myfile<<"data num\t\t";
+    myfile<<"data structure\n\n";
     myfile.close();
     
     cout<<"file 200OK"<<endl;
@@ -198,7 +194,7 @@ int main(){
         }
         vs.push_back(na);
         
-        /*
+        
         pi=rand()%rdn;
         plo=rand()%rdn;
         pd=rand()%rdn;
@@ -208,35 +204,50 @@ int main(){
         alo[i]=plo;
         ad[i]=pd;
         af[i]=pf;
-        */
+        
     }
 
     //sort choose
     int sc;
     cout<<"sort choose-->";
     cin>>sc;
-    asta=clock();        //timing start
+    auto start = chrono::steady_clock::now();
     switch (sc){
-    case 1:
-        gogo(is(vs,fre),0,0);
-        gogo(is(vi,fre),0,1);
-        gogo(is(vlo,fre),0,2);
-        gogo(is(vd,fre),0,3);
-        gogo(is(vf,fre),0,4);
+    case 1:/*
+        gogo(is(as,fre),0,0,0);
+        gogo(is(ai,fre),0,1,0);
+        gogo(is(alo,fre),0,2,0);
+        gogo(is(ad,fre),0,3,0);
+        gogo(is(af,fre),0,4,0);
+        gogo(is(vs,fre),0,0,1);
+        gogo(is(vi,fre),0,1,1);
+        gogo(is(vlo,fre),0,2,1);
+        gogo(is(vd,fre),0,3,1);
+        gogo(is(vf,fre),0,4,1);*/
         break;
     case 2:
-        gogo(sel(vs,fre),1,0);
-        gogo(sel(vi,fre),1,1);
-        gogo(sel(vlo,fre),1,2);
-        gogo(sel(vd,fre),1,3);
-        gogo(sel(vf,fre),1,4);
+        gogo(sel(as,fre),1,0,0);
+        gogo(sel(ai,fre),1,1,0);
+        gogo(sel(alo,fre),1,2,0);
+        gogo(sel(ad,fre),1,3,0);
+        gogo(sel(af,fre),1,4,0);
+        gogo(sel(vs,fre),1,0,1);
+        gogo(sel(vi,fre),1,1,1);
+        gogo(sel(vlo,fre),1,2,1);
+        gogo(sel(vd,fre),1,3,1);
+        gogo(sel(vf,fre),1,4,1);
         break;
     case 3:
-        gogo(bub(vs,fre),2,0);
-        gogo(bub(vi,fre),2,1);
-        gogo(bub(vlo,fre),2,2);
-        gogo(bub(vd,fre),2,3);
-        gogo(bub(vf,fre),2,4);
+        gogo(bub(as,fre),2,0,0);
+        gogo(bub(ai,fre),2,1,0);
+        gogo(bub(alo,fre),2,2,0);
+        gogo(bub(ad,fre),2,3,0);
+        gogo(bub(af,fre),2,4,0);
+        gogo(bub(vs,fre),2,0,1);
+        gogo(bub(vi,fre),2,1,1);
+        gogo(bub(vlo,fre),2,2,1);
+        gogo(bub(vd,fre),2,3,1);
+        gogo(bub(vf,fre),2,4,1);
         break;
     case 4:
 
@@ -249,11 +260,11 @@ int main(){
     //output(sel(vi,fre));
 
 
-    aend=clock();    //timing end
-    ati=(aend-asta)/1000;
-    cout<<"\nAll time-->"<<ati<<"s"<<endl;
+    auto end = chrono::steady_clock::now();
+    long long att=chrono::duration_cast<chrono::nanoseconds>(end-start).count();
+    cout<<"\nAll time-->"<<att<<"ns"<<endl;
     myfile.open("count.txt",ios::app);      //改app
-    myfile<<"All time-->"<<ati<<"s\n\n";
+    myfile<<"All time-->"<<att<<"ns\n\n";
     myfile.close();
     return 0;
 }
