@@ -135,6 +135,7 @@ template <class go>
                 <<dtl[dt]<<"\t\t"
                 <<ti<<"ns\t\t"
                 <<fre<<"\t\t"
+                <<smfre<<"\t\t"
                 <<ds[dsn]<<"\n"
                 <<endl;
         myfile.close();
@@ -172,8 +173,9 @@ int main(){
     myfile<<"sort\t\t";
     myfile<<"type\t\t";
     myfile<<"time\t\t";
-    myfile<<"data num\t\t";
-    myfile<<"data structure\n\n";
+    myfile<<"data num\t";
+    myfile<<"rep ti\t\t";   //repeat time
+    myfile<<"data str\n\n";
     myfile.close();
     
     cout<<"file 200OK"<<endl;
