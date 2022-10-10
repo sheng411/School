@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int fre=500000;       //quantity of data
+int fre=100000;       //quantity of data
 long double smfre=1;     //Use of small data
 
 /*
 input 1--> is sel bub merg 
 
-更改時間:2022/10/10 02:46
+更改時間:2022/10/10 17:00
 */
 
 //insertion sort經更改過仍會出現錯誤
@@ -194,7 +194,7 @@ int main(){
             na[x]+=rand()%26;
         }
         vs.push_back(na);
-        
+
         pi=rand()%rdn;
         plo=rand()%rdn;
         pd=rand()%rdn;
