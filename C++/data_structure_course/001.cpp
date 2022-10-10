@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int fre=10;       //quantity of data
-long double smfre=10000;     //Use of small data
+int fre=500000;       //quantity of data
+long double smfre=1;     //Use of small data
 
 /*
 input 1--> is sel bub merg 
@@ -12,7 +12,7 @@ input 1--> is sel bub merg
 
 //insertion sort經更改過仍會出現錯誤
 /*template <class ins>
-    ins is(ins in,int n){
+    void is(ins *in,int n){
         ins temp;
         int j=0;
         for(int i=1;i<n;i++){
@@ -22,9 +22,8 @@ input 1--> is sel bub merg
                 in[j+1]=in[j];
                 j--;
             }
-            in[j+1]=temp[i];
+            in[j+1]=temp;
         }
-        return in;
     }*/
 
 template <class se>
@@ -115,7 +114,7 @@ template <class go>
         //cout<<"\nsta "<<gst<<endl;    //test
         if(smfre>=2){
             for(int i=0;i<smfre;i++){
-            fun;
+                fun;
             }
         }
         else{
@@ -125,7 +124,7 @@ template <class go>
         //cout<<"\n1end "<<gend<<endl;
         //cout<<"\n1usage time-->"<<ti<<"ms"<<endl; test
 
-        long double ti=chrono::duration_cast<chrono::nanoseconds>(gend-gst).count()/smfre;
+        long double ti=chrono::duration_cast<chrono::nanoseconds>(gend-gst).count();
         string st[4] {"insertion","selection","bubble","merge"};
         string dtl[5] {"string","int\t","long","double","float"};
         string ds[3] {"C array","vector","std array"};
@@ -146,11 +145,11 @@ template <class go>
 int main(){
     cout<<"start"<<endl;
     
-    string as[100];
-    int ai[100],pi;
-    long alo[100],plo;
-    double ad[100],pd;
-    float af[100],pf;
+    string *as=new string[fre];
+    int *ai=new int[fre],pi;
+    long *alo=new long[fre],plo;
+    double *ad=new double[fre],pd;
+    float *af=new float[fre],pf;
     
     vector <string>vs;
     vector <int>vi;
@@ -195,7 +194,6 @@ int main(){
             na[x]+=rand()%26;
         }
         vs.push_back(na);
-        
         
         pi=rand()%rdn;
         plo=rand()%rdn;
