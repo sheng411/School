@@ -7,7 +7,7 @@ long double smfre=1;     //Use of small data
 /*
 input 1--> is sel bub merg 
 
-更改時間:2022/10/10 17:00
+更改時間:2022/10/11 01:55
 */
 
 //insertion sort經更改過仍會出現錯誤
@@ -54,7 +54,7 @@ template <class bu>
         }
         return b;
     }
-
+/*
 template <class mes>
     void mergso(mes ms,int st,int ed){
         if(st<ed){
@@ -99,7 +99,7 @@ template <class mer>
             k++;
         }
     }
-
+*/
 template <class out>
     void output(out st){
         double sta,end,ti;
@@ -214,6 +214,7 @@ int main(){
 
     //sort choose
     int sc;
+    cout<<"fre:"<<fre<<",smfre:"<<smfre<<endl;
     cout<<"sort choose-->";
     cin>>sc;
     auto start = chrono::steady_clock::now();
