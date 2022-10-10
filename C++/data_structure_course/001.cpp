@@ -55,44 +55,50 @@ template <class bu>
         return b;
     }
 
-/*
-int Mx=1000;
-template <class mer>
-    void merg(mer mr,int sn,int md,int en){
-        mer l(mr.begin()+sn,mr.begin()+md+1),
-            r(mr.begin()+md,mr.begin()+en+1);
-        l.insert(l.end(),Mx);
-        r.insert(r.end(),Mx);
-        int il=0,ir=0;
-        for(int i=sn;i<=en;i++){
-            if(l[il]<=r[ir]){
-                mr[i]=l[il];
-                il++;
-            }
-            else{
-                mr[i]=r[ir];
-                ir++;
-            }
+template <class mes>
+    void mergso(mes ms,int st,int ed){
+        if(st<ed){
+            int md=(st+ed)/2;
+            mergso(ms,st,md);
+            mergso(ms,md+1,ed);
+            merg(ms,st,md,ed);
         }
     }
 
-
-template <class mers>
-    void mergsort(mers m,int snr,int enr){      //snr is start num,enr is end num.
-        if(snr<enr){
-            int mid=(snr+enr)/2;
-            mergsort(m,snr,mid);
-            mergsort(m,mid+1,enr);
-            merg(m,snr,mid,enr);
+template <class mer>
+    void merg(mer mr,int sn,int md,int en){
+        int l1=md-sn+1;
+        int r1=en-md;
+        mer L[l1],R[r1];
+        for(int i=0;i<l1;i++){
+            L[i]=mr[sn+i];
         }
-        cout<<"merge list-->"<<endl;
-        for(int c=0;c<fre;c++){
-            cout<<m[c]<<"\t";
-            if(c%10==0){
-                cout<<endl;
+        for(int j=0;j<r1;j++){
+            R[j]=mr[md+1+j];
+        }
+        int i=0,j=0,k=sn;
+        while(i<l1 && j<r1){
+            if(L[i] <=R[j]){
+                mr[k]=L[i];
+                i++;
             }
+            else{
+                mr[k]=R[j];
+                j++;
+            }
+            k++;
         }
-    }*/
+        while(i<l1){
+            mr[k]=L[i];
+            i++;
+            k++;
+        }
+        while(j<r1){
+            mr[k]=R[j];
+            j++;
+            k++;
+        }
+    }
 
 template <class out>
     void output(out st){
@@ -181,7 +187,6 @@ int main(){
 
     int num,rdn;
     srand(time(NULL));
-
     rdn=1000;
 
     for(int i=0;i<fre;i++){
