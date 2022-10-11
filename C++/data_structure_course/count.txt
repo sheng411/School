@@ -2,23 +2,23 @@ sort		type		time		data num	rep ti		data str
 
 selection		string		200ns		100000		1		C array
 
-selection		int			100ns		100000		1		C array
+selection		int			200ns		100000		1		C array
 
 selection		long		100ns		100000		1		C array
 
-selection		double		200ns		100000		1		C array
+selection		double		100ns		100000		1		C array
 
 selection		float		100ns		100000		1		C array
 
-selection		string		100ns		100000		1		vector
+selection		string		200ns		100000		1		vector
 
-selection		int			300ns		100000		1		vector
+selection		int			100ns		100000		1		vector
 
 selection		long		100ns		100000		1		vector
 
 selection		double		100ns		100000		1		vector
 
-selection		float		0ns		100000		1		vector
+selection		float		300ns		100000		1		vector
 
-All time-->172934042900ns
+All time-->168541782600ns
 
