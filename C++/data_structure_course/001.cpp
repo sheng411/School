@@ -1,18 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int fre=100000;       //quantity of data
+int fre=500000;       //quantity of data
 long double smfre=1;     //Use of small data
 
 /*
 input 1--> is sel bub merg 
 
-更改時間:2022/10/11 01:55
+更改時間:2022/10/12 03:00
 */
 
 //insertion sort經更改過仍會出現錯誤
 /*template <class ins>
-    void is(ins *in,int n){
+    ins is(ins *in,int n){
         ins temp;
         int j=0;
         for(int i=1;i<n;i++){
@@ -24,6 +24,7 @@ input 1--> is sel bub merg
             }
             in[j+1]=temp;
         }
+        return in;
     }*/
 
 template <class se>
