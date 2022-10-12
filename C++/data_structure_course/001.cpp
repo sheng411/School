@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int fre=300000;       //quantity of data
+int fre=100000;       //quantity of data
 long double smfre=1;     //Use of small data
 
 /*
 input 1--> is sel bub merg 
 
-更改時間:2022/10/12 14:30
+更改時間:2022/10/12 16:35
 */
 
 template <class ins>
@@ -117,7 +117,6 @@ template <class go>
         fstream myfile;
         myfile.open("count.txt",ios::app);      //改app
         auto gst=chrono::steady_clock::now();
-        //cout<<"\nsta "<<gst<<endl;    //test
         if(smfre>=2){
             for(int i=0;i<smfre;i++){
                 fun;
@@ -127,8 +126,6 @@ template <class go>
             fun;
         }
         auto gend=chrono::steady_clock::now();
-        //cout<<"\n1end "<<gend<<endl;
-        //cout<<"\n1usage time-->"<<ti<<"ms"<<endl; test
 
         long double ti=chrono::duration_cast<chrono::nanoseconds>(gend-gst).count();
         string st[4] {"insertion","selection","bubble","merge"};
@@ -144,7 +141,6 @@ template <class go>
                 <<ds[dsn]<<"\n"
                 <<endl;
         myfile.close();
-        //return ti;
     }
 
 
@@ -185,15 +181,15 @@ int main(){
     
     cout<<"file 200OK"<<endl;
 
-    int num,rdn;
+    
     srand(time(NULL));
-    rdn=1000;
+    int rdn=10,rdm=10000;
 
     for(int i=0;i<fre;i++){
-        vi.push_back(rand()%rdn);
-        vlo.push_back(rand()%rdn);
-        vd.push_back(rand()%rdn);
-        vf.push_back(rand()%rdn);
+        vi.push_back(rand()%rdm/int(rdn));
+        vlo.push_back(rand()%rdm/long(rdn));
+        vd.push_back(rand()%rdm/double(rdn));
+        vf.push_back(rand()%rdm/float(rdn));
         string na="aaaaaa";
         for(int x=0;x<6;x++){
             na[x]+=rand()%26;
