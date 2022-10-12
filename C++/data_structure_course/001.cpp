@@ -263,7 +263,7 @@ int main(){
 
 
     auto end = chrono::steady_clock::now();
-    long long att=chrono::duration_cast<chrono::nanoseconds>(end-start).count();
+    long long att=chrono::duration_cast<chrono::nanoseconds>(end-start).count();    //秒 seconds
     cout<<"\nAll time-->"<<att<<"ns"<<endl;
     myfile.open("count.txt",ios::app);      //改app
     myfile<<"All time-->"<<att<<"ns\n\n";
