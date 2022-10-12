@@ -1,22 +1,21 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int fre=500000;       //quantity of data
+int fre=300000;       //quantity of data
 long double smfre=1;     //Use of small data
 
 /*
 input 1--> is sel bub merg 
 
-更改時間:2022/10/12 03:00
+更改時間:2022/10/12 14:30
 */
 
-//insertion sort經更改過仍會出現錯誤
-/*template <class ins>
-    ins is(ins *in,int n){
-        ins temp;
+template <class ins>
+    ins is(ins in,int n){
+        //ins temp;
         int j=0;
         for(int i=1;i<n;i++){
-            temp=in[i];
+            auto temp=in[i];
             j=i-1;
             while(j>=0 && temp<in[j]){
                 in[j+1]=in[j];
@@ -25,7 +24,7 @@ input 1--> is sel bub merg
             in[j+1]=temp;
         }
         return in;
-    }*/
+    }
 
 template <class se>
     se sel(se s,int n){
@@ -220,7 +219,7 @@ int main(){
     cin>>sc;
     auto start = chrono::steady_clock::now();
     switch (sc){
-    case 1:/*
+    case 1:
         gogo(is(as,fre),0,0,0);
         gogo(is(ai,fre),0,1,0);
         gogo(is(alo,fre),0,2,0);
@@ -230,7 +229,7 @@ int main(){
         gogo(is(vi,fre),0,1,1);
         gogo(is(vlo,fre),0,2,1);
         gogo(is(vd,fre),0,3,1);
-        gogo(is(vf,fre),0,4,1);*/
+        gogo(is(vf,fre),0,4,1);
         break;
     case 2:
         gogo(sel(as,fre),1,0,0);
