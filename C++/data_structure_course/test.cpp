@@ -7,7 +7,7 @@ int fre=10;
 
 
 template <class mer>
-    void merg(mer mr,int sn,int md,int en){
+    void merg(mer *mr,int sn,int md,int en){
         int l1=md-sn+1;
         int r1=en-md;
         mer L[l1],R[r1];
@@ -42,7 +42,7 @@ template <class mer>
     }
 
 template <class mes>
-    void mergso(mes ms,int st,int ed){
+    void mergso(mes *ms,int st,int ed){
         if(st<ed){
             int md=(st+ed)/2;
             mergso(ms,st,md);
@@ -59,12 +59,12 @@ int main(){
     vector <float>vf;
 
     srand(time(NULL));
-    int rdn=1000;
+    int rdn=10,rdm=10000;
     for(int i=0;i<fre;i++){
-        vi.push_back(rand()%rdn);
-        vlo.push_back(rand()%rdn);
-        vd.push_back(rand()%rdn);
-        vf.push_back(rand()%rdn);
+        vi.push_back(rand()%rdm/int(rdn));
+        vlo.push_back(rand()%rdm/long(rdn));
+        vd.push_back(rand()%rdm/double(rdn));
+        vf.push_back(rand()%rdm/float(rdn));
         string na="aaaaaa";
         for(int x=0;x<6;x++){
             na[x]+=rand()%26;
@@ -76,10 +76,10 @@ int main(){
         cout<<vi[i]<<"\t";
     }
 
-    mergso(vi,0,fre);
+    mergso(&vf,0,fre);
 
     for(int i=0;i<fre;i++){
-        cout<<vi[i]<<"\t";
+        cout<<"hello "<<vf[i]<<"\t";
     }
     return 0;
 }
