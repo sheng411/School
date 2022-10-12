@@ -1,24 +1,24 @@
 sort		type		time		data num	rep ti		data str
 
-insertion		string		100ns		100000		1		C array
+insertion		string		200ns		100000		1		C array
 
 insertion		int			100ns		100000		1		C array
 
-insertion		long		200ns		100000		1		C array
+insertion		long		100ns		100000		1		C array
 
-insertion		double		100ns		100000		1		C array
+insertion		double		0ns		100000		1		C array
 
 insertion		float		100ns		100000		1		C array
 
-insertion		string		200ns		100000		1		vector
+insertion		string		100ns		100000		1		vector
 
 insertion		int			200ns		100000		1		vector
 
-insertion		long		100ns		100000		1		vector
+insertion		long		0ns		100000		1		vector
 
-insertion		double		300ns		100000		1		vector
+insertion		double		100ns		100000		1		vector
 
 insertion		float		100ns		100000		1		vector
 
-All time-->160575746700ns
+All time-->157483553800ns
 
