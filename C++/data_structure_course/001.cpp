@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int fre=100000;       //quantity of data
-long double smfre=1;     //Use of small data
+int fre=1000;       //quantity of data
+long double smfre=100000;     //Use of small data
 
 /*
 input 1--> is sel bub merg 
 
-更改時間:2022/10/12 16:35
+更改時間:2022/10/14 02:38
 */
 
 template <class ins>
@@ -159,13 +159,13 @@ int main(){
     vector <double>vd;
     vector <float>vf;
     
-    /*
-    array <string,100> aas;
-    array <int,100> aai;
-    array <long,100> aalo;
-    array <double,100> aad;
-    array <float,100> aaf;
-    */
+    
+    array <string,1000> aas;
+    array <int,1000> aai;
+    array <long,1000> aalo;
+    array <double,1000> aad;
+    array <float,1000> aaf;
+    
 
 
     // open file
@@ -196,15 +196,21 @@ int main(){
         }
         vs.push_back(na);
 
-        pi=rand()%rdn;
-        plo=rand()%rdn;
-        pd=rand()%rdn;
-        pf=rand()%rdn;
+        pi=rand()%rdm/int(rdn);
+        plo=rand()%rdm/long(rdn);
+        pd=rand()%rdm/double(rdn);
+        pf=rand()%rdm/float(rdn);
         as[i]=na;
         ai[i]=pi;
         alo[i]=plo;
         ad[i]=pd;
         af[i]=pf;
+
+        aas[i]=na;
+        aai[i]=rand()%rdm/int(rdn);
+        aalo[i]=rand()%rdm/long(rdn);
+        aad[i]=rand()%rdm/double(rdn);
+        aaf[i]=rand()%rdm/float(rdn);
         
     }
 
@@ -226,6 +232,11 @@ int main(){
         gogo(is(vlo,fre),0,2,1);
         gogo(is(vd,fre),0,3,1);
         gogo(is(vf,fre),0,4,1);
+        gogo(is(aas,fre),0,0,2);
+        gogo(is(aai,fre),0,1,2);
+        gogo(is(aalo,fre),0,2,2);
+        gogo(is(aad,fre),0,3,2);
+        gogo(is(aaf,fre),0,4,2);
         break;
     case 2:
         gogo(sel(as,fre),1,0,0);
@@ -238,6 +249,11 @@ int main(){
         gogo(sel(vlo,fre),1,2,1);
         gogo(sel(vd,fre),1,3,1);
         gogo(sel(vf,fre),1,4,1);
+        gogo(sel(aas,fre),1,0,2);
+        gogo(sel(aai,fre),1,1,2);
+        gogo(sel(aalo,fre),1,2,2);
+        gogo(sel(aad,fre),1,3,2);
+        gogo(sel(aaf,fre),1,4,2);
         break;
     case 3:
         gogo(bub(as,fre),2,0,0);
@@ -250,6 +266,11 @@ int main(){
         gogo(bub(vlo,fre),2,2,1);
         gogo(bub(vd,fre),2,3,1);
         gogo(bub(vf,fre),2,4,1);
+        gogo(bub(aas,fre),2,0,2);
+        gogo(bub(aai,fre),2,1,2);
+        gogo(bub(aalo,fre),2,2,2);
+        gogo(bub(aad,fre),2,3,2);
+        gogo(bub(aaf,fre),2,4,2);
         break;
     case 4:
 
