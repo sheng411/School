@@ -76,7 +76,7 @@ int main(){
         cout<<vi[i]<<"\t";
     }
 
-    mergso(&vf,0,fre);
+    mergso(&vf,0,fre-1);
 
     for(int i=0;i<fre;i++){
         cout<<"hello "<<vf[i]<<"\t";
