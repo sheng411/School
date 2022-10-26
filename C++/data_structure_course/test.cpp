@@ -4,18 +4,16 @@ using namespace std;
 int fre=10;
 
 
-
-
 template <class mer>
     void merg(mer *mr,int sn,int md,int en){
         int l1=md-sn+1;
         int r1=en-md;
         mer L[l1],R[r1];
-        for(int i=0;i<l1;i++){
-            L[i]=mr[sn+i];
+        for(int ll=0;ll<l1;ll++){
+            L[ll]=mr[sn+ll];
         }
-        for(int j=0;j<r1;j++){
-            R[j]=mr[md+1+j];
+        for(int rr=0;rr<r1;rr++){
+            R[rr]=mr[md+1+rr];
         }
         int i=0,j=0,k=sn;
         while(i<l1 && j<r1){

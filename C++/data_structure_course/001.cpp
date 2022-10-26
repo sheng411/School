@@ -7,7 +7,7 @@ long double smfre=100000;     //Use of small data
 /*
 input 1--> is sel bub merg 
 
-更改時間:2022/10/14 02:38
+更改時間:2022/10/26 15:50
 */
 
 template <class ins>
@@ -211,7 +211,6 @@ int main(){
         aalo[i]=rand()%rdm/long(rdn);
         aad[i]=rand()%rdm/double(rdn);
         aaf[i]=rand()%rdm/float(rdn);
-        
     }
 
     //sort choose
