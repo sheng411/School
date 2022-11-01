@@ -54,30 +54,21 @@ template <class bu>
         }
         return b;
     }
-/*
-template <class mes>
-    void mergso(mes ms,int st,int ed){
-        if(st<ed){
-            int md=(st+ed)/2;
-            mergso(ms,st,md);
-            mergso(ms,md+1,ed);
-            merg(ms,st,md,ed);
-        }
-    }
 
 template <class mer>
-    void merg(mer mr,int sn,int md,int en){
-        int l1=md-sn+1;
-        int r1=en-md;
-        mer L[l1],R[r1];
-        for(int i=0;i<l1;i++){
-            L[i]=mr[sn+i];
+    mer merg(mer &mr,int sn,int md,int en){
+        using elType = typename mer::value_type;
+        int L_s=md-sn+1;
+        int R_s=en-md;
+        elType L[L_s],R[R_s];
+        for(int ll=0;ll<L_s;ll++){
+            L[ll]=mr[sn+ll];
         }
-        for(int j=0;j<r1;j++){
-            R[j]=mr[md+1+j];
+        for(int rr=0;rr<R_s;rr++){
+            R[rr]=mr[md+1+rr];
         }
         int i=0,j=0,k=sn;
-        while(i<l1 && j<r1){
+        while(i<L_s && j<R_s){
             if(L[i] <=R[j]){
                 mr[k]=L[i];
                 i++;
@@ -88,18 +79,30 @@ template <class mer>
             }
             k++;
         }
-        while(i<l1){
+        while(i<L_s){
             mr[k]=L[i];
             i++;
             k++;
         }
-        while(j<r1){
+        while(j<R_s){
             mr[k]=R[j];
             j++;
             k++;
         }
+        return mr;
     }
-*/
+
+template <class mes>
+    mes mergso(mes &ms,int st,int ed){
+        if(st<ed){
+            int md=(st+ed)/2;
+            mergso(ms,st,md);
+            mergso(ms,md+1,ed);
+            merg(ms,st,md,ed);
+        }
+        return ms;
+    }
+
 template <class out>
     void output(out st){
         double sta,end,ti;
@@ -272,7 +275,21 @@ int main(){
         gogo(bub(aaf,fre),2,4,2);
         break;
     case 4:
-
+        gogo(mergso(as,0,fre-1),3,0,0);
+        gogo(mergso(ai,0,fre-1),3,1,0);
+        gogo(mergso(alo,0,fre-1),3,2,0);
+        gogo(mergso(ad,0,fre-1),3,3,0);
+        gogo(mergso(af,0,fre-1),3,4,0);
+        gogo(mergso(vs,0,fre-1),3,0,1);
+        gogo(mergso(vi,0,fre-1),3,1,1);
+        gogo(mergso(vlo,0,fre-1),3,2,1);
+        gogo(mergso(vd,0,fre-1),3,3,1);
+        gogo(mergso(vf,0,fre-1),3,4,1);
+        gogo(mergso(aas,0,fre-1),3,0,2);
+        gogo(mergso(aai,0,fre-1),3,1,2);
+        gogo(mergso(aalo,0,fre-1),3,2,2);
+        gogo(mergso(aad,0,fre-1),3,3,2);
+        gogo(mergso(aaf,0,fre-1),3,4,2);
         break;
     default:
         cout<<"404 error"<<endl;
