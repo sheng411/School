@@ -5,18 +5,19 @@ int fre=10;
 
 
 template <class mer>
-    void merg(mer *mr,int sn,int md,int en){
-        int l1=md-sn+1;
-        int r1=en-md;
-        mer L[l1],R[r1];
-        for(int ll=0;ll<l1;ll++){
+    void merg(mer &mr,int sn,int md,int en){
+        using elType = typename mer::value_type;
+        int L_s=md-sn+1;
+        int R_s=en-md;
+        elType L[L_s],R[R_s];
+        for(int ll=0;ll<L_s;ll++){
             L[ll]=mr[sn+ll];
         }
-        for(int rr=0;rr<r1;rr++){
+        for(int rr=0;rr<R_s;rr++){
             R[rr]=mr[md+1+rr];
         }
         int i=0,j=0,k=sn;
-        while(i<l1 && j<r1){
+        while(i<L_s && j<R_s){
             if(L[i] <=R[j]){
                 mr[k]=L[i];
                 i++;
@@ -27,12 +28,12 @@ template <class mer>
             }
             k++;
         }
-        while(i<l1){
+        while(i<L_s){
             mr[k]=L[i];
             i++;
             k++;
         }
-        while(j<r1){
+        while(j<R_s){
             mr[k]=R[j];
             j++;
             k++;
@@ -40,7 +41,7 @@ template <class mer>
     }
 
 template <class mes>
-    void mergso(mes *ms,int st,int ed){
+    void mergso(mes &ms,int st,int ed){
         if(st<ed){
             int md=(st+ed)/2;
             mergso(ms,st,md);
@@ -73,11 +74,12 @@ int main(){
     for(int i=0;i<fre;i++){
         cout<<vi[i]<<"\t";
     }
+    cout<<endl;
 
-    mergso(&vf,0,fre-1);
+    mergso(vi,0,fre-1);
 
     for(int i=0;i<fre;i++){
-        cout<<"hello "<<vf[i]<<"\t";
+        cout<<vi[i]<<"\t";
     }
     return 0;
 }
