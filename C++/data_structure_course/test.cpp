@@ -83,3 +83,47 @@ int main(){
     }
     return 0;
 }
+
+
+
+
+
+
+/*
+template <class mgo>
+    void mergego(int dt,int dsn){  //dt is data type
+        fstream myfile;
+        myfile.open("count.txt",ios::app);      //改app
+        auto gst=chrono::steady_clock::now();
+        mergso(as,0,fre-1);
+        mergso(ai,0,fre-1);
+        mergso(alo,0,fre-1);
+        mergso(ad,0,fre-1);
+        mergso(af,0,fre-1);
+        mergso(vs,0,fre-1);
+        mergso(vi,0,fre-1);
+        mergso(vlo,0,fre-1);
+        mergso(vd,0,fre-1);
+        mergso(vf,0,fre-1);
+        mergso(aas,0,fre-1);
+        mergso(aai,0,fre-1);
+        mergso(aalo,0,fre-1);
+        mergso(aad,0,fre-1);
+        mergso(aaf,0,fre-1);
+        auto gend=chrono::steady_clock::now();
+
+        long double ti=chrono::duration_cast<chrono::nanoseconds>(gend-gst).count();
+
+        string dtl[5] {"string","int\t","long","double","float"};
+        string ds[3] {"C array","vector","std array"};
+        cout<<"Sort: \""<<" \",data type is \" "<<dtl[dt]<<" \""<<"data str"<<ds[dsn]<<endl;
+        cout<<"usage time-->"<<ti<<"ns\n"<<endl;
+        myfile<<"merge"<<"\t\t"
+                <<dtl[dt]<<"\t\t"
+                <<ti<<"ns\t\t"
+                <<fre<<"\t\t"
+                <<smfre<<"\t\t"
+                <<ds[dsn]<<"\n"
+                <<endl;
+        myfile.close();
+    }*/
