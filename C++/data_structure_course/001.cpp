@@ -1,8 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int fre=1000;       //quantity of data
-long double smfre=100000;     //Use of small data
+
+constexpr int arnum=10000;
+long double smfre=1;     //Use of small data
+int fre=arnum;       //quantity of data
 
 /*
 input 1--> ins sel bub merg 
@@ -99,39 +101,62 @@ template <class go>
         myfile.close();
     }
 
-/*
-void randd(int &vi,long &vlo,double &vd,float &vf){
-    srand(time(NULL));
-    int rdn=10,rdm=10000;
 
-    for(int i=0;i<fre;i++){
-        vi.push_back(rand()%rdm/int(rdn));
-        vlo.push_back(rand()%rdm/long(rdn));
-        vd.push_back(rand()%rdm/double(rdn));
-        vf.push_back(rand()%rdm/float(rdn));
-        string na="aaaaaa";
-        for(int x=0;x<6;x++){
-            na[x]+=rand()%26;
+template <class rds,class rdi,class rdlo,class rdd,class rdf,class rdas,class rdai,class rdalo,class rdad,class rdaf,class rdaas,class rdaai,class rdaalo,class rdaad,class rdaaf>
+    void randd(rds &vs,rdi &vi,rdlo &vlo,rdd &vd,rdf &vf,rdas &as,rdai &ai,rdalo &alo,rdad &ad,rdaf &af,rdaas &aas,rdaai &aai,rdaalo &aalo,rdaad &aad,rdaaf &aaf){
+        int pi;long plo;double pd;float pf;
+        srand(time(NULL));
+        int rdn=10,rdm=10000;
+
+        for(int i=0;i<fre;i++){
+            vi.push_back(rand()%rdm/int(rdn));
+            vlo.push_back(rand()%rdm/long(rdn));
+            vd.push_back(rand()%rdm/double(rdn));
+            vf.push_back(rand()%rdm/float(rdn));
+            string na="aaaaaa";
+            for(int x=0;x<6;x++){
+                na[x]+=rand()%26;
+            }
+            vs.push_back(na);
+
+            pi=rand()%rdm/int(rdn);
+            plo=rand()%rdm/long(rdn);
+            pd=rand()%rdm/double(rdn);
+            pf=rand()%rdm/float(rdn);
+            as[i]=na;
+            ai[i]=pi;
+            alo[i]=plo;
+            ad[i]=pd;
+            af[i]=pf;
+
+            aas[i]=na;
+            aai[i]=rand()%rdm/int(rdn);
+            aalo[i]=rand()%rdm/long(rdn);
+            aad[i]=rand()%rdm/double(rdn);
+            aaf[i]=rand()%rdm/float(rdn);
         }
-        vs.push_back(na);
-
-        pi=rand()%rdm/int(rdn);
-        plo=rand()%rdm/long(rdn);
-        pd=rand()%rdm/double(rdn);
-        pf=rand()%rdm/float(rdn);
-        as[i]=na;
-        ai[i]=pi;
-        alo[i]=plo;
-        ad[i]=pd;
-        af[i]=pf;
-
-        aas[i]=na;
-        aai[i]=rand()%rdm/int(rdn);
-        aalo[i]=rand()%rdm/long(rdn);
-        aad[i]=rand()%rdm/double(rdn);
-        aaf[i]=rand()%rdm/float(rdn);
     }
-}*/
+
+/*
+template <class cls,class cli,class cllo,class cld,class clf,class clas,class clai,class clalo,class clad,class claf,class claas,class claai,class claalo,class claad,class claaf>
+    void clearr(){
+        cls vs.clear();
+        cli vi.clear();
+        vlo.clear();
+        vd.clear();
+        as.clear();
+        ai.clear();
+        alo.clear();
+        ad.clear();
+        af.clear();
+        aas.clear();
+        aai.clear();
+        aalo.clear();
+        aad.clear();
+        aaf.clear();
+    }
+*/
+
 
 
 int main(){
@@ -150,11 +175,11 @@ int main(){
     vector <float>vf;
     
     
-    array <string,1000> aas;
-    array <int,1000> aai;
-    array <long,1000> aalo;
-    array <double,1000> aad;
-    array <float,1000> aaf;
+    array <string,arnum> aas;
+    array <int,arnum> aai;
+    array <long,arnum> aalo;
+    array <double,arnum> aad;
+    array <float,arnum> aaf;
     
 
 
@@ -171,10 +196,11 @@ int main(){
     
     cout<<"file 200OK"<<endl;
 
-    /*
+    
     srand(time(NULL));
     int rdn=10,rdm=10000;
 
+    /*
     for(int i=0;i<fre;i++){
         vi.push_back(rand()%rdm/int(rdn));
         vlo.push_back(rand()%rdm/long(rdn));
@@ -202,6 +228,8 @@ int main(){
         aad[i]=rand()%rdm/double(rdn);
         aaf[i]=rand()%rdm/float(rdn);
     }*/
+
+    randd(vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
 
 
     //sort choose
@@ -272,9 +300,10 @@ int main(){
 
     auto end = chrono::steady_clock::now();
     long long att=chrono::duration_cast<chrono::nanoseconds>(end-start).count();    //秒 seconds
+    double ats=att*0.000000001;
     cout<<"\nAll time-->"<<att<<"ns"<<endl;
     myfile.open("count.txt",ios::app);      //改app
-    myfile<<"All time-->"<<att<<"ns\n\n";
+    myfile<<"All time-->"<<att<<"ns-->"<<ats<<"s\n\n";
     myfile.close();
     return 0;
 }
