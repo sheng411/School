@@ -1,2 +1,34 @@
 sort		type		time		data num	rep ti		data str
 
+selection		string		100ns		1000		1		C array
+
+selection		int			100ns		1000		1		C array
+
+selection		long		100ns		1000		1		C array
+
+selection		double		100ns		1000		1		C array
+
+selection		float		200ns		1000		1		C array
+
+selection		string		100ns		1000		1		vector
+
+selection		int			100ns		1000		1		vector
+
+selection		long		200ns		1000		1		vector
+
+selection		double		100ns		1000		1		vector
+
+selection		float		300ns		1000		1		vector
+
+selection		string		0ns		1000		1		std array
+
+selection		int			100ns		1000		1		std array
+
+selection		long		100ns		1000		1		std array
+
+selection		double		100ns		1000		1		std array
+
+selection		float		100ns		1000		1		std array
+
+All time-->61031300ns-->0.0610313s
+
