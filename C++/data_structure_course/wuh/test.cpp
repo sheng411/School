@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-constexpr int arnum=100000;
+constexpr int arnum=10000;
 long double smfre=1;     //Use of small data
 int fre=arnum;       //quantity of data
 
