@@ -1,0 +1,15 @@
+bubble string 26250 50 10000 C array 
+bubble int	 25987 50 10000 C array 
+bubble long 27527 50 10000 C array 
+bubble double 24578 50 10000 C array 
+bubble float 31005 50 10000 C array 
+bubble string 24498 50 10000 vector 
+bubble int	 25776 50 10000 vector 
+bubble long 24621 50 10000 vector 
+bubble double 36689 50 10000 vector 
+bubble float 24911 50 10000 vector 
+bubble string 24778 50 10000 std array 
+bubble int	 24830 50 10000 std array 
+bubble long 24388 50 10000 std array 
+bubble double 24753 50 10000 std array 
+bubble float 25187 50 10000 std array 
