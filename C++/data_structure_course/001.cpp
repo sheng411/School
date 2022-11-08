@@ -169,8 +169,6 @@ template <class cls,class cli,class cllo,class cld,class clf,class clas,class cl
     }
 */
 
-
-
 int main(){
     cout<<"start"<<endl;
     
