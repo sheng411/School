@@ -40,7 +40,7 @@ template <class rds,class rdi,class rdlo,class rdd,class rdf,class rdas,class rd
 
 template <class mer>
     void merg(mer &mr,int sn,int md,int en){
-    	using elType = typename mer::value_type;
+        using elType = typename mer::value_type;
         int L_s=md-sn+1;
         int R_s=en-md;
         elType L[L_s],R[R_s];
