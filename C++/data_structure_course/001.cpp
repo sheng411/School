@@ -137,7 +137,7 @@ template <class go,class rds,class rdi,class rdlo,class rdd,class rdf,class rdas
         myfile.close();
 
         //input read
-        read.open("read.txt",ios::app);
+        read.open("read.txt",ios::out);     //app
         read<<st[stn]<<" "
             <<dtl[dt]<<" "
             <<ti<<" "

@@ -1,34 +1,34 @@
 sort		type		time		data num	rep ti		data str
 
-bubble		string		26250ns		50		10000		C array
+insertion		string		27632ns		50		10000		C array
 
-bubble		int			25987ns		50		10000		C array
+insertion		int			28024ns		50		10000		C array
 
-bubble		long		27527ns		50		10000		C array
+insertion		long		29022ns		50		10000		C array
 
-bubble		double		24578ns		50		10000		C array
+insertion		double		26460ns		50		10000		C array
 
-bubble		float		31005ns		50		10000		C array
+insertion		float		33096ns		50		10000		C array
 
-bubble		string		24498ns		50		10000		vector
+insertion		string		25663ns		50		10000		vector
 
-bubble		int			25776ns		50		10000		vector
+insertion		int			26361ns		50		10000		vector
 
-bubble		long		24621ns		50		10000		vector
+insertion		long		27626ns		50		10000		vector
 
-bubble		double		36689ns		50		10000		vector
+insertion		double		39315ns		50		10000		vector
 
-bubble		float		24911ns		50		10000		vector
+insertion		float		26310ns		50		10000		vector
 
-bubble		string		24778ns		50		10000		std array
+insertion		string		25546ns		50		10000		std array
 
-bubble		int			24830ns		50		10000		std array
+insertion		int			25793ns		50		10000		std array
 
-bubble		long		24388ns		50		10000		std array
+insertion		long		26034ns		50		10000		std array
 
-bubble		double		24753ns		50		10000		std array
+insertion		double		25536ns		50		10000		std array
 
-bubble		float		25187ns		50		10000		std array
+insertion		float		25695ns		50		10000		std array
 
-All time-->4095289800ns-->4.09529s
+All time-->4320444200ns-->4.32044s
 

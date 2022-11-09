@@ -125,7 +125,8 @@ int main(){
 
     srand(time(NULL));
     int rdn=10,rdm=10000;
-
+    
+    randd(vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
     /*
     for(int i=0;i<fre;i++){
         vi.push_back(rand()%rdm/int(rdn));
