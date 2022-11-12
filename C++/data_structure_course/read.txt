@@ -1,1 +1,15 @@
-selection float 5268 10 10000 std array 
+bubble string 5532 10 10000 C array 
+bubble int	 5412 10 10000 C array 
+bubble long 5700 10 10000 C array 
+bubble double 4944 10 10000 C array 
+bubble float 4913 10 10000 C array 
+bubble string 6410 10 10000 vector 
+bubble int	 5007 10 10000 vector 
+bubble long 5092 10 10000 vector 
+bubble double 4904 10 10000 vector 
+bubble float 5054 10 10000 vector 
+bubble string 7748 10 10000 std array 
+bubble int	 5003 10 10000 std array 
+bubble long 4966 10 10000 std array 
+bubble double 4944 10 10000 std array 
+bubble float 5019 10 10000 std array 
