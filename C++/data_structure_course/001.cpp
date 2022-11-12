@@ -2,14 +2,14 @@
 using namespace std;
 
 
-constexpr int arnum=50;
+constexpr int arnum=10;
 long double smfre=10000;     //Use of small data
 int fre=arnum;       //quantity of data
 
 /*
 input 1--> ins sel bub merg 
 
-更改時間:2022/11/04 02:51
+更改時間:2022/11/11 23:51
 */
 
 
