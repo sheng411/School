@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int fre=1000;       //quantity of data
+constexpr int arnum=10;
 long double smfre=100000;     //Use of small data
+int fre=arnum;       //quantity of data
 
 template <class rds,class rdi,class rdlo,class rdd,class rdf,class rdas,class rdai,class rdalo,class rdad,class rdaf,class rdaas,class rdaai,class rdaalo,class rdaad,class rdaaf>
     void randd(rds &vs,rdi &vi,rdlo &vlo,rdd &vd,rdf &vf,rdas &as,rdai &ai,rdalo &alo,rdad &ad,rdaf &af,rdaas &aas,rdaai &aai,rdaalo &aalo,rdaad &aad,rdaaf &aaf){
@@ -37,7 +38,6 @@ template <class rds,class rdi,class rdlo,class rdd,class rdf,class rdas,class rd
             aaf[i]=rand()%rdm/float(rdn);
         }
     }
-
 
 template <class mer>
     void merg(mer &mr,int sn,int md,int en){
@@ -104,15 +104,15 @@ int main(){
     vector <float>vf;
     
     
-    array <string,1000> aas;
-    array <int,1000> aai;
-    array <long,1000> aalo;
-    array <double,1000> aad;
-    array <float,1000> aaf;
+    array <string,arnum> aas;
+    array <int,arnum> aai;
+    array <long,arnum> aalo;
+    array <double,arnum> aad;
+    array <float,arnum> aaf;
 
     //open file
     fstream myfile;
-    myfile.open("count_merge.txt",ios::app);      //改app
+    myfile.open("count_merge.txt",ios::out);      //改app
     myfile<<"sort\t\t";
     myfile<<"type\t\t";
     myfile<<"time\t\t";
@@ -123,10 +123,6 @@ int main(){
 
     cout<<"file 200OK"<<endl;
 
-    srand(time(NULL));
-    int rdn=10,rdm=10000;
-    
-    randd(vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
     /*
     for(int i=0;i<fre;i++){
         vi.push_back(rand()%rdm/int(rdn));
@@ -156,19 +152,83 @@ int main(){
         aaf[i]=rand()%rdm/float(rdn);
     }*/
 
+    randd(vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
+
+    int sc;
     cout<<"fre:"<<fre<<",smfre:"<<smfre<<endl;
-    cout<<"sort choose--> merge sort"<<endl;
+    cout<<"sort choose-->"<<endl;
+    cin>>sc;
     auto start = chrono::steady_clock::now();
 
-
-    //run sort
-
-
+    switch(sc){
+    case 1:
+        if(smfre>=2){
+            for(int i=0;i<smfre;i++){
+                mergso(as,0,fre-1);
+                mergso(ai,0,fre-1);
+                mergso(alo,0,fre-1);
+                mergso(ad,0,fre-1);
+                mergso(af,0,fre-1);;
+                randd(vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
+            }
+        }
+        else{
+            mergso(as,0,fre-1);
+            mergso(ai,0,fre-1);
+            mergso(alo,0,fre-1);
+            mergso(ad,0,fre-1);
+            mergso(af,0,fre-1);;
+        }
+        break;
+    case 2:
+        if(smfre>=2){
+            for(int i=0;i<smfre;i++){
+                mergso(vs,0,fre-1);
+                mergso(vi,0,fre-1);
+                mergso(vlo,0,fre-1);
+                mergso(vd,0,fre-1);
+                mergso(vf,0,fre-1);;
+                randd(vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
+            }
+        }
+        else{
+            mergso(vs,0,fre-1);
+            mergso(vi,0,fre-1);
+            mergso(vlo,0,fre-1);
+            mergso(vd,0,fre-1);
+            mergso(vf,0,fre-1);;
+        }
+        break;
+    case 3:
+        if(smfre>=2){
+            for(int i=0;i<smfre;i++){
+                mergso(aas,0,fre-1);
+                mergso(aai,0,fre-1);
+                mergso(aalo,0,fre-1);
+                mergso(aad,0,fre-1);
+                mergso(aaf,0,fre-1);;
+                randd(vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
+            }
+        }
+        else{
+            mergso(aas,0,fre-1);
+            mergso(aai,0,fre-1);
+            mergso(aalo,0,fre-1);
+            mergso(aad,0,fre-1);
+            mergso(aaf,0,fre-1);;
+        }
+        break;
+    default:
+        cout<<"404 error"<<endl;
+        break;
+    }
+    
     auto end = chrono::steady_clock::now();
-    long long att=chrono::duration_cast<chrono::nanoseconds>(end-start).count();    //秒 seconds
+    long long att=chrono::duration_cast<chrono::nanoseconds>((end-start)/smfre).count();    //秒 seconds
+    double ats=att*0.000000001;
     cout<<"\nAll time-->"<<att<<"ns"<<endl;
-    myfile.open("count_merge.txt",ios::app);      //改app
-    myfile<<"All time-->"<<att<<"ns\n\n";
+    myfile.open("count.txt",ios::app);      //改app
+    myfile<<"All time-->"<<att<<"ns-->"<<ats<<"s\n\n";
     myfile.close();
     return 0;
     }
