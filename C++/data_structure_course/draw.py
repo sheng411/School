@@ -3,27 +3,30 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 #讀檔案
-'''
+
 path = 'D:/code/School/C++/data_structure_course/read.txt'
 f = open(path, 'r')
-text = [[]]
+text = [[""]*15]
+j=0
 for i in range(15):
     j==0
     for line in f:
-        text[i][j].append(line.split(" "))
+        text[i][j]=line.split(" ")
+        print(text[i][j],"\n")  #line,
         j+=1
 
 f.close()
-print(line,text,"\n")
+
 
 
 sn=int(input("start:"))
 en=int(input("end:"))
-
+print('hi',sn,en)
+'''
 data=[]
 for i in range(sn):
     data.append(int(input()))
-'''
+
 
 x = np.array([1, 5])
 y = np.array([20,40])
@@ -47,3 +50,4 @@ plt.ylabel('Y')
 plt.title('Sort')
 plt.legend(title = "Four animals:") #線條標籤
 plt.show()
+'''
