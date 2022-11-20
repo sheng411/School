@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-constexpr int arnum=10;
-long double smfre=100000;     //Use of small data
+constexpr int arnum=1000;
+long double smfre=10000;     //Use of small data
 int fre=arnum;       //quantity of data
 
 template <class rds,class rdi,class rdlo,class rdd,class rdf,class rdas,class rdai,class rdalo,class rdad,class rdaf,class rdaas,class rdaai,class rdaalo,class rdaad,class rdaaf>
@@ -156,79 +156,84 @@ int main(){
 
     int sc;
     cout<<"fre:"<<fre<<",smfre:"<<smfre<<endl;
-    cout<<"sort choose-->"<<endl;
+    cout<<"sort choose-->";
     cin>>sc;
     auto start = chrono::steady_clock::now();
 
-    switch(sc){
+    for(int i=0;i<smfre;i++){
+        mergso(as,0,fre-1);
+        mergso(ai,0,fre-1);
+        mergso(alo,0,fre-1);
+        mergso(ad,0,fre-1);
+        mergso(af,0,fre-1);
+        randd(vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
+    }
+
+    /*for(int i=0;i<smfre;i++){
+        mergso(vs,0,fre-1);
+        mergso(vi,0,fre-1);
+        mergso(vlo,0,fre-1);
+        mergso(vd,0,fre-1);
+        mergso(vf,0,fre-1);
+        randd(vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
+    }*/
+
+    /*for(int i=0;i<smfre;i++){
+        mergso(aas,0,fre-1);
+        mergso(aai,0,fre-1);
+        mergso(aalo,0,fre-1);
+        mergso(aad,0,fre-1);
+        mergso(aaf,0,fre-1);
+        randd(vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
+    }*/
+
+    auto end = chrono::steady_clock::now();
+    long long att=chrono::duration_cast<chrono::nanoseconds>((end-start)/smfre).count();    //秒 seconds
+    double ats=att*0.000000001;
+    cout<<"\nAll time-->"<<att<<"ns"<<endl;
+    myfile.open("count_merge.txt",ios::app);      //改app
+    myfile<<"All time-->"<<att<<"ns-->"<<ats<<"s\n\n";
+    myfile.close();
+    return 0;
+    }
+
+
+
+/*
+switch (sc){
     case 1:
-        if(smfre>=2){
-            for(int i=0;i<smfre;i++){
-                mergso(as,0,fre-1);
-                mergso(ai,0,fre-1);
-                mergso(alo,0,fre-1);
-                mergso(ad,0,fre-1);
-                mergso(af,0,fre-1);;
-                randd(vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
-            }
-        }
-        else{
-            mergso(as,0,fre-1);
-            mergso(ai,0,fre-1);
-            mergso(alo,0,fre-1);
-            mergso(ad,0,fre-1);
-            mergso(af,0,fre-1);;
-        }
-        break;
-    case 2:
-        if(smfre>=2){
-            for(int i=0;i<smfre;i++){
-                mergso(vs,0,fre-1);
-                mergso(vi,0,fre-1);
-                mergso(vlo,0,fre-1);
-                mergso(vd,0,fre-1);
-                mergso(vf,0,fre-1);;
-                randd(vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
-            }
-        }
-        else{
+        for(int i=0;i<smfre;i++){
             mergso(vs,0,fre-1);
             mergso(vi,0,fre-1);
             mergso(vlo,0,fre-1);
             mergso(vd,0,fre-1);
-            mergso(vf,0,fre-1);;
+            mergso(vf,0,fre-1);
+            randd(vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
+        }
+        break;
+    case 2:
+        for(int i=0;i<smfre;i++){
+            mergso(as,0,fre-1);
+            mergso(ai,0,fre-1);
+            mergso(alo,0,fre-1);
+            mergso(ad,0,fre-1);
+            mergso(af,0,fre-1);
+            randd(vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
         }
         break;
     case 3:
-        if(smfre>=2){
-            for(int i=0;i<smfre;i++){
-                mergso(aas,0,fre-1);
-                mergso(aai,0,fre-1);
-                mergso(aalo,0,fre-1);
-                mergso(aad,0,fre-1);
-                mergso(aaf,0,fre-1);;
-                randd(vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
-            }
-        }
-        else{
+        for(int i=0;i<smfre;i++){
             mergso(aas,0,fre-1);
             mergso(aai,0,fre-1);
             mergso(aalo,0,fre-1);
             mergso(aad,0,fre-1);
-            mergso(aaf,0,fre-1);;
+            mergso(aaf,0,fre-1);
+            randd(vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
         }
         break;
     default:
         cout<<"404 error"<<endl;
         break;
     }
-    
-    auto end = chrono::steady_clock::now();
-    long long att=chrono::duration_cast<chrono::nanoseconds>((end-start)/smfre).count();    //秒 seconds
-    double ats=att*0.000000001;
-    cout<<"\nAll time-->"<<att<<"ns"<<endl;
-    myfile.open("count.txt",ios::app);      //改app
-    myfile<<"All time-->"<<att<<"ns-->"<<ats<<"s\n\n";
-    myfile.close();
-    return 0;
-    }
+
+*/
