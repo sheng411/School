@@ -36,8 +36,6 @@ template <class rds,class rdi,class rdlo,class rdd,class rdf,class rdas,class rd
         }
     }
 
-
-
 template <class mer>
     void merg(mer &mr,int sn,int md,int en){
         using elType = typename mer::value_type;
