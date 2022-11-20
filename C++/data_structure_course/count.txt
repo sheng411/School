@@ -373,3 +373,61 @@ bubble		float		20927ns		50		10000		vector
 All time-->2440706200ns-->2.44071s
 ------------------------------------------------------------------------------------
 
+sort		type		time		data num	rep ti		data str
+
+selection		string		100ns		100000		1		C array
+
+selection		int			100ns		100000		1		C array
+
+selection		long		200ns		100000		1		C array
+
+selection		double		100ns		100000		1		C array
+
+selection		float		100ns		100000		1		C array
+
+selection		string		200ns		100000		1		vector
+
+selection		int			100ns		100000		1		vector
+
+selection		long		100ns		100000		1		vector
+
+selection		double		100ns		100000		1		vector
+
+selection		float		300ns		100000		1		vector
+
+All time-->172237489300ns-->172.237s
+------------------------------------------------------------------------------------
+
+****
+
+sort		type		time		data num	rep ti		data str
+
+fre:100000,smfre:1, sortselection
+
+insertion		string		100ns		100000		1		C array
+
+insertion		int			100ns		100000		1		C array
+
+insertion		long		100ns		100000		1		C array
+
+insertion		double		100ns		100000		1		C array
+
+insertion		float		100ns		100000		1		C array
+
+insertion		string		400ns		100000		1		vector
+
+insertion		int			100ns		100000		1		vector
+
+insertion		long		100ns		100000		1		vector
+
+insertion		double		200ns		100000		1		vector
+
+insertion		float		100ns		100000		1		vector
+
+All time-->177046212100ns-->177.046s
+------------------------------------------------------------------------------------
+
+sort		type		time		data num	rep ti		data str
+
+fre:500000 , smfre:1 , sort-->bubble
+
