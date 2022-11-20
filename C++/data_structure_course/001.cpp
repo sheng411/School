@@ -2,8 +2,8 @@
 using namespace std;
 
 
-constexpr int arnum=50;
-long double smfre=10000;     //Use of small data
+constexpr int arnum=100000;
+long double smfre=1;     //Use of small data
 int fre=arnum;       //quantity of data
 
 /*
@@ -121,7 +121,6 @@ template <class go,class rds,class rdi,class rdlo,class rdd,class rdf,class rdas
             fun;
         }
         auto gend=chrono::steady_clock::now();
-
         long double ti=chrono::duration_cast<chrono::nanoseconds>((gend-gst)/smfre).count();
         string st[4] {"insertion","selection","bubble","merge"};
         string dtl[5] {"string","int\t","long","double","float"};
@@ -205,7 +204,8 @@ int main(){
     myfile<<"data num\t";
     myfile<<"rep ti\t\t";   //repeat time
     myfile<<"data str\n\n";
-    myfile.close();
+    
+    
     
     cout<<"file 200OK"<<endl;
 
@@ -250,6 +250,14 @@ int main(){
     cout<<"fre:"<<fre<<",smfre:"<<smfre<<endl;
     cout<<"sort choose-->";
     cin>>sc;
+    string st[4] {"insertion","selection","bubble","merge"};
+    myfile<<"fre:"<<fre<<" , smfre:"<<smfre<<" , sort-->"<<st[sc]<<"\n\n";
+    myfile.close();
+
+    for(int kk=0;kk<fre;kk++){
+            cout<<ai[kk]<<"\t";
+    }
+
     auto start = chrono::steady_clock::now();
     switch (sc){
     case 1:
@@ -309,7 +317,9 @@ int main(){
     }
     
     //output(sel(vi,fre));
-
+    for(int kk=0;kk<fre;kk++){
+            cout<<ai[kk]<<"\t";
+    }
 
     auto end = chrono::steady_clock::now();
     long long att=chrono::duration_cast<chrono::nanoseconds>(end-start).count();    //秒 seconds

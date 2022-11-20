@@ -427,7 +427,3 @@ insertion		float		100ns		100000		1		vector
 All time-->177046212100ns-->177.046s
 ------------------------------------------------------------------------------------
 
-sort		type		time		data num	rep ti		data str
-
-fre:500000 , smfre:1 , sort-->bubble
-
