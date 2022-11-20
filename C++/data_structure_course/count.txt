@@ -1,34 +1,375 @@
 sort		type		time		data num	rep ti		data str
 
-bubble		string		5532ns		10		10000		C array
+insertion		string		4908ns		10		10000		C array
 
-bubble		int			5412ns		10		10000		C array
+insertion		int			4893ns		10		10000		C array
 
-bubble		long		5700ns		10		10000		C array
+insertion		long		4990ns		10		10000		C array
 
-bubble		double		4944ns		10		10000		C array
+insertion		double		4283ns		10		10000		C array
 
-bubble		float		4913ns		10		10000		C array
+insertion		float		4235ns		10		10000		C array
 
-bubble		string		6410ns		10		10000		vector
+insertion		string		5779ns		10		10000		vector
 
-bubble		int			5007ns		10		10000		vector
+insertion		int			4303ns		10		10000		vector
 
-bubble		long		5092ns		10		10000		vector
+insertion		long		4208ns		10		10000		vector
 
-bubble		double		4904ns		10		10000		vector
+insertion		double		4340ns		10		10000		vector
 
-bubble		float		5054ns		10		10000		vector
+insertion		float		4324ns		10		10000		vector
 
-bubble		string		7748ns		10		10000		std array
+All time-->509511700ns-->0.509512s
+------------------------------------------------------------------------------------
 
-bubble		int			5003ns		10		10000		std array
+sort		type		time		data num	rep ti		data str
 
-bubble		long		4966ns		10		10000		std array
+insertion		string		9306ns		20		10000		C array
 
-bubble		double		4944ns		10		10000		std array
+insertion		int			9267ns		20		10000		C array
 
-bubble		float		5019ns		10		10000		std array
+insertion		long		10079ns		20		10000		C array
 
-All time-->868023500ns-->0.868024s
+insertion		double		8296ns		20		10000		C array
+
+insertion		float		8662ns		20		10000		C array
+
+insertion		string		12146ns		20		10000		vector
+
+insertion		int			8416ns		20		10000		vector
+
+insertion		long		8632ns		20		10000		vector
+
+insertion		double		9025ns		20		10000		vector
+
+insertion		float		8539ns		20		10000		vector
+
+All time-->988644500ns-->0.988645s
+------------------------------------------------------------------------------------
+
+sort		type		time		data num	rep ti		data str
+
+insertion		string		14105ns		30		10000		C array
+
+insertion		int			13859ns		30		10000		C array
+
+insertion		long		12965ns		30		10000		C array
+
+insertion		double		15304ns		30		10000		C array
+
+insertion		float		12688ns		30		10000		C array
+
+insertion		string		12562ns		30		10000		vector
+
+insertion		int			18756ns		30		10000		vector
+
+insertion		long		13111ns		30		10000		vector
+
+insertion		double		12751ns		30		10000		vector
+
+insertion		float		12738ns		30		10000		vector
+
+All time-->1472447900ns-->1.47245s
+------------------------------------------------------------------------------------
+
+sort		type		time		data num	rep ti		data str
+
+insertion		string		18553ns		40		10000		C array
+
+insertion		int			18378ns		40		10000		C array
+
+insertion		long		19799ns		40		10000		C array
+
+insertion		double		17177ns		40		10000		C array
+
+insertion		float		16771ns		40		10000		C array
+
+insertion		string		22912ns		40		10000		vector
+
+insertion		int			16943ns		40		10000		vector
+
+insertion		long		17076ns		40		10000		vector
+
+insertion		double		16656ns		40		10000		vector
+
+insertion		float		17382ns		40		10000		vector
+
+All time-->1922269100ns-->1.92227s
+------------------------------------------------------------------------------------
+
+sort		type		time		data num	rep ti		data str
+
+insertion		string		22803ns		50		10000		C array
+
+insertion		int			22393ns		50		10000		C array
+
+insertion		long		26361ns		50		10000		C array
+
+insertion		double		22401ns		50		10000		C array
+
+insertion		float		26811ns		50		10000		C array
+
+insertion		string		20609ns		50		10000		vector
+
+insertion		int			21992ns		50		10000		vector
+
+insertion		long		20605ns		50		10000		vector
+
+insertion		double		33960ns		50		10000		vector
+
+insertion		float		20957ns		50		10000		vector
+
+All time-->2500545300ns-->2.50055s
+------------------------------------------------------------------------------------
+
+sort		type		time		data num	rep ti		data str
+
+selection		string		4604ns		10		10000		C array
+
+selection		int			4709ns		10		10000		C array
+
+selection		long		5043ns		10		10000		C array
+
+selection		double		4241ns		10		10000		C array
+
+selection		float		4233ns		10		10000		C array
+
+selection		string		5745ns		10		10000		vector
+
+selection		int			4475ns		10		10000		vector
+
+selection		long		4193ns		10		10000		vector
+
+selection		double		4238ns		10		10000		vector
+
+selection		float		4245ns		10		10000		vector
+
+All time-->498499800ns-->0.4985s
+------------------------------------------------------------------------------------
+
+sort		type		time		data num	rep ti		data str
+
+selection		string		9271ns		20		10000		C array
+
+selection		int			9391ns		20		10000		C array
+
+selection		long		9955ns		20		10000		C array
+
+selection		double		8512ns		20		10000		C array
+
+selection		float		8851ns		20		10000		C array
+
+selection		string		11568ns		20		10000		vector
+
+selection		int			8649ns		20		10000		vector
+
+selection		long		8741ns		20		10000		vector
+
+selection		double		8944ns		20		10000		vector
+
+selection		float		8511ns		20		10000		vector
+
+All time-->989550600ns-->0.989551s
+------------------------------------------------------------------------------------
+
+sort		type		time		data num	rep ti		data str
+
+selection		string		13952ns		30		10000		C array
+
+selection		int			13756ns		30		10000		C array
+
+selection		long		12343ns		30		10000		C array
+
+selection		double		15953ns		30		10000		C array
+
+selection		float		12914ns		30		10000		C array
+
+selection		string		12549ns		30		10000		vector
+
+selection		int			19102ns		30		10000		vector
+
+selection		long		13646ns		30		10000		vector
+
+selection		double		12908ns		30		10000		vector
+
+selection		float		12451ns		30		10000		vector
+
+All time-->1476525000ns-->1.47653s
+------------------------------------------------------------------------------------
+
+sort		type		time		data num	rep ti		data str
+
+selection		string		18920ns		40		10000		C array
+
+selection		int			18243ns		40		10000		C array
+
+selection		long		19379ns		40		10000		C array
+
+selection		double		16530ns		40		10000		C array
+
+selection		float		16505ns		40		10000		C array
+
+selection		string		22219ns		40		10000		vector
+
+selection		int			16777ns		40		10000		vector
+
+selection		long		16657ns		40		10000		vector
+
+selection		double		17369ns		40		10000		vector
+
+selection		float		17389ns		40		10000		vector
+
+All time-->1898857400ns-->1.89886s
+------------------------------------------------------------------------------------
+
+sort		type		time		data num	rep ti		data str
+
+selection		string		21981ns		50		10000		C array
+
+selection		int			22362ns		50		10000		C array
+
+selection		long		24008ns		50		10000		C array
+
+selection		double		20678ns		50		10000		C array
+
+selection		float		26854ns		50		10000		C array
+
+selection		string		21119ns		50		10000		vector
+
+selection		int			21973ns		50		10000		vector
+
+selection		long		21047ns		50		10000		vector
+
+selection		double		33754ns		50		10000		vector
+
+selection		float		20647ns		50		10000		vector
+
+All time-->2455487600ns-->2.45549s
+------------------------------------------------------------------------------------
+
+sort		type		time		data num	rep ti		data str
+
+bubble		string		4796ns		10		10000		C array
+
+bubble		int			4661ns		10		10000		C array
+
+bubble		long		5063ns		10		10000		C array
+
+bubble		double		4199ns		10		10000		C array
+
+bubble		float		4485ns		10		10000		C array
+
+bubble		string		5682ns		10		10000		vector
+
+bubble		int			4245ns		10		10000		vector
+
+bubble		long		4175ns		10		10000		vector
+
+bubble		double		4254ns		10		10000		vector
+
+bubble		float		4239ns		10		10000		vector
+
+All time-->496752800ns-->0.496753s
+------------------------------------------------------------------------------------
+
+sort		type		time		data num	rep ti		data str
+
+bubble		string		9312ns		20		10000		C array
+
+bubble		int			9206ns		20		10000		C array
+
+bubble		long		9838ns		20		10000		C array
+
+bubble		double		8289ns		20		10000		C array
+
+bubble		float		8391ns		20		10000		C array
+
+bubble		string		11885ns		20		10000		vector
+
+bubble		int			8437ns		20		10000		vector
+
+bubble		long		8581ns		20		10000		vector
+
+bubble		double		9246ns		20		10000		vector
+
+bubble		float		8797ns		20		10000		vector
+
+All time-->983531200ns-->0.983531s
+------------------------------------------------------------------------------------
+
+sort		type		time		data num	rep ti		data str
+
+bubble		string		14105ns		30		10000		C array
+
+bubble		int			15261ns		30		10000		C array
+
+bubble		long		12571ns		30		10000		C array
+
+bubble		double		15271ns		30		10000		C array
+
+bubble		float		12487ns		30		10000		C array
+
+bubble		string		13029ns		30		10000		vector
+
+bubble		int			18536ns		30		10000		vector
+
+bubble		long		12996ns		30		10000		vector
+
+bubble		double		12570ns		30		10000		vector
+
+bubble		float		12530ns		30		10000		vector
+
+All time-->1473229200ns-->1.47323s
+------------------------------------------------------------------------------------
+
+sort		type		time		data num	rep ti		data str
+
+bubble		string		18894ns		40		10000		C array
+
+bubble		int			18686ns		40		10000		C array
+
+bubble		long		19995ns		40		10000		C array
+
+bubble		double		16641ns		40		10000		C array
+
+bubble		float		16490ns		40		10000		C array
+
+bubble		string		22278ns		40		10000		vector
+
+bubble		int			17486ns		40		10000		vector
+
+bubble		long		16708ns		40		10000		vector
+
+bubble		double		16660ns		40		10000		vector
+
+bubble		float		16683ns		40		10000		vector
+
+All time-->1904853400ns-->1.90485s
+------------------------------------------------------------------------------------
+
+sort		type		time		data num	rep ti		data str
+
+bubble		string		22531ns		50		10000		C array
+
+bubble		int			22522ns		50		10000		C array
+
+bubble		long		23863ns		50		10000		C array
+
+bubble		double		21389ns		50		10000		C array
+
+bubble		float		26346ns		50		10000		C array
+
+bubble		string		20488ns		50		10000		vector
+
+bubble		int			20971ns		50		10000		vector
+
+bubble		long		21135ns		50		10000		vector
+
+bubble		double		32517ns		50		10000		vector
+
+bubble		float		20927ns		50		10000		vector
+
+All time-->2440706200ns-->2.44071s
+------------------------------------------------------------------------------------
 
