@@ -40,7 +40,7 @@ template <class rds,class rdi,class rdlo,class rdd,class rdf,class rdas,class rd
     }
 
 template <class mer>
-    void merg(mer &mr,int sn,int md,int en){
+    int merg(mer &mr,int sn,int md,int en){
         using elType = typename mer::value_type;
         int L_s=md-sn+1;
         int R_s=en-md;
@@ -73,18 +73,18 @@ template <class mer>
             j++;
             k++;
         }
-        //return mr;
+        return 0;
     }
 
 template <class mes>
-    void mergso(mes &ms,int st,int ed){
+    int mergso(mes &ms,int st,int ed){
         if(st<ed){
             int md=(st+ed)/2;
             mergso(ms,st,md);
             mergso(ms,md+1,ed);
             merg(ms,st,md,ed);
         }
-        //return ms;
+        return 0;
     }
 
 
@@ -104,11 +104,11 @@ int main(){
     vector <float>vf;
     
     
-    array <string,arnum> aas;
-    array <int,arnum> aai;
-    array <long,arnum> aalo;
-    array <double,arnum> aad;
-    array <float,arnum> aaf;
+    static array <string,arnum> aas;
+    static array <int,arnum> aai;
+    static array <long,arnum> aalo;
+    static array <double,arnum> aad;
+    static array <float,arnum> aaf;
 
     //open file
     fstream myfile;
