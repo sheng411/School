@@ -97,11 +97,11 @@ int main(){
     vector <double>vd;
     vector <float>vf;
 
-    array <string,arnum> aas;
-    array <int,arnum> aai;
-    array <long,arnum> aalo;
-    array <double,arnum> aad;
-    array <float,arnum> aaf;
+    static array <string,arnum> aas;
+    static array <int,arnum> aai;
+    static array <long,arnum> aalo;
+    static array <double,arnum> aad;
+    static array <float,arnum> aaf;
     
     srand(time(NULL));
     int rdn=10,rdm=10000;
