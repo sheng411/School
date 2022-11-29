@@ -250,3 +250,57 @@ insertion float 100 500000 1 std array
 selection float 0 500000 1 std array 
 bubble float 0 500000 1 std array 
 
+-----------------------------------------
+merge string 0 10 10000 vector 
+merge int	 0 10 10000 vector 
+merge long 0 10 10000 vector 
+merge double 0 10 10000 vector 
+merge float 0 10 10000 vector 
+merge string 0 20 10000 vector 
+merge int	 0 20 10000 vector 
+merge long 0 20 10000 vector 
+merge double 0 20 10000 vector 
+merge float 0 20 10000 vector 
+merge string 0 30 10000 vector 
+merge int	 0 30 10000 vector 
+merge long 0 30 10000 vector 
+merge double 0 30 10000 vector 
+merge float 0 30 10000 vector 
+merge string 0 40 10000 vector 
+merge int	 0 40 10000 vector 
+merge long 0 40 10000 vector 
+merge double 0 40 10000 vector 
+merge float 0 40 10000 vector 
+merge string 0 50 10000 vector 
+merge int	 0 50 10000 vector 
+merge long 0 50 10000 vector 
+merge double 0 50 10000 vector 
+merge float 0 50 10000 vector 
+
+-----------------------------------------
+merge string 0 10 10000 std array 
+merge int	 0 10 10000 std array 
+merge long 0 10 10000 std array 
+merge double 0 10 10000 std array 
+merge float 0 10 10000 std array 
+merge string 0 20 10000 std array 
+merge int	 0 20 10000 std array 
+merge long 0 20 10000 std array 
+merge double 0 20 10000 std array 
+merge float 0 20 10000 std array 
+merge string 0 30 10000 std array 
+merge int	 0 30 10000 std array 
+merge long 0 30 10000 std array 
+merge double 0 30 10000 std array 
+merge float 0 30 10000 std array 
+merge string 0 40 10000 std array 
+merge int	 0 40 10000 std array 
+merge long 0 40 10000 std array 
+merge double 0 40 10000 std array 
+merge float 0 40 10000 std array 
+merge string 0 50 10000 std array 
+merge int	 0 50 10000 std array 
+merge long 0 50 10000 std array 
+merge double 0 50 10000 std array 
+merge float 0 50 10000 std array 
+
