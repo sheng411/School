@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-constexpr int arnum=1000000;
+constexpr int arnum=500000;
 long double smfre=1;     //Use of small data
-int fre=100000;         //quantity of data
+int fre=0;         //quantity of data
 int fadd=100000;        //add num
 int frt=fadd;         //return num
 
@@ -14,7 +14,6 @@ template <class rds,class rdi,class rdlo,class rdd,class rdf,class rdas,class rd
         srand(time(NULL));
         int rdn=10,rdm=10000;
         for(int i=0;i<fre;i++){
-            
             vi.push_back(rand()%rdm/int(rdn));
             vlo.push_back(rand()%rdm/long(rdn));
             vd.push_back(rand()%rdm/double(rdn));
@@ -50,7 +49,8 @@ template <class mer>
         using elType = typename mer::value_type;
         int L_s=md-sn+1;
         int R_s=en-md;
-        elType L[L_s],R[R_s];
+        elType *L=new elType[L_s];
+        elType *R=new elType[R_s];
         for(int ll=0;ll<L_s;ll++){
             L[ll]=mr[sn+ll];
         }
@@ -79,6 +79,8 @@ template <class mer>
             j++;
             k++;
         }
+        delete [] L;
+        delete [] R;
         return 0;
     }
 
@@ -277,6 +279,18 @@ int main(){
     }
     rd();
     */
+    vector <string>vs;
+	vector <int>vi;
+	vector <long>vlo;
+	vector <double>vd;
+	vector <float>vf;
+	
+	static array <string,arnum> aas;
+	static array <int,arnum> aai;
+	static array <long,arnum> aalo;
+	static array <double,arnum> aad;
+	static array <float,arnum> aaf;
+	cout <<"yes" << endl;
     fre=frt;
     for(int i=0;i<5;i++){
         cout<<"start\n";
@@ -285,18 +299,6 @@ int main(){
 	    long *alo=new long[fre],plo;
 	    double *ad=new double[fre],pd;
 	    float *af=new float[fre],pf;
-	    
-	    vector <string>vs;
-	    vector <int>vi;
-	    vector <long>vlo;
-	    vector <double>vd;
-	    vector <float>vf;
-	    
-	    static array <string,arnum> aas;
-	    static array <int,arnum> aai;
-	    static array <long,arnum> aalo;
-	    static array <double,arnum> aad;
-	    static array <float,arnum> aaf;
 
 		cout << i+1 <<"W fre~~~\n\n" ;
 
