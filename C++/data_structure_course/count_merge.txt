@@ -1,4 +1,4 @@
 sort		type		time		data num	rep ti		data str
 
-All time-->1200333ns-->0.00120033s
+All time-->0ns-->0s
 
