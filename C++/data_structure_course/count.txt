@@ -1,429 +1,1682 @@
-sort		type		time		data num	rep ti		data str
+type		sort		time		data num	rep ti		data str
 
-insertion		string		4908ns		10		10000		C array
+fre:10 , smfre:10000 , type-->string
 
-insertion		int			4893ns		10		10000		C array
+string		insertion		5545ns		10		10000		C array
 
-insertion		long		4990ns		10		10000		C array
+string		selection		5573ns		10		10000		C array
 
-insertion		double		4283ns		10		10000		C array
+string		bubble		6096ns		10		10000		C array
 
-insertion		float		4235ns		10		10000		C array
+int			insertion		5197ns		10		10000		C array
 
-insertion		string		5779ns		10		10000		vector
+int			selection		5071ns		10		10000		C array
 
-insertion		int			4303ns		10		10000		vector
+int			bubble		7018ns		10		10000		C array
 
-insertion		long		4208ns		10		10000		vector
+long		insertion		5298ns		10		10000		C array
 
-insertion		double		4340ns		10		10000		vector
+long		selection		5250ns		10		10000		C array
 
-insertion		float		4324ns		10		10000		vector
+long		bubble		5279ns		10		10000		C array
 
-All time-->509511700ns-->0.509512s
+double		insertion		5282ns		10		10000		C array
+
+double		selection		8050ns		10		10000		C array
+
+double		bubble		5292ns		10		10000		C array
+
+float		insertion		5122ns		10		10000		C array
+
+float		selection		5129ns		10		10000		C array
+
+float		bubble		5100ns		10		10000		C array
+
+All time-->884171300ns-->0.884171s
 ------------------------------------------------------------------------------------
 
-sort		type		time		data num	rep ti		data str
+type		sort		time		data num	rep ti		data str
 
-insertion		string		9306ns		20		10000		C array
+fre:20 , smfre:10000 , type-->string
 
-insertion		int			9267ns		20		10000		C array
+string		insertion		11370ns		20		10000		C array
 
-insertion		long		10079ns		20		10000		C array
+string		selection		10966ns		20		10000		C array
 
-insertion		double		8296ns		20		10000		C array
+string		bubble		11627ns		20		10000		C array
 
-insertion		float		8662ns		20		10000		C array
+int			insertion		10327ns		20		10000		C array
 
-insertion		string		12146ns		20		10000		vector
+int			selection		10261ns		20		10000		C array
 
-insertion		int			8416ns		20		10000		vector
+int			bubble		12950ns		20		10000		C array
 
-insertion		long		8632ns		20		10000		vector
+long		insertion		10106ns		20		10000		C array
 
-insertion		double		9025ns		20		10000		vector
+long		selection		10671ns		20		10000		C array
 
-insertion		float		8539ns		20		10000		vector
+long		bubble		10408ns		20		10000		C array
 
-All time-->988644500ns-->0.988645s
+double		insertion		10432ns		20		10000		C array
+
+double		selection		15757ns		20		10000		C array
+
+double		bubble		10342ns		20		10000		C array
+
+float		insertion		10221ns		20		10000		C array
+
+float		selection		10070ns		20		10000		C array
+
+float		bubble		10058ns		20		10000		C array
+
+All time-->1695430200ns-->1.69543s
 ------------------------------------------------------------------------------------
 
-sort		type		time		data num	rep ti		data str
+type		sort		time		data num	rep ti		data str
 
-insertion		string		14105ns		30		10000		C array
+fre:30 , smfre:10000 , type-->string
 
-insertion		int			13859ns		30		10000		C array
+string		insertion		16883ns		30		10000		C array
 
-insertion		long		12965ns		30		10000		C array
+string		selection		16566ns		30		10000		C array
 
-insertion		double		15304ns		30		10000		C array
+string		bubble		15395ns		30		10000		C array
 
-insertion		float		12688ns		30		10000		C array
+int			insertion		18943ns		30		10000		C array
 
-insertion		string		12562ns		30		10000		vector
+int			selection		15681ns		30		10000		C array
 
-insertion		int			18756ns		30		10000		vector
+int			bubble		15455ns		30		10000		C array
 
-insertion		long		13111ns		30		10000		vector
+long		insertion		21444ns		30		10000		C array
 
-insertion		double		12751ns		30		10000		vector
+long		selection		15654ns		30		10000		C array
 
-insertion		float		12738ns		30		10000		vector
+long		bubble		16890ns		30		10000		C array
 
-All time-->1472447900ns-->1.47245s
+double		insertion		15538ns		30		10000		C array
+
+double		selection		16092ns		30		10000		C array
+
+double		bubble		15738ns		30		10000		C array
+
+float		insertion		15178ns		30		10000		C array
+
+float		selection		26885ns		30		10000		C array
+
+float		bubble		15276ns		30		10000		C array
+
+All time-->2618454600ns-->2.61845s
 ------------------------------------------------------------------------------------
 
-sort		type		time		data num	rep ti		data str
+type		sort		time		data num	rep ti		data str
 
-insertion		string		18553ns		40		10000		C array
+fre:40 , smfre:10000 , type-->string
 
-insertion		int			18378ns		40		10000		C array
+string		insertion		22216ns		40		10000		C array
 
-insertion		long		19799ns		40		10000		C array
+string		selection		22186ns		40		10000		C array
 
-insertion		double		17177ns		40		10000		C array
+string		bubble		23617ns		40		10000		C array
 
-insertion		float		16771ns		40		10000		C array
+int			insertion		20278ns		40		10000		C array
 
-insertion		string		22912ns		40		10000		vector
+int			selection		20256ns		40		10000		C array
 
-insertion		int			16943ns		40		10000		vector
+int			bubble		26195ns		40		10000		C array
 
-insertion		long		17076ns		40		10000		vector
+long		insertion		20327ns		40		10000		C array
 
-insertion		double		16656ns		40		10000		vector
+long		selection		21909ns		40		10000		C array
 
-insertion		float		17382ns		40		10000		vector
+long		bubble		20353ns		40		10000		C array
 
-All time-->1922269100ns-->1.92227s
+double		insertion		20857ns		40		10000		C array
+
+double		selection		32208ns		40		10000		C array
+
+double		bubble		20777ns		40		10000		C array
+
+float		insertion		20309ns		40		10000		C array
+
+float		selection		20272ns		40		10000		C array
+
+float		bubble		20191ns		40		10000		C array
+
+All time-->3361430800ns-->3.36143s
 ------------------------------------------------------------------------------------
 
-sort		type		time		data num	rep ti		data str
+type		sort		time		data num	rep ti		data str
 
-insertion		string		22803ns		50		10000		C array
+fre:50 , smfre:10000 , type-->string
 
-insertion		int			22393ns		50		10000		C array
+string		insertion		27684ns		50		10000		C array
 
-insertion		long		26361ns		50		10000		C array
+string		selection		26778ns		50		10000		C array
 
-insertion		double		22401ns		50		10000		C array
+string		bubble		28202ns		50		10000		C array
 
-insertion		float		26811ns		50		10000		C array
+int			insertion		25637ns		50		10000		C array
 
-insertion		string		20609ns		50		10000		vector
+int			selection		31090ns		50		10000		C array
 
-insertion		int			21992ns		50		10000		vector
+int			bubble		25265ns		50		10000		C array
 
-insertion		long		20605ns		50		10000		vector
+long		insertion		25329ns		50		10000		C array
 
-insertion		double		33960ns		50		10000		vector
+long		selection		25365ns		50		10000		C array
 
-insertion		float		20957ns		50		10000		vector
+long		bubble		37172ns		50		10000		C array
 
-All time-->2500545300ns-->2.50055s
+double		insertion		25435ns		50		10000		C array
+
+double		selection		25527ns		50		10000		C array
+
+double		bubble		25504ns		50		10000		C array
+
+float		insertion		25473ns		50		10000		C array
+
+float		selection		25268ns		50		10000		C array
+
+float		bubble		26019ns		50		10000		C array
+
+All time-->4098682000ns-->4.09868s
 ------------------------------------------------------------------------------------
 
-sort		type		time		data num	rep ti		data str
+type		sort		time		data num	rep ti		data str
 
-selection		string		4604ns		10		10000		C array
+fre:10 , smfre:10000 , type-->int
 
-selection		int			4709ns		10		10000		C array
+string		insertion		5627ns		10		10000		vector
 
-selection		long		5043ns		10		10000		C array
+string		selection		5465ns		10		10000		vector
 
-selection		double		4241ns		10		10000		C array
+string		bubble		5967ns		10		10000		vector
 
-selection		float		4233ns		10		10000		C array
+int			insertion		5090ns		10		10000		vector
 
-selection		string		5745ns		10		10000		vector
+int			selection		5189ns		10		10000		vector
 
-selection		int			4475ns		10		10000		vector
+int			bubble		6860ns		10		10000		vector
 
-selection		long		4193ns		10		10000		vector
+long		insertion		5092ns		10		10000		vector
 
-selection		double		4238ns		10		10000		vector
+long		selection		5438ns		10		10000		vector
 
-selection		float		4245ns		10		10000		vector
+long		bubble		5250ns		10		10000		vector
 
-All time-->498499800ns-->0.4985s
+double		insertion		5360ns		10		10000		vector
+
+double		selection		8424ns		10		10000		vector
+
+double		bubble		5149ns		10		10000		vector
+
+float		insertion		5155ns		10		10000		vector
+
+float		selection		5198ns		10		10000		vector
+
+float		bubble		5544ns		10		10000		vector
+
+All time-->891258900ns-->0.891259s
 ------------------------------------------------------------------------------------
 
-sort		type		time		data num	rep ti		data str
+type		sort		time		data num	rep ti		data str
 
-selection		string		9271ns		20		10000		C array
+fre:20 , smfre:10000 , type-->int
 
-selection		int			9391ns		20		10000		C array
+string		insertion		11014ns		20		10000		vector
 
-selection		long		9955ns		20		10000		C array
+string		selection		11642ns		20		10000		vector
 
-selection		double		8512ns		20		10000		C array
+string		bubble		11681ns		20		10000		vector
 
-selection		float		8851ns		20		10000		C array
+int			insertion		10093ns		20		10000		vector
 
-selection		string		11568ns		20		10000		vector
+int			selection		10567ns		20		10000		vector
 
-selection		int			8649ns		20		10000		vector
+int			bubble		13188ns		20		10000		vector
 
-selection		long		8741ns		20		10000		vector
+long		insertion		10116ns		20		10000		vector
 
-selection		double		8944ns		20		10000		vector
+long		selection		10231ns		20		10000		vector
 
-selection		float		8511ns		20		10000		vector
+long		bubble		10571ns		20		10000		vector
 
-All time-->989550600ns-->0.989551s
+double		insertion		10264ns		20		10000		vector
+
+double		selection		16051ns		20		10000		vector
+
+double		bubble		10285ns		20		10000		vector
+
+float		insertion		10279ns		20		10000		vector
+
+float		selection		10264ns		20		10000		vector
+
+float		bubble		10436ns		20		10000		vector
+
+All time-->1712743600ns-->1.71274s
 ------------------------------------------------------------------------------------
 
-sort		type		time		data num	rep ti		data str
+type		sort		time		data num	rep ti		data str
 
-selection		string		13952ns		30		10000		C array
+fre:30 , smfre:10000 , type-->int
 
-selection		int			13756ns		30		10000		C array
+string		insertion		17153ns		30		10000		vector
 
-selection		long		12343ns		30		10000		C array
+string		selection		17157ns		30		10000		vector
 
-selection		double		15953ns		30		10000		C array
+string		bubble		15515ns		30		10000		vector
 
-selection		float		12914ns		30		10000		C array
+int			insertion		18418ns		30		10000		vector
 
-selection		string		12549ns		30		10000		vector
+int			selection		15511ns		30		10000		vector
 
-selection		int			19102ns		30		10000		vector
+int			bubble		15179ns		30		10000		vector
 
-selection		long		13646ns		30		10000		vector
+long		insertion		21119ns		30		10000		vector
 
-selection		double		12908ns		30		10000		vector
+long		selection		18008ns		30		10000		vector
 
-selection		float		12451ns		30		10000		vector
+long		bubble		15219ns		30		10000		vector
 
-All time-->1476525000ns-->1.47653s
+double		insertion		15288ns		30		10000		vector
+
+double		selection		15620ns		30		10000		vector
+
+double		bubble		15280ns		30		10000		vector
+
+float		insertion		15207ns		30		10000		vector
+
+float		selection		27809ns		30		10000		vector
+
+float		bubble		16522ns		30		10000		vector
+
+All time-->2629620700ns-->2.62962s
 ------------------------------------------------------------------------------------
 
-sort		type		time		data num	rep ti		data str
+type		sort		time		data num	rep ti		data str
 
-selection		string		18920ns		40		10000		C array
+fre:40 , smfre:10000 , type-->int
 
-selection		int			18243ns		40		10000		C array
+string		insertion		22032ns		40		10000		vector
 
-selection		long		19379ns		40		10000		C array
+string		selection		22254ns		40		10000		vector
 
-selection		double		16530ns		40		10000		C array
+string		bubble		23343ns		40		10000		vector
 
-selection		float		16505ns		40		10000		C array
+int			insertion		20985ns		40		10000		vector
 
-selection		string		22219ns		40		10000		vector
+int			selection		20530ns		40		10000		vector
 
-selection		int			16777ns		40		10000		vector
+int			bubble		26639ns		40		10000		vector
 
-selection		long		16657ns		40		10000		vector
+long		insertion		21583ns		40		10000		vector
 
-selection		double		17369ns		40		10000		vector
+long		selection		20582ns		40		10000		vector
 
-selection		float		17389ns		40		10000		vector
+long		bubble		20589ns		40		10000		vector
 
-All time-->1898857400ns-->1.89886s
+double		insertion		20480ns		40		10000		vector
+
+double		selection		30834ns		40		10000		vector
+
+double		bubble		20470ns		40		10000		vector
+
+float		insertion		20510ns		40		10000		vector
+
+float		selection		21147ns		40		10000		vector
+
+float		bubble		20471ns		40		10000		vector
+
+All time-->3362831300ns-->3.36283s
 ------------------------------------------------------------------------------------
 
-sort		type		time		data num	rep ti		data str
+type		sort		time		data num	rep ti		data str
 
-selection		string		21981ns		50		10000		C array
+fre:50 , smfre:10000 , type-->int
 
-selection		int			22362ns		50		10000		C array
+string		insertion		27227ns		50		10000		vector
 
-selection		long		24008ns		50		10000		C array
+string		selection		27766ns		50		10000		vector
 
-selection		double		20678ns		50		10000		C array
+string		bubble		29510ns		50		10000		vector
 
-selection		float		26854ns		50		10000		C array
+int			insertion		25414ns		50		10000		vector
 
-selection		string		21119ns		50		10000		vector
+int			selection		31395ns		50		10000		vector
 
-selection		int			21973ns		50		10000		vector
+int			bubble		26088ns		50		10000		vector
 
-selection		long		21047ns		50		10000		vector
+long		insertion		26109ns		50		10000		vector
 
-selection		double		33754ns		50		10000		vector
+long		selection		25563ns		50		10000		vector
 
-selection		float		20647ns		50		10000		vector
+long		bubble		36912ns		50		10000		vector
 
-All time-->2455487600ns-->2.45549s
+double		insertion		25962ns		50		10000		vector
+
+double		selection		26221ns		50		10000		vector
+
+double		bubble		26721ns		50		10000		vector
+
+float		insertion		25406ns		50		10000		vector
+
+float		selection		25566ns		50		10000		vector
+
+float		bubble		25626ns		50		10000		vector
+
+All time-->4154378800ns-->4.15438s
 ------------------------------------------------------------------------------------
 
-sort		type		time		data num	rep ti		data str
+type		sort		time		data num	rep ti		data str
 
-bubble		string		4796ns		10		10000		C array
+fre:10 , smfre:10000 , type-->long
 
-bubble		int			4661ns		10		10000		C array
+string		insertion		5783ns		10		10000		std array
 
-bubble		long		5063ns		10		10000		C array
+string		selection		5570ns		10		10000		std array
 
-bubble		double		4199ns		10		10000		C array
+string		bubble		5975ns		10		10000		std array
 
-bubble		float		4485ns		10		10000		C array
+int			insertion		5139ns		10		10000		std array
 
-bubble		string		5682ns		10		10000		vector
+int			selection		5195ns		10		10000		std array
 
-bubble		int			4245ns		10		10000		vector
+int			bubble		6793ns		10		10000		std array
 
-bubble		long		4175ns		10		10000		vector
+long		insertion		5139ns		10		10000		std array
 
-bubble		double		4254ns		10		10000		vector
+long		selection		5197ns		10		10000		std array
 
-bubble		float		4239ns		10		10000		vector
+long		bubble		5104ns		10		10000		std array
 
-All time-->496752800ns-->0.496753s
+double		insertion		5129ns		10		10000		std array
+
+double		selection		8145ns		10		10000		std array
+
+double		bubble		5125ns		10		10000		std array
+
+float		insertion		5201ns		10		10000		std array
+
+float		selection		5514ns		10		10000		std array
+
+float		bubble		5171ns		10		10000		std array
+
+All time-->879715800ns-->0.879716s
 ------------------------------------------------------------------------------------
 
-sort		type		time		data num	rep ti		data str
+type		sort		time		data num	rep ti		data str
 
-bubble		string		9312ns		20		10000		C array
+fre:20 , smfre:10000 , type-->long
 
-bubble		int			9206ns		20		10000		C array
+string		insertion		11240ns		20		10000		std array
 
-bubble		long		9838ns		20		10000		C array
+string		selection		11299ns		20		10000		std array
 
-bubble		double		8289ns		20		10000		C array
+string		bubble		11710ns		20		10000		std array
 
-bubble		float		8391ns		20		10000		C array
+int			insertion		10481ns		20		10000		std array
 
-bubble		string		11885ns		20		10000		vector
+int			selection		10747ns		20		10000		std array
 
-bubble		int			8437ns		20		10000		vector
+int			bubble		13374ns		20		10000		std array
 
-bubble		long		8581ns		20		10000		vector
+long		insertion		10251ns		20		10000		std array
 
-bubble		double		9246ns		20		10000		vector
+long		selection		10550ns		20		10000		std array
 
-bubble		float		8797ns		20		10000		vector
+long		bubble		10434ns		20		10000		std array
 
-All time-->983531200ns-->0.983531s
+double		insertion		10849ns		20		10000		std array
+
+double		selection		16344ns		20		10000		std array
+
+double		bubble		10601ns		20		10000		std array
+
+float		insertion		10274ns		20		10000		std array
+
+float		selection		10367ns		20		10000		std array
+
+float		bubble		10655ns		20		10000		std array
+
+All time-->1734146300ns-->1.73415s
 ------------------------------------------------------------------------------------
 
-sort		type		time		data num	rep ti		data str
+type		sort		time		data num	rep ti		data str
 
-bubble		string		14105ns		30		10000		C array
+fre:30 , smfre:10000 , type-->long
 
-bubble		int			15261ns		30		10000		C array
+string		insertion		17514ns		30		10000		std array
 
-bubble		long		12571ns		30		10000		C array
+string		selection		16745ns		30		10000		std array
 
-bubble		double		15271ns		30		10000		C array
+string		bubble		15753ns		30		10000		std array
 
-bubble		float		12487ns		30		10000		C array
+int			insertion		18229ns		30		10000		std array
 
-bubble		string		13029ns		30		10000		vector
+int			selection		15291ns		30		10000		std array
 
-bubble		int			18536ns		30		10000		vector
+int			bubble		15472ns		30		10000		std array
 
-bubble		long		12996ns		30		10000		vector
+long		insertion		20987ns		30		10000		std array
 
-bubble		double		12570ns		30		10000		vector
+long		selection		15580ns		30		10000		std array
 
-bubble		float		12530ns		30		10000		vector
+long		bubble		15304ns		30		10000		std array
 
-All time-->1473229200ns-->1.47323s
+double		insertion		15322ns		30		10000		std array
+
+double		selection		15918ns		30		10000		std array
+
+double		bubble		15659ns		30		10000		std array
+
+float		insertion		15477ns		30		10000		std array
+
+float		selection		27187ns		30		10000		std array
+
+float		bubble		16253ns		30		10000		std array
+
+All time-->2612447600ns-->2.61245s
 ------------------------------------------------------------------------------------
 
-sort		type		time		data num	rep ti		data str
+type		sort		time		data num	rep ti		data str
 
-bubble		string		18894ns		40		10000		C array
+fre:40 , smfre:10000 , type-->long
 
-bubble		int			18686ns		40		10000		C array
+string		insertion		21904ns		40		10000		std array
 
-bubble		long		19995ns		40		10000		C array
+string		selection		21711ns		40		10000		std array
 
-bubble		double		16641ns		40		10000		C array
+string		bubble		23817ns		40		10000		std array
 
-bubble		float		16490ns		40		10000		C array
+int			insertion		21431ns		40		10000		std array
 
-bubble		string		22278ns		40		10000		vector
+int			selection		20806ns		40		10000		std array
 
-bubble		int			17486ns		40		10000		vector
+int			bubble		26117ns		40		10000		std array
 
-bubble		long		16708ns		40		10000		vector
+long		insertion		20178ns		40		10000		std array
 
-bubble		double		16660ns		40		10000		vector
+long		selection		21169ns		40		10000		std array
 
-bubble		float		16683ns		40		10000		vector
+long		bubble		20239ns		40		10000		std array
 
-All time-->1904853400ns-->1.90485s
+double		insertion		20898ns		40		10000		std array
+
+double		selection		32331ns		40		10000		std array
+
+double		bubble		20720ns		40		10000		std array
+
+float		insertion		20710ns		40		10000		std array
+
+float		selection		20304ns		40		10000		std array
+
+float		bubble		21128ns		40		10000		std array
+
+All time-->3374643900ns-->3.37464s
 ------------------------------------------------------------------------------------
 
-sort		type		time		data num	rep ti		data str
+type		sort		time		data num	rep ti		data str
 
-bubble		string		22531ns		50		10000		C array
+fre:50 , smfre:10000 , type-->long
 
-bubble		int			22522ns		50		10000		C array
+string		insertion		27811ns		50		10000		std array
 
-bubble		long		23863ns		50		10000		C array
+string		selection		28150ns		50		10000		std array
 
-bubble		double		21389ns		50		10000		C array
+string		bubble		30252ns		50		10000		std array
 
-bubble		float		26346ns		50		10000		C array
+int			insertion		25443ns		50		10000		std array
 
-bubble		string		20488ns		50		10000		vector
+int			selection		31259ns		50		10000		std array
 
-bubble		int			20971ns		50		10000		vector
+int			bubble		25845ns		50		10000		std array
 
-bubble		long		21135ns		50		10000		vector
+long		insertion		25237ns		50		10000		std array
 
-bubble		double		32517ns		50		10000		vector
+long		selection		25625ns		50		10000		std array
 
-bubble		float		20927ns		50		10000		vector
+long		bubble		36850ns		50		10000		std array
 
-All time-->2440706200ns-->2.44071s
+double		insertion		25278ns		50		10000		std array
+
+double		selection		25665ns		50		10000		std array
+
+double		bubble		25864ns		50		10000		std array
+
+float		insertion		25657ns		50		10000		std array
+
+float		selection		25844ns		50		10000		std array
+
+float		bubble		25536ns		50		10000		std array
+
+All time-->4147260100ns-->4.14726s
+------------------------------------------------------------------------------------
+*
+
+string		insertion		200ns		100000		1		C array
+
+All time-->104078161900ns-->104.078s
 ------------------------------------------------------------------------------------
 
-sort		type		time		data num	rep ti		data str
+string		selection		100ns		100000		1		C array
 
-selection		string		100ns		100000		1		C array
-
-selection		int			100ns		100000		1		C array
-
-selection		long		200ns		100000		1		C array
-
-selection		double		100ns		100000		1		C array
-
-selection		float		100ns		100000		1		C array
-
-selection		string		200ns		100000		1		vector
-
-selection		int			100ns		100000		1		vector
-
-selection		long		100ns		100000		1		vector
-
-selection		double		100ns		100000		1		vector
-
-selection		float		300ns		100000		1		vector
-
-All time-->172237489300ns-->172.237s
+All time-->163088897400ns-->163.089s
 ------------------------------------------------------------------------------------
 
-****
+string		bubble		100ns		100000		1		C array
 
-sort		type		time		data num	rep ti		data str
+All time-->239384281800ns-->239.384s
+------------------------------------------------------------------------------------
 
-fre:100000,smfre:1, sortselection
+string		insertion		200ns		200000		1		C array
 
-insertion		string		100ns		100000		1		C array
+All time-->499609674100ns-->499.61s
+------------------------------------------------------------------------------------
 
-insertion		int			100ns		100000		1		C array
+string		selection		200ns		200000		1		C array
 
-insertion		long		100ns		100000		1		C array
+All time-->676471249800ns-->676.471s
+------------------------------------------------------------------------------------
 
-insertion		double		100ns		100000		1		C array
+string		bubble		200ns		200000		1		C array
 
-insertion		float		100ns		100000		1		C array
+All time-->974810204000ns-->974.81s
+------------------------------------------------------------------------------------
 
-insertion		string		400ns		100000		1		vector
+string		insertion		200ns		300000		1		C array
 
-insertion		int			100ns		100000		1		vector
+All time-->1163984367500ns-->1163.98s
+------------------------------------------------------------------------------------
 
-insertion		long		100ns		100000		1		vector
+string		selection		100ns		300000		1		C array
 
-insertion		double		200ns		100000		1		vector
+All time-->1588341178400ns-->1588.34s
+------------------------------------------------------------------------------------
 
-insertion		float		100ns		100000		1		vector
+string		bubble		200ns		300000		1		C array
 
-All time-->177046212100ns-->177.046s
+All time-->2254393430200ns-->2254.39s
+------------------------------------------------------------------------------------
+
+string		insertion		200ns		400000		1		C array
+
+All time-->2089258689000ns-->2089.26s
+------------------------------------------------------------------------------------
+
+string		selection		100ns		400000		1		C array
+
+All time-->2721816667500ns-->2721.82s
+------------------------------------------------------------------------------------
+
+string		bubble		100ns		400000		1		C array
+
+All time-->3992696381900ns-->3992.7s
+------------------------------------------------------------------------------------
+
+string		insertion		100ns		500000		1		C array
+
+All time-->3323970754100ns-->3323.97s
+------------------------------------------------------------------------------------
+
+string		selection		100ns		500000		1		C array
+
+All time-->4311248012100ns-->4311.25s
+------------------------------------------------------------------------------------
+
+string		bubble		100ns		500000		1		C array
+
+All time-->6417865180300ns-->6417.87s
+------------------------------------------------------------------------------------
+
+int			insertion		100ns		100000		1		C array
+
+All time-->3694400ns-->0.0036944s
+------------------------------------------------------------------------------------
+
+int			selection		100ns		100000		1		C array
+
+All time-->9714140800ns-->9.71414s
+------------------------------------------------------------------------------------
+
+int			bubble		100ns		100000		1		C array
+
+All time-->8433152800ns-->8.43315s
+------------------------------------------------------------------------------------
+
+int			insertion		0ns		200000		1		C array
+
+All time-->4717400ns-->0.0047174s
+------------------------------------------------------------------------------------
+
+int			selection		100ns		200000		1		C array
+
+All time-->38910309400ns-->38.9103s
+------------------------------------------------------------------------------------
+
+int			bubble		100ns		200000		1		C array
+
+All time-->34382934400ns-->34.3829s
+------------------------------------------------------------------------------------
+
+int			insertion		0ns		300000		1		C array
+
+All time-->5127400ns-->0.0051274s
+------------------------------------------------------------------------------------
+
+int			selection		100ns		300000		1		C array
+
+All time-->87134220300ns-->87.1342s
+------------------------------------------------------------------------------------
+
+int			bubble		200ns		300000		1		C array
+
+All time-->78405218000ns-->78.4052s
+------------------------------------------------------------------------------------
+
+int			insertion		0ns		400000		1		C array
+
+All time-->4364500ns-->0.0043645s
+------------------------------------------------------------------------------------
+
+int			selection		200ns		400000		1		C array
+
+All time-->156917713200ns-->156.918s
+------------------------------------------------------------------------------------
+
+int			bubble		100ns		400000		1		C array
+
+All time-->137356722500ns-->137.357s
+------------------------------------------------------------------------------------
+
+int			insertion		0ns		500000		1		C array
+
+All time-->4546200ns-->0.0045462s
+------------------------------------------------------------------------------------
+
+int			selection		200ns		500000		1		C array
+
+All time-->248309494200ns-->248.309s
+------------------------------------------------------------------------------------
+
+int			bubble		100ns		500000		1		C array
+
+All time-->215775138500ns-->215.775s
+------------------------------------------------------------------------------------
+
+long		insertion		100ns		100000		1		C array
+
+All time-->3456900ns-->0.0034569s
+------------------------------------------------------------------------------------
+
+long		selection		200ns		100000		1		C array
+
+All time-->9847142500ns-->9.84714s
+------------------------------------------------------------------------------------
+
+long		bubble		200ns		100000		1		C array
+
+All time-->8269345800ns-->8.26935s
+------------------------------------------------------------------------------------
+
+long		insertion		100ns		200000		1		C array
+
+All time-->5636200ns-->0.0056362s
+------------------------------------------------------------------------------------
+
+long		selection		100ns		200000		1		C array
+
+All time-->39222627900ns-->39.2226s
+------------------------------------------------------------------------------------
+
+long		bubble		200ns		200000		1		C array
+
+All time-->34371460100ns-->34.3715s
+------------------------------------------------------------------------------------
+
+long		insertion		200ns		300000		1		C array
+
+All time-->3054300ns-->0.0030543s
+------------------------------------------------------------------------------------
+
+long		selection		100ns		300000		1		C array
+
+All time-->88085804600ns-->88.0858s
+------------------------------------------------------------------------------------
+
+long		bubble		100ns		300000		1		C array
+
+All time-->78598603900ns-->78.5986s
+------------------------------------------------------------------------------------
+
+long		insertion		100ns		400000		1		C array
+
+All time-->4239700ns-->0.0042397s
+------------------------------------------------------------------------------------
+
+long		selection		100ns		400000		1		C array
+
+All time-->154943132700ns-->154.943s
+------------------------------------------------------------------------------------
+
+long		bubble		200ns		400000		1		C array
+
+All time-->141681615100ns-->141.682s
+------------------------------------------------------------------------------------
+
+long		insertion		200ns		500000		1		C array
+
+All time-->4696300ns-->0.0046963s
+------------------------------------------------------------------------------------
+
+long		selection		200ns		500000		1		C array
+
+All time-->241804563100ns-->241.805s
+------------------------------------------------------------------------------------
+
+long		bubble		100ns		500000		1		C array
+
+All time-->210354409400ns-->210.354s
+------------------------------------------------------------------------------------
+
+float		insertion		100ns		100000		1		C array
+
+All time-->3934300ns-->0.0039343s
+------------------------------------------------------------------------------------
+
+float		selection		100ns		100000		1		C array
+
+All time-->9867752900ns-->9.86775s
+------------------------------------------------------------------------------------
+
+float		bubble		100ns		100000		1		C array
+
+All time-->8352159700ns-->8.35216s
+------------------------------------------------------------------------------------
+
+float		insertion		100ns		200000		1		C array
+
+All time-->2934500ns-->0.0029345s
+------------------------------------------------------------------------------------
+
+float		selection		100ns		200000		1		C array
+
+All time-->39649484700ns-->39.6495s
+------------------------------------------------------------------------------------
+
+float		bubble		100ns		200000		1		C array
+
+All time-->34098531000ns-->34.0985s
+------------------------------------------------------------------------------------
+
+float		insertion		0ns		300000		1		C array
+
+All time-->3760400ns-->0.0037604s
+------------------------------------------------------------------------------------
+
+float		selection		100ns		300000		1		C array
+
+All time-->87708959600ns-->87.709s
+------------------------------------------------------------------------------------
+
+float		bubble		100ns		300000		1		C array
+
+All time-->75961683100ns-->75.9617s
+------------------------------------------------------------------------------------
+
+float		insertion		0ns		400000		1		C array
+
+All time-->4311700ns-->0.0043117s
+------------------------------------------------------------------------------------
+
+float		selection		100ns		400000		1		C array
+
+All time-->156373368000ns-->156.373s
+------------------------------------------------------------------------------------
+
+float		bubble		200ns		400000		1		C array
+
+All time-->137167745500ns-->137.168s
+------------------------------------------------------------------------------------
+
+float		insertion		100ns		500000		1		C array
+
+All time-->4943400ns-->0.0049434s
+------------------------------------------------------------------------------------
+
+float		selection		100ns		500000		1		C array
+
+All time-->244177206400ns-->244.177s
+------------------------------------------------------------------------------------
+
+float		bubble		100ns		500000		1		C array
+
+All time-->214129105700ns-->214.129s
+------------------------------------------------------------------------------------********************************
+
+double		insertion		100ns		100000		1		C array
+
+All time-->2578700ns-->0.0025787s
+------------------------------------------------------------------------------------
+
+double		selection		100ns		100000		1		C array
+
+All time-->9733927500ns-->9.73393s
+------------------------------------------------------------------------------------
+
+double		bubble		100ns		100000		1		C array
+
+All time-->9006772600ns-->9.00677s
+------------------------------------------------------------------------------------********************************
+
+double		insertion		100ns		200000		1		C array
+
+All time-->3671500ns-->0.0036715s
+------------------------------------------------------------------------------------
+
+double		selection		200ns		200000		1		C array
+
+All time-->38914138000ns-->38.9141s
+------------------------------------------------------------------------------------
+
+double		bubble		300ns		200000		1		C array
+
+All time-->35926372500ns-->35.9264s
+------------------------------------------------------------------------------------********************************
+
+double		insertion		0ns		300000		1		C array
+
+All time-->3757300ns-->0.0037573s
+------------------------------------------------------------------------------------
+
+double		selection		100ns		300000		1		C array
+
+All time-->88019993100ns-->88.02s
+------------------------------------------------------------------------------------
+
+double		bubble		100ns		300000		1		C array
+
+All time-->79709330100ns-->79.7093s
+------------------------------------------------------------------------------------********************************
+
+double		insertion		0ns		400000		1		C array
+
+All time-->3892200ns-->0.0038922s
+------------------------------------------------------------------------------------
+
+double		selection		200ns		400000		1		C array
+
+All time-->156486374300ns-->156.486s
+------------------------------------------------------------------------------------
+
+double		bubble		100ns		400000		1		C array
+
+All time-->135876132200ns-->135.876s
+------------------------------------------------------------------------------------
+
+double		insertion		200ns		500000		1		C array
+
+All time-->5375400ns-->0.0053754s
+------------------------------------------------------------------------------------
+
+double		selection		100ns		500000		1		C array
+
+All time-->245732757900ns-->245.733s
+------------------------------------------------------------------------------------
+
+double		bubble		200ns		500000		1		C array
+
+All time-->213769204100ns-->213.769s
+------------------------------------------------------------------------------------
+
+
+string		insertion		200ns		100000		1		vector
+
+All time-->113164457400ns-->113.164s
+------------------------------------------------------------------------------------
+
+string		selection		200ns		100000		1		vector
+
+All time-->168374411700ns-->168.374s
+------------------------------------------------------------------------------------
+
+string		bubble		200ns		100000		1		vector
+
+All time-->242331568900ns-->242.332s
+------------------------------------------------------------------------------------
+
+string		insertion		300ns		200000		1		vector
+
+All time-->497035841600ns-->497.036s
+------------------------------------------------------------------------------------
+
+string		selection		100ns		200000		1		vector
+
+All time-->720906465600ns-->720.906s
+------------------------------------------------------------------------------------
+
+string		bubble		500ns		200000		1		vector
+
+All time-->1068105433200ns-->1068.11s
+------------------------------------------------------------------------------------
+
+string		insertion		100ns		300000		1		vector
+
+All time-->1192203422700ns-->1192.2s
+------------------------------------------------------------------------------------
+
+string		selection		500ns		300000		1		vector
+
+All time-->1644310843300ns-->1644.31s
+------------------------------------------------------------------------------------
+
+string		bubble		100ns		300000		1		vector
+
+All time-->2441607260300ns-->2441.61s
+------------------------------------------------------------------------------------
+
+string		insertion		200ns		400000		1		vector
+
+All time-->2151339881500ns-->2151.34s
+------------------------------------------------------------------------------------
+
+string		selection		200ns		400000		1		vector
+
+All time-->2954253614000ns-->2954.25s
+------------------------------------------------------------------------------------
+
+string		bubble		100ns		400000		1		vector
+
+All time-->4456586785500ns-->4456.59s
+------------------------------------------------------------------------------------
+
+int			insertion		200ns		100000		1		vector
+
+All time-->10914837200ns-->10.9148s
+------------------------------------------------------------------------------------
+
+int			selection		200ns		100000		1		vector
+
+All time-->14551062600ns-->14.5511s
+------------------------------------------------------------------------------------
+
+int			bubble		100ns		100000		1		vector
+
+All time-->15231489900ns-->15.2315s
+------------------------------------------------------------------------------------
+
+int			insertion		100ns		200000		1		vector
+
+All time-->45444626600ns-->45.4446s
+------------------------------------------------------------------------------------
+
+int			selection		100ns		200000		1		vector
+
+All time-->63641888000ns-->63.6419s
+------------------------------------------------------------------------------------
+
+int			bubble		100ns		200000		1		vector
+
+All time-->62997627600ns-->62.9976s
+------------------------------------------------------------------------------------
+
+int			insertion		200ns		300000		1		vector
+
+All time-->103092321800ns-->103.092s
+------------------------------------------------------------------------------------
+
+int			selection		100ns		300000		1		vector
+
+All time-->149764130400ns-->149.764s
+------------------------------------------------------------------------------------
+
+int			bubble		200ns		300000		1		vector
+
+All time-->150478032300ns-->150.478s
+------------------------------------------------------------------------------------
+
+int			insertion		200ns		400000		1		vector
+
+All time-->186126963700ns-->186.127s
+------------------------------------------------------------------------------------
+
+int			selection		100ns		400000		1		vector
+
+All time-->275371941600ns-->275.372s
+------------------------------------------------------------------------------------
+
+int			bubble		200ns		400000		1		vector
+
+All time-->271825054800ns-->271.825s
+------------------------------------------------------------------------------------
+
+int			insertion		100ns		500000		1		vector
+
+All time-->282952940100ns-->282.953s
+------------------------------------------------------------------------------------
+
+int			selection		100ns		500000		1		vector
+
+All time-->403860372000ns-->403.86s
+------------------------------------------------------------------------------------
+
+int			bubble		200ns		500000		1		vector
+
+All time-->414974047700ns-->414.974s
+------------------------------------------------------------------------------------
+
+long		insertion		100ns		100000		1		vector
+
+All time-->11172742500ns-->11.1727s
+------------------------------------------------------------------------------------
+
+long		selection		0ns		100000		1		vector
+
+All time-->15567309700ns-->15.5673s
+------------------------------------------------------------------------------------
+
+long		bubble		0ns		100000		1		vector
+
+All time-->14918286900ns-->14.9183s
+------------------------------------------------------------------------------------
+
+long		insertion		100ns		200000		1		vector
+
+All time-->45341620800ns-->45.3416s
+------------------------------------------------------------------------------------
+
+long		selection		100ns		200000		1		vector
+
+All time-->64244603400ns-->64.2446s
+------------------------------------------------------------------------------------
+
+long		bubble		0ns		200000		1		vector
+
+All time-->63550787600ns-->63.5508s
+------------------------------------------------------------------------------------
+
+long		insertion		100ns		300000		1		vector
+
+All time-->110582850100ns-->110.583s
+------------------------------------------------------------------------------------
+
+long		selection		0ns		300000		1		vector
+
+All time-->151532553500ns-->151.533s
+------------------------------------------------------------------------------------
+
+long		bubble		0ns		300000		1		vector
+
+All time-->155179128100ns-->155.179s
+------------------------------------------------------------------------------------
+
+long		insertion		100ns		400000		1		vector
+
+All time-->180311748500ns-->180.312s
+------------------------------------------------------------------------------------
+
+long		selection		0ns		400000		1		vector
+
+All time-->256835145600ns-->256.835s
+------------------------------------------------------------------------------------
+
+long		bubble		0ns		400000		1		vector
+
+All time-->269322971900ns-->269.323s
+------------------------------------------------------------------------------------
+
+long		insertion		0ns		500000		1		vector
+
+All time-->309530181100ns-->309.53s
+------------------------------------------------------------------------------------
+
+long		selection		0ns		500000		1		vector
+
+All time-->425170743300ns-->425.171s
+------------------------------------------------------------------------------------
+
+long		bubble		100ns		500000		1		vector
+
+All time-->422079869600ns-->422.08s
+------------------------------------------------------------------------------------
+
+double		insertion		0ns		100000		1		vector
+
+All time-->12720287800ns-->12.7203s
+------------------------------------------------------------------------------------
+
+double		selection		0ns		100000		1		vector
+
+All time-->16989640800ns-->16.9896s
+------------------------------------------------------------------------------------
+
+double		bubble		0ns		100000		1		vector
+
+All time-->17160814800ns-->17.1608s
+------------------------------------------------------------------------------------
+
+double		insertion		0ns		200000		1		vector
+
+All time-->54616547500ns-->54.6165s
+------------------------------------------------------------------------------------
+
+double		selection		0ns		200000		1		vector
+
+All time-->69322300400ns-->69.3223s
+------------------------------------------------------------------------------------
+
+double		bubble		0ns		200000		1		vector
+
+All time-->68819003300ns-->68.819s
+------------------------------------------------------------------------------------
+
+double		insertion		100ns		300000		1		vector
+
+All time-->109500431200ns-->109.5s
+------------------------------------------------------------------------------------
+
+double		selection		100ns		300000		1		vector
+
+All time-->150782596300ns-->150.783s
+------------------------------------------------------------------------------------
+
+double		bubble		0ns		300000		1		vector
+
+All time-->152465840100ns-->152.466s
+------------------------------------------------------------------------------------
+
+double		insertion		100ns		400000		1		vector
+
+All time-->192514683500ns-->192.515s
+------------------------------------------------------------------------------------
+
+double		selection		0ns		400000		1		vector
+
+All time-->264223304700ns-->264.223s
+------------------------------------------------------------------------------------
+
+double		bubble		100ns		400000		1		vector
+
+All time-->278057307300ns-->278.057s
+------------------------------------------------------------------------------------
+
+double		insertion		0ns		500000		1		vector
+
+All time-->306188346900ns-->306.188s
+------------------------------------------------------------------------------------
+
+double		selection		0ns		500000		1		vector
+
+All time-->423642519200ns-->423.643s
+------------------------------------------------------------------------------------
+
+double		bubble		100ns		500000		1		vector
+
+All time-->434840189500ns-->434.84s
+------------------------------------------------------------------------------------
+
+float		insertion		100ns		100000		1		vector
+
+All time-->10796991700ns-->10.797s
+------------------------------------------------------------------------------------
+
+float		selection		0ns		100000		1		vector
+
+All time-->14871102600ns-->14.8711s
+------------------------------------------------------------------------------------
+
+float		bubble		0ns		100000		1		vector
+
+All time-->14472273500ns-->14.4723s
+------------------------------------------------------------------------------------
+
+float		insertion		0ns		200000		1		vector
+
+All time-->47806035300ns-->47.806s
+------------------------------------------------------------------------------------
+
+float		selection		0ns		200000		1		vector
+
+All time-->65265965200ns-->65.266s
+------------------------------------------------------------------------------------
+
+float		bubble		0ns		200000		1		vector
+
+All time-->62836170100ns-->62.8362s
+------------------------------------------------------------------------------------
+
+float		insertion		100ns		300000		1		vector
+
+All time-->102937359000ns-->102.937s
+------------------------------------------------------------------------------------
+
+float		selection		100ns		300000		1		vector
+
+All time-->144159483100ns-->144.159s
+------------------------------------------------------------------------------------
+
+float		bubble		100ns		300000		1		vector
+
+All time-->142433217900ns-->142.433s
+------------------------------------------------------------------------------------
+
+float		insertion		100ns		400000		1		vector
+
+All time-->186461995600ns-->186.462s
+------------------------------------------------------------------------------------
+
+float		selection		0ns		400000		1		vector
+
+All time-->266842807700ns-->266.843s
+------------------------------------------------------------------------------------
+
+float		bubble		0ns		400000		1		vector
+
+All time-->262480206900ns-->262.48s
+------------------------------------------------------------------------------------
+
+float		insertion		100ns		500000		1		vector
+
+All time-->284281978000ns-->284.282s
+------------------------------------------------------------------------------------
+
+float		selection		100ns		500000		1		vector
+
+All time-->388221703200ns-->388.222s
+------------------------------------------------------------------------------------
+
+float		bubble		0ns		500000		1		vector
+
+All time-->379501529500ns-->379.502s
+------------------------------------------------------------------------------------
+
+string		insertion		0ns		500000		1		vector
+
+All time-->3259215178600ns-->3259.22s
+------------------------------------------------------------------------------------
+
+string		selection		0ns		500000		1		vector
+
+All time-->4458148099700ns-->4458.15s
+------------------------------------------------------------------------------------
+
+string		bubble		0ns		500000		1		vector
+
+All time-->6729641213500ns-->6729.64s
+------------------------------------------------------------------------------------
+
+string		insertion		0ns		100000		1		std array
+
+All time-->72645090800ns-->72.6451s
+------------------------------------------------------------------------------------
+
+string		selection		100ns		100000		1		std array
+
+All time-->176393439600ns-->176.393s
+------------------------------------------------------------------------------------
+
+string		bubble		100ns		100000		1		std array
+
+All time-->232085542000ns-->232.086s
+------------------------------------------------------------------------------------
+
+string		insertion		0ns		200000		1		std array
+
+All time-->472585706400ns-->472.586s
+------------------------------------------------------------------------------------
+
+string		selection		0ns		200000		1		std array
+
+All time-->946893772300ns-->946.894s
+------------------------------------------------------------------------------------
+
+string		bubble		0ns		200000		1		std array
+
+All time-->1142043477600ns-->1142.04s
+------------------------------------------------------------------------------------
+
+string		insertion		100ns		300000		1		std array
+
+All time-->1101223973700ns-->1101.22s
+------------------------------------------------------------------------------------
+
+string		selection		0ns		300000		1		std array
+
+All time-->2155856119600ns-->2155.86s
+------------------------------------------------------------------------------------
+
+string		bubble		0ns		300000		1		std array
+
+All time-->2589518685500ns-->2589.52s
+------------------------------------------------------------------------------------
+
+string		insertion		0ns		400000		1		std array
+
+All time-->2054539784900ns-->2054.54s
+------------------------------------------------------------------------------------
+
+string		selection		0ns		400000		1		std array
+
+All time-->3947051306400ns-->3947.05s
+------------------------------------------------------------------------------------
+
+string		bubble		100ns		400000		1		std array
+
+All time-->4897405324700ns-->4897.41s
+------------------------------------------------------------------------------------
+
+string		insertion		0ns		500000		1		std array
+
+All time-->3274757592100ns-->3274.76s
+------------------------------------------------------------------------------------
+
+string		selection		0ns		500000		1		std array
+
+All time-->6394914851300ns-->6394.91s
+------------------------------------------------------------------------------------
+
+string		bubble		0ns		500000		1		std array
+
+All time-->8467529222000ns-->8467.53s
+------------------------------------------------------------------------------------
+
+int			insertion		100ns		100000		1		std array
+
+All time-->17931135600ns-->17.9311s
+------------------------------------------------------------------------------------
+
+int			selection		100ns		100000		1		std array
+
+All time-->25215883000ns-->25.2159s
+------------------------------------------------------------------------------------
+
+int			bubble		100ns		100000		1		std array
+
+All time-->58156762900ns-->58.1568s
+------------------------------------------------------------------------------------
+
+int			insertion		0ns		200000		1		std array
+
+All time-->72058623000ns-->72.0586s
+------------------------------------------------------------------------------------
+
+int			selection		100ns		200000		1		std array
+
+All time-->101326350200ns-->101.326s
+------------------------------------------------------------------------------------
+
+int			bubble		0ns		200000		1		std array
+
+All time-->234166748800ns-->234.167s
+------------------------------------------------------------------------------------
+
+int			insertion		0ns		300000		1		std array
+
+All time-->166006352100ns-->166.006s
+------------------------------------------------------------------------------------
+
+int			selection		0ns		300000		1		std array
+
+All time-->232692364400ns-->232.692s
+------------------------------------------------------------------------------------
+
+int			bubble		0ns		300000		1		std array
+
+All time-->522277671800ns-->522.278s
+------------------------------------------------------------------------------------
+
+int			insertion		0ns		400000		1		std array
+
+All time-->288147768500ns-->288.148s
+------------------------------------------------------------------------------------
+
+int			selection		100ns		400000		1		std array
+
+All time-->401505563200ns-->401.506s
+------------------------------------------------------------------------------------
+
+int			bubble		100ns		400000		1		std array
+
+All time-->929818609800ns-->929.819s
+------------------------------------------------------------------------------------
+
+int			insertion		0ns		500000		1		std array
+
+All time-->449120831400ns-->449.121s
+------------------------------------------------------------------------------------
+
+int			selection		0ns		500000		1		std array
+
+All time-->626399578100ns-->626.4s
+------------------------------------------------------------------------------------
+
+int			bubble		100ns		500000		1		std array
+
+All time-->1452124296200ns-->1452.12s
+------------------------------------------------------------------------------------
+
+long		insertion		0ns		100000		1		std array
+
+All time-->19586261100ns-->19.5863s
+------------------------------------------------------------------------------------
+
+long		selection		0ns		100000		1		std array
+
+All time-->27337367200ns-->27.3374s
+------------------------------------------------------------------------------------
+
+long		bubble		100ns		100000		1		std array
+
+All time-->60469829400ns-->60.4698s
+------------------------------------------------------------------------------------
+
+long		insertion		0ns		200000		1		std array
+
+All time-->78333880500ns-->78.3339s
+------------------------------------------------------------------------------------
+
+long		selection		0ns		200000		1		std array
+
+All time-->109165563000ns-->109.166s
+------------------------------------------------------------------------------------
+
+long		bubble		100ns		200000		1		std array
+
+All time-->242184074700ns-->242.184s
+------------------------------------------------------------------------------------
+
+long		insertion		0ns		300000		1		std array
+
+All time-->176004093000ns-->176.004s
+------------------------------------------------------------------------------------
+
+long		selection		0ns		300000		1		std array
+
+All time-->246429533000ns-->246.43s
+------------------------------------------------------------------------------------
+
+long		bubble		100ns		300000		1		std array
+
+All time-->546108313500ns-->546.108s
+------------------------------------------------------------------------------------
+
+long		insertion		100ns		400000		1		std array
+
+All time-->312717417200ns-->312.717s
+------------------------------------------------------------------------------------
+
+long		selection		100ns		400000		1		std array
+
+All time-->437773455700ns-->437.773s
+------------------------------------------------------------------------------------
+
+long		bubble		0ns		400000		1		std array
+
+All time-->968233936600ns-->968.234s
+------------------------------------------------------------------------------------
+
+long		insertion		0ns		500000		1		std array
+
+All time-->489677898700ns-->489.678s
+------------------------------------------------------------------------------------
+
+long		selection		100ns		500000		1		std array
+
+All time-->682887286300ns-->682.887s
+------------------------------------------------------------------------------------
+
+long		bubble		0ns		500000		1		std array
+
+All time-->1515075677400ns-->1515.08s
+------------------------------------------------------------------------------------
+
+double		insertion		0ns		100000		1		std array
+
+All time-->17343690700ns-->17.3437s
+------------------------------------------------------------------------------------
+
+double		selection		0ns		100000		1		std array
+
+All time-->24614995300ns-->24.615s
+------------------------------------------------------------------------------------
+
+double		bubble		0ns		100000		1		std array
+
+All time-->59138469800ns-->59.1385s
+------------------------------------------------------------------------------------
+
+double		insertion		0ns		200000		1		std array
+
+All time-->69597316600ns-->69.5973s
+------------------------------------------------------------------------------------
+
+double		selection		100ns		200000		1		std array
+
+All time-->97894224500ns-->97.8942s
+------------------------------------------------------------------------------------
+
+double		bubble		0ns		200000		1		std array
+
+All time-->236416081400ns-->236.416s
+------------------------------------------------------------------------------------
+
+double		insertion		0ns		300000		1		std array
+
+All time-->158268064700ns-->158.268s
+------------------------------------------------------------------------------------
+
+double		selection		0ns		300000		1		std array
+
+All time-->220344496100ns-->220.344s
+------------------------------------------------------------------------------------
+
+double		bubble		0ns		300000		1		std array
+
+All time-->534164631400ns-->534.165s
+------------------------------------------------------------------------------------
+
+double		insertion		0ns		400000		1		std array
+
+All time-->284316219200ns-->284.316s
+------------------------------------------------------------------------------------
+
+double		selection		100ns		400000		1		std array
+
+All time-->392139480800ns-->392.139s
+------------------------------------------------------------------------------------
+
+double		bubble		0ns		400000		1		std array
+
+All time-->946478263100ns-->946.478s
+------------------------------------------------------------------------------------
+
+double		insertion		0ns		500000		1		std array
+
+All time-->442521426200ns-->442.521s
+------------------------------------------------------------------------------------
+
+double		selection		100ns		500000		1		std array
+
+All time-->613489023700ns-->613.489s
+------------------------------------------------------------------------------------
+
+double		bubble		0ns		500000		1		std array
+
+All time-->1483024309800ns-->1483.02s
+------------------------------------------------------------------------------------
+
+float		insertion		100ns		100000		1		std array
+
+All time-->16993533300ns-->16.9935s
+------------------------------------------------------------------------------------
+
+float		selection		100ns		100000		1		std array
+
+All time-->24250944700ns-->24.2509s
+------------------------------------------------------------------------------------
+
+float		bubble		100ns		100000		1		std array
+
+All time-->58326656000ns-->58.3267s
+------------------------------------------------------------------------------------
+
+float		insertion		100ns		200000		1		std array
+
+All time-->68656692700ns-->68.6567s
+------------------------------------------------------------------------------------
+
+float		selection		100ns		200000		1		std array
+
+All time-->97609462000ns-->97.6095s
+------------------------------------------------------------------------------------
+
+float		bubble		0ns		200000		1		std array
+
+All time-->234401291700ns-->234.401s
+------------------------------------------------------------------------------------
+
+float		insertion		100ns		300000		1		std array
+
+All time-->156506311700ns-->156.506s
+------------------------------------------------------------------------------------
+
+float		selection		100ns		300000		1		std array
+
+All time-->220462849000ns-->220.463s
+------------------------------------------------------------------------------------
+
+float		bubble		0ns		300000		1		std array
+
+All time-->525444480800ns-->525.444s
+------------------------------------------------------------------------------------
+
+float		insertion		0ns		400000		1		std array
+
+All time-->279734873400ns-->279.735s
+------------------------------------------------------------------------------------
+
+float		selection		100ns		400000		1		std array
+
+All time-->390963906900ns-->390.964s
+------------------------------------------------------------------------------------
+
+float		bubble		0ns		400000		1		std array
+
+All time-->932931616200ns-->932.932s
+------------------------------------------------------------------------------------
+
+float		insertion		100ns		500000		1		std array
+
+All time-->435676120700ns-->435.676s
+------------------------------------------------------------------------------------
+
+float		selection		0ns		500000		1		std array
+
+All time-->610716460700ns-->610.716s
+------------------------------------------------------------------------------------
+
+float		bubble		0ns		500000		1		std array
+
+All time-->1458646596500ns-->1458.65s
 ------------------------------------------------------------------------------------
 
