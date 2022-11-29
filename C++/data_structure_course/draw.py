@@ -22,8 +22,9 @@ for i in range(15):
 
 f.close()
 
-nptis=str(text[0][0][0])+" sort-->"+str(text[0][0][3])+","+str(text[0][0][4])
+nptis=str(text[0][0][5])+" "+str(text[0][0][6])+" -->"+str(text[0][0][3])+","+str(text[0][0][4])
 print(nptis)
+#b_or_t=int(input("b:0,t:1-->"))
 
 #print(*data,type(data[0]))
 '''
@@ -46,36 +47,46 @@ for i in range(5,10):
     p2.append(data[i])
 print(p2)
 
-'''
+
 p3=[]
 for i in range(10,15):
     p3.append(data[i])
 print(p3)
-'''
-pn=['str','int','long','double','float']
+
+pn=['10','20','30','40','50']
 
 k=0
 for f in range(5):
-    p1n=pn[f]
-    x = np.array([f+1])
-    y = np.array(p1[f])
-    plt.plot(x, y, 'o-b',label=p1n)
-    
-#plt.legend(title = "Data type:") #線條標籤
+    x1=pn[f]
+    y1=p1[f]
+    p1n="C array"
+    x= np.array(x1)
+    y= np.array(y1)
+    #plt.bar(x,y)
+    plt.plot(x, y, '^-r',label=p1n)
+
 
 for f in range(5):
-    p2n=pn[f]
-    x1= np.array([f+1])
-    y1= np.array(p2[f])
-    plt.plot(x1, y1, 'o-r',label=p2n)
-    
-'''
+    x1=pn[f]
+    y1=p2[f]
+    p2n="std vector"
+    x= np.array(x1)
+    y= np.array(y1)
+    #plt.bar(x,y)
+    plt.plot(x, y, 'o-g',label=p2n)
+
+
 for f in range(5):
-    p3n=pn[f]
-    x= np.array([f+1])
-    y= np.array(p3[f])
-    plt.plot(x, y, 'o-g',label=p3n)
-'''
+    x1=pn[f]
+    y1=p3[f]
+    p3n="std array"
+    x= np.array(x1)
+    y= np.array(y1)
+    #plt.bar(x,y)
+    plt.plot(x, y, '*-b',label=p3n)
+    
+    #plt.legend(title = "Data type:") #線條標籤
+
 
 #變直線
 
@@ -88,9 +99,10 @@ plt.plot(x1, y1, 'o-',label=p2n)
 '''
 
 #plt.bar(x,y)    #長條圖
+#if b_or_t==0:
 plt.grid(True)  #網格
 plt.xlabel('Type')
-plt.ylabel('Time')
+plt.ylabel('Time(ns)')
 plt.title(nptis)
 
 plt.show()
