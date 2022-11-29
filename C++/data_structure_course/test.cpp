@@ -1,8 +1,40 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int fre=10;
+constexpr int arnum=10000;
+long double smfre=1;     //Use of small data
+int fre=arnum;       //quantity of data
 
+//亂數排序
+template <class rds,class rdi,class rdlo,class rdd,class rdf,class rdas,class rdai,class rdalo,class rdad,class rdaf,class rdaas,class rdaai,class rdaalo,class rdaad,class rdaaf>
+    void randd(rds &vs,rdi &vi,rdlo &vlo,rdd &vd,rdf &vf,rdas &as,rdai &ai,rdalo &alo,rdad &ad,rdaf &af,rdaas &aas,rdaai &aai,rdaalo &aalo,rdaad &aad,rdaaf &aaf){
+        int pi;long plo;double pd;float pf;
+        srand(time(NULL));
+        int rdn=10,rdm=10000;
+
+        for(int i=0;i<fre;i++){
+            vi.push_back(rand()%rdm/int(rdn));
+            vlo.push_back(rand()%rdm/long(rdn));
+            vd.push_back(rand()%rdm/double(rdn));
+            vf.push_back(rand()%rdm/float(rdn));
+            string na="aaaaaa";
+            for(int x=0;x<6;x++){
+                na[x]+=rand()%26;
+            }
+            vs.push_back(na);
+
+            pi=rand()%rdm/int(rdn);
+            plo=rand()%rdm/long(rdn);
+            pd=rand()%rdm/double(rdn);
+            pf=rand()%rdm/float(rdn);
+
+            aas[i]=na;
+            aai[i]=rand()%rdm/int(rdn);
+            aalo[i]=rand()%rdm/long(rdn);
+            aad[i]=rand()%rdm/double(rdn);
+            aaf[i]=rand()%rdm/float(rdn);
+        }
+    }
 
 template <class mer>
     void merg(mer &mr,int sn,int md,int en){
@@ -50,80 +82,125 @@ template <class mes>
         }
     }
 
+
 int main(){
+
+    string *as=new string[fre];
+    int *ai=new int[fre],pi;
+    long *alo=new long[fre],plo;
+    double *ad=new double[fre],pd;
+    float *af=new float[fre],pf;
+
     vector <string>vs;
     vector <int>vi;
     vector <long>vlo;
     vector <double>vd;
     vector <float>vf;
 
-    srand(time(NULL));
-    int rdn=10,rdm=10000;
-    for(int i=0;i<fre;i++){
-        vi.push_back(rand()%rdm/int(rdn));
-        vlo.push_back(rand()%rdm/long(rdn));
-        vd.push_back(rand()%rdm/double(rdn));
-        vf.push_back(rand()%rdm/float(rdn));
-        string na="aaaaaa";
-        for(int x=0;x<6;x++){
-            na[x]+=rand()%26;
-        }
-        vs.push_back(na);
-    }
+    static array <string,arnum> aas;
+    static array <int,arnum> aai;
+    static array <long,arnum> aalo;
+    static array <double,arnum> aad;
+    static array <float,arnum> aaf;
 
-    for(int i=0;i<fre;i++){
-        cout<<vi[i]<<"\t";
-    }
-    cout<<endl;
+    //亂數排序
+    randd(vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
 
+    fre=100000;
+    for(int i=0;i<5;i++){
+        cout<<"start\n";
+    	string *as=new string[fre];
+	    int *ai=new int[fre],pi;
+	    long *alo=new long[fre],plo;
+	    double *ad=new double[fre],pd;
+	    float *af=new float[fre],pf;
+	    
+	    vector <string>vs;
+	    vector <int>vi;
+	    vector <long>vlo;
+	    vector <double>vd;
+	    vector <float>vf;
+	    
+	    static array <string,arnum> aas;
+	    static array <int,arnum> aai;
+	    static array <long,arnum> aalo;
+	    static array <double,arnum> aad;
+	    static array <float,arnum> aaf;
+
+		cout << i+1 <<"W fre~~~\n\n" ;
+
+    	randd(vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
+    	auto start = chrono::steady_clock::now();
+    	gogo(is(aas,fre),0,0,2,vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
+    	cout << "1-yes\n"  << endl;
+    	auto end = chrono::steady_clock::now();
+    	long long att=chrono::duration_cast<chrono::nanoseconds>(end-start).count();    //秒 seconds
+    	double ats=att*0.000000001;
+    	cout << fre << endl;
+    	cout<<"\nInsertionsort time-->"<<att<<"ns"<<endl;
+    	myfile.open("count.txt",ios::app);      //改app
+    	myfile<<"All time-->"<<att<<"ns-->"<<ats<<"s\n";
+    	myfile<<"------------------------------------------------------------------------------------\n\n";
+    	myfile.close();
+        cout<<"1------------------------------------------------------"<<endl;
+    // ----------------------------------------------------------------------------------------------
+    	randd(vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
+    	start = chrono::steady_clock::now();
+    	gogo(sel(aas,fre),1,0,2,vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
+    	cout << "2-yes\n"  << endl;
+    	end = chrono::steady_clock::now();
+    	att=chrono::duration_cast<chrono::nanoseconds>(end-start).count();    //秒 seconds
+    	ats=att*0.000000001;
+    	cout << fre << endl;
+    	cout<<"\nSelctionsort time-->"<<att<<"ns"<<endl;
+    	myfile.open("count.txt",ios::app);      //改app
+    	myfile<<"All time-->"<<att<<"ns-->"<<ats<<"s\n";
+    	myfile<<"------------------------------------------------------------------------------------\n\n";
+    	myfile.close();
+        cout<<"2------------------------------------------------------"<<endl;
+    //-------------------------------------------------------------------------------------------------
+        randd(vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
+    	start = chrono::steady_clock::now();
+    	gogo(bub(aas,fre),2,0,2,vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
+    	cout << "3-yes\n"  << endl;
+    	end = chrono::steady_clock::now();
+    	att=chrono::duration_cast<chrono::nanoseconds>(end-start).count();    //秒 seconds
+    	ats=att*0.000000001;
+    	cout << fre << endl;
+    	cout<<"\nSelctionsort time-->"<<att<<"ns"<<endl;
+    	myfile.open("count.txt",ios::app);      //改app
+    	myfile<<"All time-->"<<att<<"ns-->"<<ats<<"s\n";
+    	myfile<<"------------------------------------------------------------------------------------\n\n";
+    	myfile.close();
+        cout<<"3------------------------------------------------------"<<endl;
+        cout<<"i-->"<<i<<endl;
+    	fre+=100000;
+    	
+    	delete [] as;
+    	delete [] ai;
+    	delete [] alo;
+    	delete [] ad;
+    	delete [] af;
+    	
+    	vs.clear();
+    	vi.clear();
+    	vlo.clear();
+    	vd.clear();
+    	vf.clear();
+    	
+    	aas.fill("");
+    	aai.fill(0);
+    	aalo.fill(0);
+    	aad.fill(0);
+    	aaf.fill(0);
+        cout<<"HELLO\n\n";
+    }
+    rd();
+
+    mergso(vs,0,fre-1);
     mergso(vi,0,fre-1);
-
-    for(int i=0;i<fre;i++){
-        cout<<vi[i]<<"\t";
-    }
+    mergso(vlo,0,fre-1);
+    mergso(vd,0,fre-1);
+    mergso(vf,0,fre-1);
     return 0;
 }
-
-
-
-
-
-
-/*
-template <class mgo>
-    void mergego(int dt,int dsn){  //dt is data type
-        fstream myfile;
-        myfile.open("count.txt",ios::app);      //改app
-        auto gst=chrono::steady_clock::now();
-        mergso(as,0,fre-1);
-        mergso(ai,0,fre-1);
-        mergso(alo,0,fre-1);
-        mergso(ad,0,fre-1);
-        mergso(af,0,fre-1);
-        mergso(vs,0,fre-1);
-        mergso(vi,0,fre-1);
-        mergso(vlo,0,fre-1);
-        mergso(vd,0,fre-1);
-        mergso(vf,0,fre-1);
-        mergso(aas,0,fre-1);
-        mergso(aai,0,fre-1);
-        mergso(aalo,0,fre-1);
-        mergso(aad,0,fre-1);
-        mergso(aaf,0,fre-1);
-        auto gend=chrono::steady_clock::now();
-
-        long double ti=chrono::duration_cast<chrono::nanoseconds>(gend-gst).count();
-
-        string dtl[5] {"string","int\t","long","double","float"};
-        string ds[3] {"C array","vector","std array"};
-        cout<<"Sort: \""<<" \",data type is \" "<<dtl[dt]<<" \""<<"data str"<<ds[dsn]<<endl;
-        cout<<"usage time-->"<<ti<<"ns\n"<<endl;
-        myfile<<"merge"<<"\t\t"
-                <<dtl[dt]<<"\t\t"
-                <<ti<<"ns\t\t"
-                <<fre<<"\t\t"
-                <<smfre<<"\t\t"
-                <<ds[dsn]<<"\n"
-                <<endl;
-        myfile.close();
-    }*/
