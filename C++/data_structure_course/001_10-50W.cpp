@@ -3,8 +3,10 @@ using namespace std;
 
 
 constexpr int arnum=500000;
-long smfre=1;     //Use of small data
-int fre=100000;       //quantity of data
+long smfre=100000;     //Use of small data
+int fre=10;       //quantity of data
+int fadd=10;        //add num
+int frt=fadd;         //return num
 
 
 
@@ -14,11 +16,10 @@ template <class rds,class rdi,class rdlo,class rdd,class rdf,class rdas,class rd
         srand(time(NULL));
         int rdn=10,rdm=10000;
         for(int i=0;i<fre;i++){
-            /*
             vi.push_back(rand()%rdm/int(rdn));
             vlo.push_back(rand()%rdm/long(rdn));
             vd.push_back(rand()%rdm/double(rdn));
-            vf.push_back(rand()%rdm/float(rdn));*/
+            vf.push_back(rand()%rdm/float(rdn));
             string na="aaaaaa";
             for(int x=0;x<6;x++){
                 na[x]+=rand()%26;
@@ -143,7 +144,7 @@ int main(){
     read.close();
     cout<<"file 200OK"<<endl;
 
-    fre=100000;
+    fre=frt;
     for(int i=0;i<5;i++){
         cout<<"start\n";
     	string *as=new string[fre];
@@ -234,7 +235,7 @@ int main(){
     }
     rd();
 
-    fre=100000;
+    fre=frt;
     for(int i=0;i<5;i++){
         cout<<"start\n";
     	string *as=new string[fre];
@@ -325,7 +326,7 @@ int main(){
     }
     rd();
 
-    fre=100000;
+    fre=frt;
     for(int i=0;i<5;i++){
         cout<<"start\n";
     	string *as=new string[fre];
@@ -416,7 +417,7 @@ int main(){
     }
     rd();
 
-    fre=100000;
+    fre=frt;
     for(int i=0;i<5;i++){
         cout<<"start\n";
     	string *as=new string[fre];
@@ -506,7 +507,7 @@ int main(){
     }
     rd();
 
-    fre=100000;
+    fre=frt;
     for(int i=0;i<5;i++){
         cout<<"start\n";
     	string *as=new string[fre];
@@ -574,7 +575,7 @@ int main(){
         cout<<"15------------------------------------------------------"<<endl;
     //output i--------------------------------------------------------------------------------------------
         cout<<"i-->"<<i<<endl;
-    	fre+=100000;
+    	fre+=fadd;
     	
     	delete [] as;
     	delete [] ai;
