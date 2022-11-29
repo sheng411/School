@@ -137,8 +137,7 @@ int rd(){
 int main(){
     cout<<"GO start"<<endl;
     
-    fstream myfile;
-    fstream read;
+    fstream myfile,read;
     read.open("read.txt",ios::app);
     read<<"\n-----------------------------------------\n";
     read.close();
