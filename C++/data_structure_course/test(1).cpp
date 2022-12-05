@@ -51,7 +51,7 @@ template <class mer>
         int R_s=en-md;
         elType *L=new elType[L_s];
         elType *R=new elType[R_s];
-        for(int ll=0;ll<L_s;ll++){
+		for(int ll=0;ll<L_s;ll++){
             L[ll]=mr[sn+ll];
         }
         for(int rr=0;rr<R_s;rr++){
@@ -155,7 +155,7 @@ int main(){
     double *ad=new double[fre],pd;
     float *af=new float[fre],pf;
 
-    /*
+    
     fre=frt;
     for(int i=0;i<5;i++){
         cout<<"start\n";
@@ -278,7 +278,7 @@ int main(){
         cout<<"1 2 3 4 5 ENDDDDD :)\n\n";
     }
     rd();
-    */
+    
     vector <string>vs;
 	vector <int>vi;
 	vector <long>vlo;
@@ -525,7 +525,9 @@ int main(){
     }
     rd();
 
-    /* 有問題
+	
+
+    /* 
     gogo(mergso(as,0,fre-1),3,0,0,vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
     gogo(mergso(ai,0,fre-1),3,1,0,vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
     gogo(mergso(alo,0,fre-1),3,2,0,vs,vi,vlo,vd,vf,as,ai,alo,ad,af,aas,aai,aalo,aad,aaf);
