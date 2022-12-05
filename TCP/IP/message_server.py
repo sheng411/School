@@ -12,7 +12,7 @@ while(True):
     # 接收來自Client的訊息，取得訊息內容(data)與地址資訊(address)
     data, address = sock.recvfrom(MAX_BYTES)
     text = data.decode('utf-8')
-    print('The client at {} says {!r}'.format(address, text))
+    #print('The client at {} says {!r}'.format(address, text))
     # 將訊息內容由JSON字串轉成dict物件
     message = json.loads(text)
     # 依照type欄位的值做對應的動作
@@ -23,7 +23,8 @@ while(True):
             'nickname': message['nickname'],
             'address': address
         }
-        print('Enter Request:', new_client) # 除錯用
+        print(new_client," : ",text)
+        #print('Enter Request:', new_client) # 除錯用
         msdict={
             "type":2,
             "isAllow":"Yes"
@@ -36,7 +37,7 @@ while(True):
         }
         data = json.dumps(msgdict).encode('utf-8')
         sock.sendto(data, address)
-        print('Send back Enter Response to', address) # 除錯用
+        #print('Send back Enter Response to', address) # 除錯用
 ## Message Request (3)：有一個Client送來聊天訊息
     if message['type'] == 3:
         # 建立一個Message Response (4) 訊息，送回給來源Client
@@ -45,7 +46,7 @@ while(True):
         }
         data = json.dumps(msgdict).encode('utf-8')
         sock.sendto(data, address)
-        print('Send back Message Response to', address) # 除錯用
+        #print('Send back Message Response to', address) # 除錯用
         # 建立一個Message Transfer (5)訊息
         msgdict = {
             "type": 5,
@@ -58,4 +59,4 @@ while(True):
         for client in client_list:
             if client['address'] != address:
                 sock.sendto(data, client['address']) 
-                print('Transfer message to', client['address'] ) # 除錯用
+                #print('Transfer message to', client['address'] ) # 除錯用
