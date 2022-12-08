@@ -1,6 +1,5 @@
-import threading
-import socket
-import json
+import threading,socket,json,os,time
+
 MAX_BYTES = 65535
 server_addr = ('127.0.0.1',6000) # Remote server address
 # 執行緒send_message()：取得使用者的輸入訊息字串，將其傳送到Server
@@ -9,17 +8,32 @@ def send_message():
     while(True):
         # 取得使用者輸入的聊天訊息
         msgtext = input('\n請輸入聊天訊息:')
-        # 建立Message Request訊息的dict物件
-        msgdict = {
-            "type": 3,
-            "nickname": nickname,
-            "message": msgtext
-        }
         # 轉成JSON字串，再轉成bytes
+#需再調整
+        # 判讀是否為指令 (最前兩個字元與最後兩個字元都是"%%")
+        if msgtext[:2] == '%%' and msgtext[-2:] == '%%':
+            if msgtext[2:7] == 'Leave': # 若為離開聊天室的指令
+                # 建立Leave Request訊息的dict物件
+                msgdict = {
+                    "type": 6,
+                    "nickname": nickname
+                }
+        else:
+            # 建立Message Request訊息的dict物件
+            msgdict = {
+                "type": 3,
+                "nickname": nickname,
+                "message": msgtext
+            }
         msgdata = json.dumps(msgdict).encode('utf-8')
         #print(msgdata)
         # 將Enter Request送到Server
         sock.sendto(msgdata, server_addr)
+        # 如果送出的是Leave Request，則結束程式
+        if (msgdict['type']==6):
+            print("Leave") # 除錯用
+            os._exit(0)
+
 
 # 執行緒recv_message()：    
 def recv_message():
