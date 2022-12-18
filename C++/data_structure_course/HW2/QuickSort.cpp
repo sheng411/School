@@ -15,6 +15,7 @@ void C(vector<double> &randnuma,int MAX){
 		cout<<randnuma[i]<<" ";
 cout<<endl;*/
 }
+
 void C(vector<float>&randnuma,int MAX){
 	float min=0.0f,max=10000.0f;
 	for(int i=0;i<MAX;i++){
@@ -72,6 +73,7 @@ int partition(T &A,const int p ,const int r){
 	A[r]=temp;
 	return i+1;
 }
+
 template<class T>
 void QuickSort(T &A,const int p ,const int r){
 	if(p<r){
@@ -82,24 +84,32 @@ void QuickSort(T &A,const int p ,const int r){
 }
 
 int main(void){
-	
+	fstream myfile;
 	vector<int>ir;
+	vector<float>fr;
+	vector<double>dr;
+	vector<string>sr;
     ir.reserve(500000000);
-    vector<float>fr;
     fr.reserve(500000000);
-    vector<double>dr;
     dr.reserve(500000000);
-    vector<string>sr;
     sr.reserve(500000000);
-    C(ir,100000000);
-	auto start = chrono::steady_clock::now();
-    QuickSort(ir,0,100000000-1);
-	auto end = chrono::steady_clock::now();
-	long long att=chrono::duration_cast<chrono::seconds>(end-start).count();    //秒 seconds
-	
-	for(int j=0;j<10000000;j++){
-			cout<<ir[j]<<"\t ";
+
+	for (int i=0;i<5;i++){
+		C(ir,fre);
+		auto start = chrono::steady_clock::now();
+		QuickSort(ir,0,fre-1);
+		auto end = chrono::steady_clock::now();
+		long long att=chrono::duration_cast<chrono::seconds>(end-start).count();    //秒 seconds
+		/*
+		for(int j=0;j<fre;j++){
+				cout<<ir[j]<<"\t ";
+		}*/
+		myfile.open("count.txt",ios::app);      //改app
+		myfile<<"Data quantity-->"<<fre<<" Usage time-->"<<att<<"s\n";
+		cout<<"ALL Time-->"<<att<<endl;
+		fre+=100000000
 	}
-	cout<<"ALL Time-->"<<att<<endl;
+	myfile<<"------------------------------------------------------------------------------------\n\n";
+	myfile.close();
 	return 0; 
 }
