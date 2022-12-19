@@ -54,7 +54,8 @@ template<class T>
 int main(void){
 	cout<<"start\n";
 	fstream myfile;
-	
+	myfile<<"--------------------------------Quick-----------------------------------\n\n";
+
 	vector<string>vs;
 	vector<int>vi;
 	vector<double>vd;
@@ -75,7 +76,7 @@ int main(void){
 		long long att=chrono::duration_cast<chrono::seconds>(end-start).count();    //秒 seconds
 		myfile.open("count.txt",ios::app);      //改app
 		myfile<<"Data type-->"<<" String "<<"\tData quantity-->"<<fre<<"\tUsage time-->"<<att<<"s\n";
-		cout<<"ALL Time-->"<<att<<endl;
+		cout<<"fre-->"<<fre<<"ALL Time-->"<<att<<endl;
 		fre+=100000000;
 		vs.clear();
 		vi.clear();
@@ -94,7 +95,7 @@ int main(void){
 		long long att=chrono::duration_cast<chrono::seconds>(end-start).count();    //秒 seconds
 		myfile.open("count.txt",ios::app);      //改app
 		myfile<<"Data type-->"<<" int "<<"\tData quantity-->"<<fre<<"\tUsage time-->"<<att<<"s\n\n";
-		cout<<"ALL Time-->"<<att<<endl;
+		cout<<"fre-->"<<fre<<"ALL Time-->"<<att<<endl;
 		fre+=100000000;
 		vs.clear();
 		vi.clear();
@@ -113,7 +114,7 @@ int main(void){
 		long long att=chrono::duration_cast<chrono::seconds>(end-start).count();    //秒 seconds
 		myfile.open("count.txt",ios::app);      //改app
 		myfile<<"Data type-->"<<" double "<<"\tData quantity-->"<<fre<<"\tUsage time-->"<<att<<"s\n\n";
-		cout<<"ALL Time-->"<<att<<endl;
+		cout<<"fre-->"<<fre<<"ALL Time-->"<<att<<endl;
 		fre+=100000000;
 		vs.clear();
 		vi.clear();
@@ -132,7 +133,7 @@ int main(void){
 		long long att=chrono::duration_cast<chrono::seconds>(end-start).count();    //秒 seconds
 		myfile.open("count.txt",ios::app);      //改app
 		myfile<<"Data type-->"<<" float "<<"\tData quantity-->"<<fre<<"\tUsage time-->"<<att<<"s\n\n";
-		cout<<"ALL Time-->"<<att<<endl;
+		cout<<"fre-->"<<fre<<"ALL Time-->"<<att<<endl;
 		fre+=100000000;
 		vs.clear();
 		vi.clear();
