@@ -29,7 +29,6 @@ template<class T>
 		for(int j=p;j<=r-1;j++){
 			if(A[j]<=x){
 				i=i+1;
-			//	elType *a=new elType[i];
 				auto temp=A[i];
 				A[i]=A[j];
 				A[j]=temp;
