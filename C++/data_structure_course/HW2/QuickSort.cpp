@@ -1,114 +1,146 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int fre=0;
+int fre=100000000;
+int smfre=1;
 
-void C(vector<double> &randnuma,int MAX){
-	double min=0.0,max=100000.0000000000;
-	for(int i=0;i<MAX;i++){
-		double j=(double)(max-min)*rand()/(RAND_MAX+1.0);
-		randnuma.push_back(j);
-	}
-/*	cout<<"�Ƨǫe";
-	cout<<"double:  ";
-	for(int i=0;i<MAX;i++)
-		cout<<randnuma[i]<<" ";
-cout<<endl;*/
-}
+template <class rds,class rdi,class rdd,class rdf>
+    void randd(rds &vs,rdi &vi,rdd &vd,rdf &vf){
+		int pi;long plo;double pd;float pf;
+        srand(time(NULL));
+        int rdn=1,rdm=100000;
+        for(int i=0;i<fre;i++){
+            vi.push_back(rand()%rdm/int(rdn));
+            vd.push_back(rand()%rdm/double(rdn));
+            vf.push_back(rand()%rdm/float(rdn));
+            string na="aaaaaa";
+            for(int x=0;x<6;x++){
+                na[x]+=rand()%26;
+            }
+            vs.push_back(na);
+        }
+    }
 
-void C(vector<float>&randnuma,int MAX){
-	float min=0.0f,max=10000.0f;
-	for(int i=0;i<MAX;i++){
-		randnuma.push_back((float)(max-min)*rand()/(RAND_MAX+1.0));
-	}
-/*	 cout<<"float: ";
-	for(int i=0;i<MAX;i++)
-		cout<<randnuma[i]<<" ";
-    cout<<endl;*/
-}
-
-void C(vector<int> &randnuma,int MAX){
-	for(int i=0;i<MAX;i++){
-		randnuma.push_back(rand());
-	}
-/*   cout<<"int: ";
-	for(int i=0;i<MAX;i++)
-		cout<<randnuma[i]<<" ";
-    cout<<endl;*/
-
-}
-
-void C(vector<string>  &randnuma,int MAX){
-	for(int i=0;i<MAX;i++){	
-		string str="aaaaaa";
-		for(int k=0;k<6;k++){
-			str[k]+=rand()%26;
+template<class T>
+	int partition(T &A,const int p ,const int r){
+		using elType = typename	T::value_type;
+		elType x=A[r];
+		int i=p-1;
+		for(int j=p;j<=r-1;j++){
+			if(A[j]<=x){
+				i=i+1;
+			//	elType *a=new elType[i];
+				auto temp=A[i];
+				A[i]=A[j];
+				A[j]=temp;
+				}
 		}
-		randnuma.push_back(str);
+		
+		auto temp=A[i+1];
+		A[i+1]=A[r];
+		A[r]=temp;
+		return i+1;
 	}
-/*  cout<<"string: ";
-	for(int i=0;i<MAX;i++)
-		cout<<randnuma[i]<<" ";
-    cout<<endl;*/
-    
-}
 
 template<class T>
-int partition(T &A,const int p ,const int r){
-	using elType = typename	T::value_type;
-	elType x=A[r];
-	int i=p-1;
-	for(int j=p;j<=r-1;j++){
-		if(A[j]<=x){
-			i=i+1;
-		//	elType *a=new elType[i];
-			auto temp=A[i];
-			A[i]=A[j];
-			A[j]=temp;
-			}
+	void QuickSort(T &A,const int p ,const int r){
+		if(p<r){
+			int q=partition(A,p,r);
+			QuickSort(A,p,q-1);
+			QuickSort(A,q+1,r);
+		}
 	}
-	
-	auto temp=A[i+1];
-	A[i+1]=A[r];
-	A[r]=temp;
-	return i+1;
-}
-
-template<class T>
-void QuickSort(T &A,const int p ,const int r){
-	if(p<r){
-		int q=partition(A,p,r);
-		QuickSort(A,p,q-1);
-		QuickSort(A,q+1,r);
-	}
-}
 
 int main(void){
+	cout<<"start\n";
 	fstream myfile;
-	vector<int>ir;
-	vector<float>fr;
-	vector<double>dr;
-	vector<string>sr;
-    ir.reserve(500000000);
-    fr.reserve(500000000);
-    dr.reserve(500000000);
-    sr.reserve(500000000);
+	
+	vector<string>vs;
+	vector<int>vi;
+	vector<double>vd;
+	vector<float>vf;
+	
+	vs.reserve(500000000);
+    vi.reserve(500000000);
+    vd.reserve(500000000);
+    vf.reserve(500000000);
 
-	for (int i=0;i<5;i++){
-		C(ir,fre);
+	for (int i=0;i<smfre;i++){
+		cout<<"for go\n";
+		randd(vs,vi,vd,vf);
+		cout<<"rand ok\n";
 		auto start = chrono::steady_clock::now();
-		QuickSort(ir,0,fre-1);
+		QuickSort(vs,0,fre-1);
 		auto end = chrono::steady_clock::now();
 		long long att=chrono::duration_cast<chrono::seconds>(end-start).count();    //秒 seconds
-		/*
-		for(int j=0;j<fre;j++){
-				cout<<ir[j]<<"\t ";
-		}*/
 		myfile.open("count.txt",ios::app);      //改app
-		myfile<<"Data quantity-->"<<fre<<" Usage time-->"<<att<<"s\n";
+		myfile<<"Data type-->"<<" String "<<"\tData quantity-->"<<fre<<"\tUsage time-->"<<att<<"s\n";
 		cout<<"ALL Time-->"<<att<<endl;
-		fre+=100000000
+		fre+=100000000;
+		vs.clear();
+		vi.clear();
+		vd.clear();
+		vf.clear();
 	}
+
+	myfile<<"------------------------------------------------------------------------------------\n\n";
+	for (int i=0;i<smfre;i++){
+		cout<<"for go\n";
+		randd(vs,vi,vd,vf);
+		cout<<"rand ok\n";
+		auto start = chrono::steady_clock::now();
+		QuickSort(vi,0,fre-1);
+		auto end = chrono::steady_clock::now();
+		long long att=chrono::duration_cast<chrono::seconds>(end-start).count();    //秒 seconds
+		myfile.open("count.txt",ios::app);      //改app
+		myfile<<"Data type-->"<<" int "<<"\tData quantity-->"<<fre<<"\tUsage time-->"<<att<<"s\n\n";
+		cout<<"ALL Time-->"<<att<<endl;
+		fre+=100000000;
+		vs.clear();
+		vi.clear();
+		vd.clear();
+		vf.clear();
+	}
+
+	myfile<<"------------------------------------------------------------------------------------\n\n";
+	for (int i=0;i<smfre;i++){
+		cout<<"for go\n";
+		randd(vs,vi,vd,vf);
+		cout<<"rand ok\n";
+		auto start = chrono::steady_clock::now();
+		QuickSort(vd,0,fre-1);
+		auto end = chrono::steady_clock::now();
+		long long att=chrono::duration_cast<chrono::seconds>(end-start).count();    //秒 seconds
+		myfile.open("count.txt",ios::app);      //改app
+		myfile<<"Data type-->"<<" double "<<"\tData quantity-->"<<fre<<"\tUsage time-->"<<att<<"s\n\n";
+		cout<<"ALL Time-->"<<att<<endl;
+		fre+=100000000;
+		vs.clear();
+		vi.clear();
+		vd.clear();
+		vf.clear();
+	}
+	
+	myfile<<"------------------------------------------------------------------------------------\n\n";
+	for (int i=0;i<smfre;i++){
+		cout<<"for go\n";
+		randd(vs,vi,vd,vf);
+		cout<<"rand ok\n";
+		auto start = chrono::steady_clock::now();
+		QuickSort(vf,0,fre-1);
+		auto end = chrono::steady_clock::now();
+		long long att=chrono::duration_cast<chrono::seconds>(end-start).count();    //秒 seconds
+		myfile.open("count.txt",ios::app);      //改app
+		myfile<<"Data type-->"<<" float "<<"\tData quantity-->"<<fre<<"\tUsage time-->"<<att<<"s\n\n";
+		cout<<"ALL Time-->"<<att<<endl;
+		fre+=100000000;
+		vs.clear();
+		vi.clear();
+		vd.clear();
+		vf.clear();
+	}
+	
+	
 	myfile<<"------------------------------------------------------------------------------------\n\n";
 	myfile.close();
 	return 0; 
