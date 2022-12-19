@@ -87,7 +87,7 @@ int main(void){
     vi.reserve(500000000);
     vd.reserve(500000000);
     vf.reserve(500000000);
-/*
+
 	for (int i=0;i<smfre;i++){
 		cout<<"for go\n";
 		randd(vs,vi,vd,vf);
@@ -105,7 +105,7 @@ int main(void){
 		vd.clear();
 		vf.clear();
 	}
-*/
+
 	myfile<<"------------------------------------------------------------------------------------\n\n";
 	for (int i=0;i<smfre;i++){
 		cout<<"for go\n";
@@ -124,7 +124,7 @@ int main(void){
 		vd.clear();
 		vf.clear();
 	}
-/*
+
 	myfile<<"------------------------------------------------------------------------------------\n\n";
 	for (int i=0;i<smfre;i++){
 		cout<<"for go\n";
@@ -143,7 +143,7 @@ int main(void){
 		vd.clear();
 		vf.clear();
 	}
-	
+
 	myfile<<"------------------------------------------------------------------------------------\n\n";
 	for (int i=0;i<smfre;i++){
 		cout<<"for go\n";
@@ -162,7 +162,7 @@ int main(void){
 		vd.clear();
 		vf.clear();
 	}
-	*/
+	
 	
 	myfile<<"------------------------------------------------------------------------------------\n\n";
 	myfile.close();
