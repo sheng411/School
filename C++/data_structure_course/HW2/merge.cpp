@@ -73,10 +73,21 @@ template <class mes>
         return 0;
     }
 
+int rd(){
+	fstream myfile;
+	myfile.open("count.txt",ios::app);      //改app
+	myfile<<"------------------------------------------------------------------------\n\n";
+	fre=100000000;
+	myfile.close();
+	return 0;
+}
+
 int main(void){
 	cout<<"start\n";
 	fstream myfile;
+	myfile.open("count.txt",ios::app);      //改app
 	myfile<<"--------------------------------Merge-----------------------------------\n\n";
+    myfile.close();
 
 	vector<string>vs;
 	vector<int>vi;
@@ -87,8 +98,9 @@ int main(void){
     vi.reserve(500000000);
     vd.reserve(500000000);
     vf.reserve(500000000);
-
+/*
 	for (int i=0;i<smfre;i++){
+		fstream myfile;
 		cout<<"for go\n";
 		randd(vs,vi,vd,vf);
 		cout<<"rand ok\n";
@@ -98,16 +110,18 @@ int main(void){
 		long long att=chrono::duration_cast<chrono::seconds>(end-start).count();    //秒 seconds
 		myfile.open("count.txt",ios::app);      //改app
 		myfile<<"Data type-->"<<" String "<<"\tData quantity-->"<<fre<<"\tUsage time-->"<<att<<"s\n";
-		cout<<"fre-->"<<fre<<"ALL Time-->"<<att<<endl;
+		cout<<"fre-->"<<fre<<"\tALL Time-->"<<att<<endl;
 		fre+=100000000;
 		vs.clear();
 		vi.clear();
 		vd.clear();
 		vf.clear();
+		myfile.close();
 	}
-
-	myfile<<"------------------------------------------------------------------------------------\n\n";
+*/
+	rd();
 	for (int i=0;i<smfre;i++){
+		fstream myfile;
 		cout<<"for go\n";
 		randd(vs,vi,vd,vf);
 		cout<<"rand ok\n";
@@ -117,16 +131,18 @@ int main(void){
 		long long att=chrono::duration_cast<chrono::seconds>(end-start).count();    //秒 seconds
 		myfile.open("count.txt",ios::app);      //改app
 		myfile<<"Data type-->"<<" int "<<"\tData quantity-->"<<fre<<"\tUsage time-->"<<att<<"s\n\n";
-		cout<<"fre-->"<<fre<<"ALL Time-->"<<att<<endl;
+		cout<<"fre-->"<<fre<<"\tALL Time-->"<<att<<endl;
 		fre+=100000000;
 		vs.clear();
 		vi.clear();
 		vd.clear();
 		vf.clear();
+		myfile.close();
 	}
 
-	myfile<<"------------------------------------------------------------------------------------\n\n";
+	rd();
 	for (int i=0;i<smfre;i++){
+		fstream myfile;
 		cout<<"for go\n";
 		randd(vs,vi,vd,vf);
 		cout<<"rand ok\n";
@@ -136,16 +152,18 @@ int main(void){
 		long long att=chrono::duration_cast<chrono::seconds>(end-start).count();    //秒 seconds
 		myfile.open("count.txt",ios::app);      //改app
 		myfile<<"Data type-->"<<" double "<<"\tData quantity-->"<<fre<<"\tUsage time-->"<<att<<"s\n\n";
-		cout<<"fre-->"<<fre<<"ALL Time-->"<<att<<endl;
+		cout<<"fre-->"<<fre<<"\tALL Time-->"<<att<<endl;
 		fre+=100000000;
 		vs.clear();
 		vi.clear();
 		vd.clear();
 		vf.clear();
+		myfile.close();
 	}
 
-	myfile<<"------------------------------------------------------------------------------------\n\n";
+	rd();
 	for (int i=0;i<smfre;i++){
+		fstream myfile;
 		cout<<"for go\n";
 		randd(vs,vi,vd,vf);
 		cout<<"rand ok\n";
@@ -155,16 +173,17 @@ int main(void){
 		long long att=chrono::duration_cast<chrono::seconds>(end-start).count();    //秒 seconds
 		myfile.open("count.txt",ios::app);      //改app
 		myfile<<"Data type-->"<<" float "<<"\tData quantity-->"<<fre<<"\tUsage time-->"<<att<<"s\n\n";
-		cout<<"fre-->"<<fre<<"ALL Time-->"<<att<<endl;
+		cout<<"fre-->"<<fre<<"\tALL Time-->"<<att<<endl;
 		fre+=100000000;
 		vs.clear();
 		vi.clear();
 		vd.clear();
 		vf.clear();
+		myfile.close();
 	}
 	
 	
-	myfile<<"------------------------------------------------------------------------------------\n\n";
+	myfile<<"------------------------------------------------------------------------\n\n";
 	myfile.close();
 	return 0; 
 }
