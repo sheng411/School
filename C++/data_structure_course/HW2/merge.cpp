@@ -98,7 +98,7 @@ int main(void){
     vi.reserve(500000000);
     vd.reserve(500000000);
     vf.reserve(500000000);
-/*
+
 	for (int i=0;i<smfre;i++){
 		fstream myfile;
 		cout<<"for go\n";
@@ -118,7 +118,7 @@ int main(void){
 		vf.clear();
 		myfile.close();
 	}
-*/
+
 	rd();
 	for (int i=0;i<smfre;i++){
 		fstream myfile;
