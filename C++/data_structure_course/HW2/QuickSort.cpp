@@ -85,7 +85,7 @@ int main(void){
 		auto end = chrono::steady_clock::now();
 		long long att=chrono::duration_cast<chrono::seconds>(end-start).count();    //秒 seconds
 		myfile.open("count.txt",ios::app);      //改app
-		myfile<<"Data type-->"<<" String "<<"\tData quantity-->"<<fre<<"\tUsage time-->"<<att<<"s\n";
+		myfile<<"Data type-->"<<" String "<<"\tData quantity-->"<<fre<<"\tUsage time-->"<<att<<"s\n\n";
 		cout<<"fre-->"<<fre<<"\tALL Time-->"<<att<<endl;
 		fre+=100000000;
 		vs.clear();
