@@ -2,7 +2,7 @@
 using namespace std;
 
 int fre=100000000;
-int smfre=1;
+int smfre=5;
 
 
 template <class rds,class rdi,class rdd,class rdf>

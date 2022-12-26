@@ -2,7 +2,7 @@
 using namespace std;
 
 int fre=100000000;
-int smfre=1;
+int smfre=5;
 
 template <class rds,class rdi,class rdd,class rdf>
     void randd(rds &vs,rdi &vi,rdd &vd,rdf &vf){
@@ -29,15 +29,10 @@ template<class T>
 		for(int j=p;j<=r-1;j++){
 			if(A[j]<=x){
 				i=i+1;
-				auto temp=A[i];
-				A[i]=A[j];
-				A[j]=temp;
+				swap(A[i]=A[j]);
 				}
 		}
-		
-		auto temp=A[i+1];
-		A[i+1]=A[r];
-		A[r]=temp;
+		swap(A[i+1]=A[r]);
 		return i+1;
 	}
 
