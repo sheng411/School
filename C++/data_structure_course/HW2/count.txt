@@ -1,0 +1,80 @@
+--------------------------------Merge-----------------------------------
+
+Data type--> String 	Data quantity-->100000000	Usage time-->120s
+
+Data type--> String 	Data quantity-->200000000	Usage time-->247s
+
+Data type--> String 	Data quantity-->300000000	Usage time-->433s
+
+Data type--> String 	Data quantity-->400000000	Usage time-->633s
+
+Data type--> String 	Data quantity-->500000000	Usage time-->933s
+
+------------------------------------------------------------------------
+
+Data type--> int 	Data quantity-->100000000	Usage time-->33s
+
+Data type--> int 	Data quantity-->200000000	Usage time-->68s
+
+Data type--> int 	Data quantity-->300000000	Usage time-->106s
+
+Data type--> int 	Data quantity-->400000000	Usage time-->141s
+
+Data type--> int 	Data quantity-->500000000	Usage time-->179s
+
+------------------------------------------------------------------------
+
+Data type--> double 	Data quantity-->100000000	Usage time-->37s
+
+Data type--> double 	Data quantity-->200000000	Usage time-->77s
+
+Data type--> double 	Data quantity-->300000000	Usage time-->117s
+
+Data type--> double 	Data quantity-->400000000	Usage time-->157s
+
+Data type--> double 	Data quantity-->500000000	Usage time-->200s
+
+------------------------------------------------------------------------
+
+Data type--> float 	Data quantity-->100000000	Usage time-->35s
+
+Data type--> float 	Data quantity-->200000000	Usage time-->77s
+
+Data type--> float 	Data quantity-->300000000	Usage time-->114s
+
+Data type--> float 	Data quantity-->400000000	Usage time-->149s
+
+Data type--> float 	Data quantity-->500000000	Usage time-->189s
+
+--------------------------------Quick-----------------------------------
+
+Data type--> String 	Data quantity-->100000000	Usage time-->48s
+
+Data type--> String 	Data quantity-->200000000	Usage time-->103s
+
+Data type--> String 	Data quantity-->300000000	Usage time-->153s
+
+Data type--> String 	Data quantity-->400000000	Usage time-->217s
+
+Data type--> String 	Data quantity-->500000000	Usage time-->312s
+
+------------------------------------------------------------------------
+
+Data type--> int 	Data quantity-->100000000	Usage time-->309s
+
+Data type--> int 	Data quantity-->200000000	Usage time-->1200s
+
+Data type--> int 	Data quantity-->300000000	Usage time-->2677s
+
+Data type--> int 	Data quantity-->400000000	Usage time-->4732s
+
+Data type--> int 	Data quantity-->500000000	Usage time-->7382s
+
+------------------------------------------------------------------------
+
+Data type--> double 	Data quantity-->100000000	Usage time-->288s
+
+Data type--> double 	Data quantity-->200000000	Usage time-->1113s
+
+Data type--> double 	Data quantity-->300000000	Usage time-->2476s
+
