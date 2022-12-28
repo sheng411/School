@@ -3,175 +3,174 @@
 #include<ctime>
 #include<iomanip>
 #include<string>
-
+#include<fstream>
 using namespace std;
 
 template <class T>
 class sort{
-	public :
-//		sort();
-		void set(int number,int col);
-		void output(int number,int col);
-		void bubble(int number,int col);
-		void selection(int number,int col);
-		void insertion(int number,int col);
-		void mergesort(int infront, int behide,int col);
-		void merge(int infront, int behiden, int mid,int col);
-	
-	private :
-		T **A;
-	
-	
+public :
+void set(int number);
+void output(int number);
+void mergesort(int infront, int behide);
+void merge(int infront, int behiden, int mid);
+void heapsort(int number);
+void Max_Heapify(int k,int size);
+void Build_Max_Heap(int number);
+  void quicksort(int p,int r);
+int partation(int p,int r);
+T *A;
 };
 
-int main(){
+int main(void){
 	srand(time(0));
 	
-	int number,col, change = 0;
-	double start = 0, stop = 0;
-	sort<double> data;
-	cout << "quentity = ";
-	cin >> number;
-	cout << "column = ";
-	cin >> col;
+	ofstream ofs;
+	ofs.open("c++_sorttime.txt",ios::app);
+	char aph;
+	double start = 0, stop = 0,ans=0;
+	sort<string> data;
 	
-	cout << endl;
-	data.set(number,col);
-//	data.output(number,col);
-	cout << endl;
-	start = clock();
-	for(int i=0;i<col;i++){
-		data.bubble(number,i);
-	}
-	stop = clock();
-//	data.output(number,col);
-	cout << "\nbubblesort cost time : " << (stop - start) / CLOCKS_PER_SEC << endl;
+	for(int number=100000000;number<=100000000;number+=20000000){
 	
-	cout << endl;
-	data.set(number,col);
-//	data.output(number,col);
-	cout << endl;
-	start = clock();
-	for(int i=0;i<col;i++){
-		data.selection(number,i);
+		ofs << "\n";
+		ofs << number << "\n";
+		ofs << "\n\n";
+		data.set(number);
+		//data.output(number);
+		start = clock();
+		data.heapsort(number);
+		stop = clock();
+		//data.output(number);
+		ans=(stop - start) / CLOCKS_PER_SEC;
+		ofs << "\nheapsort cost time : " << ans << "\n";
+		delete []data.A;
+		cout << "cheak line" << endl;
+		
+		ofs << "\n";
+		data.set(number);
+		//data.output(number);
+		ofs << "\n";
+		start = clock();
+		data.quicksort(0,number-1);
+		stop = clock();
+		//data.output(number);
+		ans=(stop - start) / CLOCKS_PER_SEC;
+		ofs << "\nqiucksort cost time : " << ans << endl;
+		delete []data.A;
+		cout << "cheak line" << endl;
+		
+		ofs << "\n";
+		data.set(number);
+		//data.output(number);
+		ofs << "\n";
+		start = clock();
+		data.mergesort(0, number-1);
+		stop = clock();
+		//data.output(number);
+		ans=(stop - start) / CLOCKS_PER_SEC;
+		ofs << "\nmergesort cost time : " << ans << endl;
+		delete []data.A;
+		cout << "cheak line" << endl;
 	}
-	stop = clock();
-//	data.output(number,col);
-	cout << "\nselectionsort cost time : " << (stop - start) / CLOCKS_PER_SEC << endl;
-	
-	cout << endl;
-	data.set(number,col);
-//	data.output(number,col);
-	cout << endl;
-	start = clock();
-	for(int i=0;i<col;i++){
-		data.insertion(number,i);
-	}
-	stop = clock();
-//	data.output(number,col);
-	cout << "\ninsertionsort cost time : " << (stop - start) / CLOCKS_PER_SEC << endl;
-
-	cout << endl;
-	data.set(number,col);
-//	data.output(number,col);
-	cout << endl;
-	start = clock();
-	for(int i=0;i<col;i++){
-	data.mergesort(0, number-1,i);
-	}
-	stop = clock();
-//	data.output(number,col);
-	cout << "\nmergesort cost time : " << (stop - start) / CLOCKS_PER_SEC << endl;
-
+	ofs.close();
 	return 0;
 }
 
 template <class T>
-void sort<T>::set(int number,int col){
+void sort<T>::set(int number){
 	char aph;
-	A = new T*[col];
-    for(int i = 0; i < col; i++)
-        A[i] = new T[number];
+	    A= new T[number];
+	for(int i=0;i<number;i++){
+		for(int j=0;j<6;j++){
+			aph=rand()%26+97;
+			A[i]=A[i]+aph;
+		} //string睹计
+		//A[i]=rand()%(1000000);//int睹计
+		//A[i]=(T)(rand())/(RAND_MAX +1)+1; //double 睹计
+	}
+}
+
+
+template <class T>
+void sort<T>::output(int number){
+	for(int i=0;i<number;i++){
+		printf("%s ",A[i].c_str());
+	}
+}
+
+template <class T>
+void sort<T>::heapsort(int number){
+	int size=number;
+	Build_Max_Heap(number);
+	for(int j=number;j>1;j--){
+		swap(A[0],A[j-1]);
+		size--;
+		Max_Heapify(1,size);
+	}
+}
+
+template <class T>
+void sort<T>::Build_Max_Heap(int number){
+	int size=number;
+	for(int i=size/2;i>0;i--){
+		Max_Heapify(i,size);
+	}
+}
+
+template <class T>
+void sort<T>::Max_Heapify(int k,int size){
+	int left=2*k-1,right=2*k,largest;
+	if(left<=size && A[left-1]>A[k-1]){
+		largest=left;
+	}
+	else{
+		largest=k;
+	}
+	if(right<=size && A[right-1]>A[largest-1]){
+		largest=right;
+	}
+	if(largest!=k){
+		swap(A[k-1],A[largest-1]);
+		Max_Heapify(largest,size);
+	}
+}
+
+template <class T>
+void sort<T>::quicksort(int p,int r){
+	int q;
+	if(p<r){
+	    q=partation(p,r);
+	    quicksort(p,q-1);
+	    quicksort(q+1,r);
+	}
+}
+
+template <class T>
+int sort<T>::partation(int p,int r){
+	int i=p-1;
+	for(int j=p;j<r;j++){
+		if(A[j]<=A[r]){
+		i++;
+		swap(A[i],A[j]);
+		}
+	}
+	swap(A[i+1],A[r]);
 	
-	for(int k=0;k<col;k++){
-		for(int i=0;i<number;i++){
-			/*for(int j=0;j<6;j++){
-				aph=rand()%26+97;
-				A[k][i]=A[k][i]+aph;
-			}*/ //string睹计 
-		//	A[k][i]=rand()%(1000000);//int睹计 
-			A[k][i]=(T)(rand())/(RAND_MAX +1)+1; //double 睹计 
-		}
-	}
+	return i+1;
 }
 
 template <class T>
-void sort<T>::output(int number,int col){
-	for(int k=0;k<col;k++){	
-		for(int i=0;i<number;i++){
-			cout << A[k][i] << " ";
-		}
-		cout << endl;
-	}
-}
-
-template <class T>
-void sort<T>::bubble(int number,int col){
-	for(int i=0; i<number-1; i++){
-		for(int j=0; j<number-1-i; j++){
-			if(A[col][j] > A[col][j+1]){
-				swap(A[col][j], A[col][j+1]);
-			}
-		}
-	} 
-}
-
-template <class T>
-void sort<T>::selection(int number,int col){
-	T temp;
-	int count;
-	for(int i=0;i<number-1;i++){
-		temp=A[col][i];
-		for(int j=i+1;j<number;j++){
-			if(temp>A[col][j]){
-				temp=A[col][j];
-				count=j;
-			}
-		}
-		swap(A[col][i],A[col][count]); 
-	}
-}
-
-template <class T>
-void sort<T>::insertion(int number,int col){
-	T temp;
-	int count;
-	for(int i=1;i<number;i++){
-		temp=A[col][i];
-		count=i;
-		for(int j=i-1;j>=0;j--){
-			if(temp<A[col][j]){
-				A[col][j+1]=A[col][j];
-				count=j;
-			}
-			else break;
-		}
-		A[col][count]=temp;
-	}
-}
-
-template <class T>
-void sort<T>::mergesort(int first,int last,int col){
+void sort<T>::mergesort(int first,int last){
 	if(first<last){
 		int mid=(first+last)/2;
-		mergesort(first,mid,col);
-		mergesort(mid+1,last,col);
-		merge(first,last,mid,col);
+		mergesort(first,mid);
+		mergesort(mid+1,last);
+		merge(first,last,mid);
 	}
 }
 
 template <class T>
-void sort<T>::merge(int first,int last,int mid,int col){
+void sort<T>::merge(int first,int last,int mid){
 	int size1=mid-first+1,size2=last-mid;
 	int right=0,left=0;
 	
@@ -179,39 +178,40 @@ void sort<T>::merge(int first,int last,int mid,int col){
 	T *Q=new T[size2];
 	
 	for(int i=0;i<size1;i++){
-		P[i]=A[col][i+first];
+		P[i]=A[i+first];
 	}
 	
 	for(int i=0;i<size2;i++){
-		Q[i]=A[col][i+mid+1];
+		Q[i]=A[i+mid+1];
 	}
 	
 	for(int i=first;i<=last;i++){
 		if(right==size2){
-			for(int j=i;j<=last;j++){
-				A[col][j]=P[left];
-				left++;
-			}
-			break;
+		for(int j=i;j<=last;j++){
+			A[j]=P[left];
+			left++;
+		}
+		break;
 		}
 		if(left==size1){
 			for(int j=i;j<=last;j++){
-				A[col][j]=Q[right];
+				A[j]=Q[right];
 				right++;
 			}
-			break;
+		break;
 		}
 		
 		if(P[left]<=Q[right]){
-			A[col][i]=P[left];
+			A[i]=P[left];
 			left++;
 		}
 		else{
-			A[col][i]=Q[right];
+			A[i]=Q[right];
 			right++;
 		}
 	}
-	
+
 	delete []P;
 	delete []Q;
 }
+
