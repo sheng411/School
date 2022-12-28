@@ -25,25 +25,28 @@ template<class T>
 	int partition(T &A,const int p ,const int r){
 		using elType = typename	T::value_type;
 		elType x=A[r];
+		//T x=A[r];
 		int i=p-1;
 		for(int j=p;j<=r-1;j++){
-			if(A[j]<=x){
-				i=i+1;
-				swap(A[i]=A[j]);
+			if(A[j]<x){
+				i+=1;
+				swap(A[i],A[j]);
 				}
 		}
-		swap(A[i+1]=A[r]);
-		return i+1;
+		i+=1;
+		swap(A[i],A[r]);
+		return i;
 	}
 
 template<class T>
-	void QuickSort(T &A,const int p ,const int r){
+	void quickSort(T &A,const int p ,const int r){
 		if(p<r){
 			int q=partition(A,p,r);
-			QuickSort(A,p,q-1);
-			QuickSort(A,q+1,r);
+			quickSort(A,p,q-1);
+			quickSort(A,q+1,r);
 		}
 	}
+
 
 int rd(){
 	fstream myfile;
@@ -76,7 +79,7 @@ int main(void){
 		randd(vs,vi,vd,vf);
 		cout<<"rand ok\n";
 		auto start = chrono::steady_clock::now();
-		QuickSort(vs,0,fre-1);
+		quickSort(vs,0,fre-1);
 		auto end = chrono::steady_clock::now();
 		long long att=chrono::duration_cast<chrono::seconds>(end-start).count();    //秒 seconds
 		myfile.open("count.txt",ios::app);      //改app
@@ -96,7 +99,7 @@ int main(void){
 		randd(vs,vi,vd,vf);
 		cout<<"rand ok\n";
 		auto start = chrono::steady_clock::now();
-		QuickSort(vi,0,fre-1);
+		quickSort(vi,0,fre-1);
 		auto end = chrono::steady_clock::now();
 		long long att=chrono::duration_cast<chrono::seconds>(end-start).count();    //秒 seconds
 		myfile.open("count.txt",ios::app);      //改app
@@ -116,7 +119,7 @@ int main(void){
 		randd(vs,vi,vd,vf);
 		cout<<"rand ok\n";
 		auto start = chrono::steady_clock::now();
-		QuickSort(vd,0,fre-1);
+		quickSort(vd,0,fre-1);
 		auto end = chrono::steady_clock::now();
 		long long att=chrono::duration_cast<chrono::seconds>(end-start).count();    //秒 seconds
 		myfile.open("count.txt",ios::app);      //改app
@@ -136,7 +139,7 @@ int main(void){
 		randd(vs,vi,vd,vf);
 		cout<<"rand ok\n";
 		auto start = chrono::steady_clock::now();
-		QuickSort(vf,0,fre-1);
+		quickSort(vf,0,fre-1);
 		auto end = chrono::steady_clock::now();
 		long long att=chrono::duration_cast<chrono::seconds>(end-start).count();    //秒 seconds
 		myfile.open("count.txt",ios::app);      //改app
