@@ -1,4 +1,5 @@
-import socket,requests  #pip install requests
+import socket
+import requests  #pip install requests
 
 def get_lanip():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -14,3 +15,6 @@ def get_wanip():
     ip = requests.get('https://api.ipify.org').text
     return ip
 print("外部IP-->",get_wanip())
+
+ok=requests.get("https://steam.oxxostudio.tw/category/python/spider/requests.html")    #查看網址回傳狀態
+print(ok.status_code)
