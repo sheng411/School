@@ -27,13 +27,13 @@ template<class T>
 		elType x=A[r];
 		//T x=A[r];
 		int i=p-1;
-		for(int j=p;j<=r-1;j++){
+		for(int j=p;j<=r;j++){
 			if(A[j]<x){
-				i+=1;
+				i++;
 				swap(A[i],A[j]);
 				}
 		}
-		i+=1;
+		i++;
 		swap(A[i],A[r]);
 		return i;
 	}
@@ -73,7 +73,7 @@ int main(void){
     vi.reserve(500000000);
     vd.reserve(500000000);
     vf.reserve(500000000);
-
+/*
 	for (int i=0;i<smfre;i++){
 		cout<<"for go\n";
 		randd(vs,vi,vd,vf);
@@ -92,8 +92,8 @@ int main(void){
 		vf.clear();
 		myfile.close();
 	}
-
 	rd();
+*/
 	for (int i=0;i<smfre;i++){
 		cout<<"for go\n";
 		randd(vs,vi,vd,vf);
@@ -112,8 +112,8 @@ int main(void){
 		vf.clear();
 		myfile.close();
 	}
-
 	rd();
+/*
 	for (int i=0;i<smfre;i++){
 		cout<<"for go\n";
 		randd(vs,vi,vd,vf);
@@ -132,8 +132,8 @@ int main(void){
 		vf.clear();
 		myfile.close();
 	}
-
 	rd();
+
 	for (int i=0;i<smfre;i++){
 		cout<<"for go\n";
 		randd(vs,vi,vd,vf);
@@ -152,7 +152,7 @@ int main(void){
 		vf.clear();
 		myfile.close();
 	}
-	
+*/
 	
 	myfile<<"------------------------------------------------------------------------------------\n\n";
 	myfile.close();
