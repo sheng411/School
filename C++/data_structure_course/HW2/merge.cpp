@@ -1,7 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int fre=100000000;
+int fre=50000000;	//初始數
+int sfre=50000000;	//遞增數
 int smfre=5;
 
 
@@ -77,7 +78,7 @@ int rd(){
 	fstream myfile;
 	myfile.open("count.txt",ios::app);      //改app
 	myfile<<"------------------------------------------------------------------------\n\n";
-	fre=100000000;
+	fre=sfre;
 	myfile.close();
 	return 0;
 }
@@ -111,7 +112,7 @@ int main(void){
 		myfile.open("count.txt",ios::app);      //改app
 		myfile<<"Data type-->"<<" String "<<"\tData quantity-->"<<fre<<"\tUsage time-->"<<att<<"s\n\n";
 		cout<<"fre-->"<<fre<<"\tALL Time-->"<<att<<endl;
-		fre+=100000000;
+		fre+=sfre;
 		vs.clear();
 		vi.clear();
 		vd.clear();
@@ -132,7 +133,7 @@ int main(void){
 		myfile.open("count.txt",ios::app);      //改app
 		myfile<<"Data type-->"<<" int "<<"\tData quantity-->"<<fre<<"\tUsage time-->"<<att<<"s\n\n";
 		cout<<"fre-->"<<fre<<"\tALL Time-->"<<att<<endl;
-		fre+=100000000;
+		fre+=sfre;
 		vs.clear();
 		vi.clear();
 		vd.clear();
@@ -153,7 +154,7 @@ int main(void){
 		myfile.open("count.txt",ios::app);      //改app
 		myfile<<"Data type-->"<<" double "<<"\tData quantity-->"<<fre<<"\tUsage time-->"<<att<<"s\n\n";
 		cout<<"fre-->"<<fre<<"\tALL Time-->"<<att<<endl;
-		fre+=100000000;
+		fre+=sfre;
 		vs.clear();
 		vi.clear();
 		vd.clear();
@@ -174,7 +175,7 @@ int main(void){
 		myfile.open("count.txt",ios::app);      //改app
 		myfile<<"Data type-->"<<" float "<<"\tData quantity-->"<<fre<<"\tUsage time-->"<<att<<"s\n\n";
 		cout<<"fre-->"<<fre<<"\tALL Time-->"<<att<<endl;
-		fre+=100000000;
+		fre+=sfre;
 		vs.clear();
 		vi.clear();
 		vd.clear();
