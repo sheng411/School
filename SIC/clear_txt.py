@@ -20,9 +20,6 @@ try:
     output_txt.write("")
     tree_txt.write("")
 
-    print("\n* Clear all txt file !!")
-    t_ime(time())
-
 except Exception as e:
     print(f"Error{e}")
 
@@ -30,3 +27,5 @@ finally:
     hash_txt.close()
     output_txt.close()
     tree_txt.close()
+    print("\n* Clear all txt file !!")
+    t_ime(time())
