@@ -155,7 +155,7 @@ int b_tree::b_treeinsert() {				//Put symbol and loc into binarytree
 		}
 		else if(sym==ptr->data){
 			errorflag=1;
-			out_f << "錯誤的變數宣告(重複宣告)" << endl;	
+			out_f << "*Error* Incorrect variable declaration (repetitive declaration)" << endl;	
 			return 0;
 		}
 	}
@@ -434,13 +434,13 @@ int check_start2()
 
 //pass1 function
 void pass1(){
-	if(symbol()) { // 如果有symbol的話 
-			n=str.find(" ",0);//從0開始找到空白 
-			sym.assign(str,0,n);//抓到symbol
+	if(symbol()) { 					//if there is a symbol
+			n=str.find(" ",0);		//start from 0 and find the blanks
+			sym.assign(str,0,n);	//get symbol
 			fo=""; code="";re="";
-			getop(); //抓opcode的函數
+			getop(); 				//get opcode function
 			lo=dec_hex(loc);
-			data2.b_treeinsert();//建二元樹  
+			data2.b_treeinsert();	//creating a binary
 			getretadr();
 			obj_code();
 		}
@@ -459,7 +459,7 @@ void pass1(){
 }
 
 void obj_code(){
-	if(data.hash_search()!=0){ //確認是不是opcode
+	if(data.hash_search()!=0){ 		//check opcode
 				if(retadr.find(",")==string::npos){
 					data2.findloc(data2.tree,retadr);
 					if(data2.i==1){
@@ -488,7 +488,7 @@ void obj_code(){
 			}
 			else if(fo=="BYTE"){
 				if(retadr[0]=='C'){
-					loc+=retadr.length()-3;//減掉C跟兩個'
+					loc+=retadr.length()-3;		//Minus C and two '
 					for(i=2;i<retadr.length()-1;i++){
 						n=retadr[i];
 						code+=inttoA(retadr[i]);
@@ -519,12 +519,12 @@ void obj_code(){
 			}
 			else {
 				errorflag=1;
-				out_f << "錯誤的指令宣告" << endl; 
+				out_f << "*Error* Erroneous Command Announcementx" << endl; 
 			}
 }
 
 void obj_code2(){
-	if(data.hash_search()!=0){ //確認是不是opcode
+	if(data.hash_search()!=0){ 			//cheak opcode
 				if(retadr.find(",")==string::npos){
 					data2.findloc(data2.tree,retadr);
 					if(data2.i==1){
@@ -534,7 +534,7 @@ void obj_code2(){
 					}
 					else{
 						errorflag=1;
-						out_f << retadr << "沒有被宣告" << endl;
+						out_f << retadr << "Not declared" << endl;
 					}
 				}
 				else{
@@ -550,7 +550,7 @@ void obj_code2(){
 					}
 					else{
 						errorflag=1;
-						out_f << retadr << "沒有被宣告" << endl;
+						out_f << retadr << "Not declared" << endl;
 					}
 				}
 				loc+=3;
@@ -561,7 +561,7 @@ void obj_code2(){
 			}
 			else if(fo=="BYTE"){
 				if(retadr[0]=='C'){
-					loc+=retadr.length()-3;//減掉C跟兩個'
+					loc+=retadr.length()-3;		//Minus C and two '
 					for(i=2;i<retadr.length()-1;i++){
 						n=retadr[i];
 						code+=inttoA(retadr[i]);
