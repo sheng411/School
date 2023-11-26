@@ -17,27 +17,26 @@ void getretadr();
 int get_byte();
 string word_change();
 void obj_code();
-void pass1();
+void pass();
 void output();
 
 
 //symbol area
 bool symbol(){
-	if(str[0]!=' ')return true;
-	else return false;
-}
-
-bool symbol2(){
-	if(str[5]!=' ')return true;
-	else return false;
+	if(str[0]!=' '){
+		return true;
+	} 
+	else{
+		return false;
+	} 
 }
 
 
 //op table area
 struct op{
 	public:
-		string opname;
-		int opvalue;	 
+		string op_n;
+		int op_va;
 };
 
 op optable[31]={			//optable 
@@ -73,6 +72,7 @@ op optable[31]={			//optable
     {  "TIXR", 0xB8},
     {    "WD", 0xDC},
 };
+
 
 void getop(){				//functions for catching opcodes 
 	int n,t;
@@ -143,10 +143,10 @@ class b_tree{
 };
 
 int b_tree::b_treeinsert() {				//Put symbol and loc into binarytree 
-	TreeNode *preptr;
 	TreeNode *ptr=tree;
+	TreeNode *pre;
 	while(ptr!=NULL){
-		preptr=ptr;
+		pre=ptr;
 		if(sym>ptr->data){
 			ptr=ptr->rightChild;
 		}
@@ -163,18 +163,18 @@ int b_tree::b_treeinsert() {				//Put symbol and loc into binarytree
 		tree->data=sym;
 		tree->loc=lo;
 	}
-	if(sym<preptr->data){
-		preptr->leftChild=new TreeNode;
-		preptr->leftChild->data=sym;
-		preptr->leftChild->loc =lo;
+	if(sym<pre->data){
+		pre->leftChild=new TreeNode;
+		pre->leftChild->data=sym;
+		pre->leftChild->loc =lo;
 	}
-	else if(sym>preptr->data){
-		preptr->rightChild=new TreeNode;
-		preptr->rightChild->data=sym;
-		preptr->rightChild->loc =lo;
+	else if(sym>pre->data){
+		pre->rightChild=new TreeNode;
+		pre->rightChild->data=sym;
+		pre->rightChild->loc =lo;
 	}
 	ptr=tree;
-	preptr=NULL;
+	pre=NULL;
 }
 
 void b_tree::inorder_show(TreeNode *root){		//show binarytree 
@@ -220,20 +220,20 @@ void ha_sh::hash_table(){		//cheat hash table
     int index;
     for(int i=0;i<31;i++){
         index=0;
-        for(int j=0;j<optable[i].opname.length();j++){
-            index+=(optable[i].opname[j]-65)*pow(17,j);
+        for(int j=0;j<optable[i].op_n.length();j++){
+            index+=(optable[i].op_n[j]-65)*pow(17,j);
         }
         index=index%3001;
         if(table[index]==NULL){
             table[index]=new node;
-            table[index]->data=optable[i].opname;
-            table[index]->opcode=optable[i].opvalue;
+            table[index]->data=optable[i].op_n;
+            table[index]->opcode=optable[i].op_va;
         }
         else {
             last=new node;
             move=table[index]->link;
-            last->data=optable[i].opname;
-            last->opcode=optable[i].opvalue;
+            last->data=optable[i].op_n;
+            last->opcode=optable[i].op_va;
             table[index]->link=last;
             last->link=move;
         }
@@ -411,29 +411,9 @@ int check_start()
 		
 }
 
-int check_start2()
-{	
-	if(str.find("START")!=string::npos) 
-       	{
-       		i=str.length()-1;
-       		while(str[i]!=' ')//為了讀到地址 
-			{		   	
-			   	startadd=str[i]+startadd;
-			   	i=i-1;
-			}
-			//cout<<startadd.length()<<endl;
-			loc=hex_dec(startadd);
-			startflag=1;
-			out_f << str << endl;
-			//cout << loc << endl;
-			return 1;		 
-		}
-		
-}
 
-
-//pass1 function
-void pass1(){
+//pass function
+void pass(){
 	if(symbol()) { 					//if there is a symbol
 			n=str.find(" ",0);		//start from 0 and find the blanks
 			sym.assign(str,0,n);	//get symbol
@@ -450,7 +430,6 @@ void pass1(){
 			fo=getop2(str);
 			lo=dec_hex(loc);
 			getretadr();
-			//cout << "       " << fo <<  " " << lo << " " << retadr << endl;
 			obj_code();
 		}
 	if(fo=="END"){

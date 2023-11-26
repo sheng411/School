@@ -16,7 +16,7 @@ int main(){
 		   	continue;
 		}
        	if(startflag==1){
-			pass1();
+			pass();
 			if(endflag==1) break;
 			if(errorflag==1) break;
 			output();
