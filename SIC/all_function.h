@@ -39,7 +39,7 @@ struct op{
 		int op_va;
 };
 
-op optable[31]={			//optable 
+op opt[31]={			//optable 
     {   "ADD", 0x18},
     { "CLEAR", 0xB4},
     {  "COMP", 0x28},
@@ -202,8 +202,8 @@ class ha_sh{
     friend class node;
     public:
         ha_sh(){
-            table=new node *[3001];
-            for(int i=0;i<3001;i++){
+            table=new node *[4027];
+            for(int i=0;i<4027;i++){
                 table[i]=NULL;
             }
         }
@@ -215,65 +215,65 @@ class ha_sh{
 };
 
 void ha_sh::hash_table(){		//cheat hash table 
-    node  *move;
-    node  *last;
-    int index;
+    node  *m;		//move
+    node  *la;		//last
+    int ind;		//index
     for(int i=0;i<31;i++){
-        index=0;
-        for(int j=0;j<optable[i].op_n.length();j++){
-            index+=(optable[i].op_n[j]-65)*pow(17,j);
+        ind=0;
+        for(int j=0;j<opt[i].op_n.length();j++){
+            ind+=(opt[i].op_n[j]-65)*pow(97,j);		//pow number is random prime number
         }
-        index=index%3001;
-        if(table[index]==NULL){
-            table[index]=new node;
-            table[index]->data=optable[i].op_n;
-            table[index]->opcode=optable[i].op_va;
+        ind%=4027;		//random
+        if(table[ind]==NULL){
+            table[ind]=new node;
+            table[ind]->data=opt[i].op_n;
+            table[ind]->opcode=opt[i].op_va;
         }
         else {
-            last=new node;
-            move=table[index]->link;
-            last->data=optable[i].op_n;
-            last->opcode=optable[i].op_va;
-            table[index]->link=last;
-            last->link=move;
+            la=new node;
+            m=table[ind]->link;
+            la->data=opt[i].op_n;
+            la->opcode=opt[i].op_va;
+            table[ind]->link=la;
+            la->link=m;
         }
     }
 }
 
 bool ha_sh::hash_search(){	//Find Instructions 
-    int index;
-    node *first;
-    first=new node;
-        index=0;
+    int ind;
+    node *fir;		//first
+    fir=new node;
+        ind=0;
         for(int j=0;j<fo.length();j++){
-            index+=(fo[j]-65)*pow(17,j);
+            ind+=(fo[j]-65)*pow(97,j);
         }
-        index=index%3001;
-        first=table[index];
-        while(first!=NULL){
-            if(first->data==fo){
+        ind=ind%4027;
+        fir=table[ind];
+        while(fir!=NULL){
+            if(fir->data==fo){
                 return true;
             }
-            else first=first->link;
+            else fir=fir->link;
         }
         return false;
 }
 
 int ha_sh::hash_opcode(){
-	int index;
-    node *first;
-    first=new node;
-        index=0;
+	int ind;
+    node *fir;		//first
+    fir=new node;
+        ind=0;
         for(int j=0;j<fo.length();j++){
-            index+=(fo[j]-65)*pow(17,j);
+            ind+=(fo[j]-65)*pow(97,j);
         }
-        index=index%3001;
-        first=table[index];
-        while(first!=NULL){
-            if(first->data==fo){
-                return first->opcode;
+        ind=ind%4027;
+        fir=table[ind];
+        while(fir!=NULL){
+            if(fir->data==fo){
+                return fir->opcode;
             }
-            else first=first->link;
+            else fir=fir->link;
         }
 }
 
@@ -281,7 +281,7 @@ void ha_sh::show_hash(){		//show optable
     node *temp;
     temp=new node;
     temp->data="";
-    for(int i=0;i<3001;i++){
+    for(int i=0;i<4027;i++){
         temp=table[i];
         while(temp!=NULL){
             hash_f<< temp->data << " " << hex<<temp->opcode << " ";

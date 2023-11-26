@@ -12,9 +12,9 @@ def t_ime(a):
     print(Y,"/",M,"/",D,"  ",h,":",m,":",s,"\n")
 
 try:
-    hash_txt = open('School/SIC/hash.txt', 'w')
-    output_txt = open('School/SIC/output.txt', 'w')
-    tree_txt = open('School/SIC/tree.txt', 'w')
+    hash_txt = open('D:/code/School/SIC/hash.txt', 'w')
+    output_txt = open('D:/code/School/SIC/output.txt', 'w')
+    tree_txt = open('D:/code/School/SIC/tree.txt', 'w')
 
     hash_txt.write("")
     output_txt.write("")
