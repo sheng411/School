@@ -16,7 +16,7 @@ string getop2(string x);
 void getretadr();
 int get_byte();
 string word_change();
-void obj_code();
+void ob_c();
 void pass();
 void output();
 
@@ -33,13 +33,13 @@ bool symbol(){
 
 
 //op table area
-struct op{
+struct op_c{
 	public:
 		string op_n;
 		int op_va;
 };
 
-op opt[31]={			//optable 
+op_c opt[31]={			//optable 
     {   "ADD", 0x18},
     { "CLEAR", 0xB4},
     {  "COMP", 0x28},
@@ -338,17 +338,17 @@ string inttoA(int n){   //output is 2 char
 
 int hex_dec(string s){	//Hex to dec 
     string Hex="0123456789ABCDEF";
-    int t=0,ans=0,k;
-    k=s.length()-1;
+    int n=0,ans=0,m;
+    m=s.length()-1;
     for(int i=0;i<s.length();i++){
     	for(int j=0;j<16;j++){
     		if(s[i]==Hex[j]){
-    			t=j;
+    			n=j;
     			break;
 			} 
 		}
-		ans+=pow(16,k)*t;
-		k-=1;
+		ans+=pow(16,m)*n;
+		m-=1;
 	}
 	return ans;
 }
@@ -422,7 +422,7 @@ void pass(){
 			lo=dec_hex(loc);
 			data2.b_treeinsert();	//creating a binary
 			getretadr();
-			obj_code();
+			ob_c();
 		}
 		else {
 			sym="       ";
@@ -430,14 +430,14 @@ void pass(){
 			fo=getop2(str);
 			lo=dec_hex(loc);
 			getretadr();
-			obj_code();
+			ob_c();
 		}
 	if(fo=="END"){
 		out_f << str;
 	}
 }
 
-void obj_code(){
+void ob_c(){
 	if(data.hash_search()!=0){ 		//check opcode
 				if(retadr.find(",")==string::npos){
 					data2.findloc(data2.tree,retadr);
@@ -480,13 +480,13 @@ void obj_code(){
 					loc+=(retadr.length()-3+1)/2;
 				}
 			}
+			else if(fo=="RESB"){
+				loc+=get_byte();
+				code="";
+			}
 			else if(fo=="RESW"){
 				byten=get_byte();
 				loc+=byten*3;
-				code="";
-			}
-			else if(fo=="RESB"){
-				loc+=get_byte();
 				code="";
 			}
 			else if(fo=="RSUB"){
@@ -499,75 +499,6 @@ void obj_code(){
 			else {
 				errorflag=1;
 				out_f << "*Error* Erroneous Command Announcementx" << endl; 
-			}
-}
-
-void obj_code2(){
-	if(data.hash_search()!=0){ 			//cheak opcode
-				if(retadr.find(",")==string::npos){
-					data2.findloc(data2.tree,retadr);
-					if(data2.i==1){
-						code+=inttoA(data.hash_opcode());
-						code+=data2.treeloc;
-						data2.i=0;
-					}
-					else{
-						errorflag=1;
-						out_f << retadr << "Not declared" << endl;
-					}
-				}
-				else{
-					n=retadr.find(",");
-					for(int i=0;i<n;i++){
-						re+=retadr[i];
-					}
-					data2.findloc(data2.tree,re);
-					if(data2.i==1){
-						code+=inttoA(data.hash_opcode());
-						code+=dec_hex(hex_dec(data2.treeloc)+32768);//16**3*8
-						data2.i=0;
-					}
-					else{
-						errorflag=1;
-						out_f << retadr << "Not declared" << endl;
-					}
-				}
-				loc+=3;
-			}
-			else if(fo=="WORD"){
-				code=word_change();
-				loc+=3;
-			}
-			else if(fo=="BYTE"){
-				if(retadr[0]=='C'){
-					loc+=retadr.length()-3;		//Minus C and two '
-					for(i=2;i<retadr.length()-1;i++){
-						n=retadr[i];
-						code+=inttoA(retadr[i]);
-					}
-				}
-				else if(retadr[0]=='X'){
-					for(i=2;i<retadr.length()-1;i++){
-						code+=retadr[i];
-					}
-					loc+=(retadr.length()-3+1)/2;
-				}
-			}
-			else if(fo=="RESW"){
-				byten=get_byte();
-				loc+=byten*3;
-				code="";
-			}
-			else if(fo=="RESB"){
-				loc+=get_byte();
-				code="";
-			}
-			else if(fo=="RSUB"){
-				loc+=3;
-				code="4C0000";
-			}
-			else if(fo=="END"){
-				endflag=1;
 			}
 }
 
