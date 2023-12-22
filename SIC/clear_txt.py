@@ -13,11 +13,15 @@ def t_ime(a):
 
 try:
     hash_txt = open('D:/code/School/SIC/hash.txt', 'w')
-    output_txt = open('D:/code/School/SIC/output.txt', 'w')
+    output1_txt = open('D:/code/School/SIC/pass1_output.txt', 'w')
+    output2_txt = open('D:/code/School/SIC/pass2_output.txt', 'w')
+    program_txt = open('D:/code/School/SIC/program.txt', 'w')
     tree_txt = open('D:/code/School/SIC/tree.txt', 'w')
 
     hash_txt.write("")
-    output_txt.write("")
+    output1_txt.write("")
+    output2_txt.write("")
+    program_txt.write("")
     tree_txt.write("")
 
 except Exception as e:
@@ -25,7 +29,9 @@ except Exception as e:
 
 finally:
     hash_txt.close()
-    output_txt.close()
+    output1_txt.close()
+    output2_txt.close()
+    program_txt.close()
     tree_txt.close()
     print("\n* Clear all txt file !!")
     t_ime(time())
