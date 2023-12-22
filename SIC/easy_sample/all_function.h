@@ -3,8 +3,8 @@ using namespace std;
 
 bool flag,f,errorflag=0,startflag=0,endflag=0;
 int i=0,byten,n,loc=0,firstadd=0,counter=0;
-string startadd="",sym="",fo="",lo="",str="",retadr="",code="",re="";
-ofstream out_f,hash_f,s;
+string startadd="",sym="",fo="",lo="",str="",retadr="",code="",re="",pro_t="";
+ofstream out_f,hash_f,s,program;
 
 
 int check_start();
@@ -18,6 +18,7 @@ int get_byte();
 string word_change();
 void ob_c();
 void pass();
+void pro_txt();
 void output();
 
 
@@ -29,6 +30,11 @@ bool symbol(){
 	else{
 		return false;
 	} 
+}
+
+bool symbol2(){
+	if(str[5]!=' ')return true;
+	else return false;
 }
 
 
@@ -72,7 +78,6 @@ op_c opt[31]={			//optable
     {  "TIXR", 0xB8},
     {    "WD", 0xDC},
 };
-
 
 void getop(){				//functions for catching opcodes 
 	int n,t;
@@ -315,6 +320,28 @@ string dec_hex(int n){   //output is 4 char
 	return ans;
 }
 
+string dec_hex6(int n){   //output is 6 char /intTohex6/
+    string ans;
+    int t=0,length;
+    char x[]={'A','B','C','D','E','F'},y;
+    
+    while(n!=0){
+    	t=n%16;
+    	if(t>=10) {
+    		t=t-10;
+    		ans=x[t]+ans;
+		}
+		else{
+			y=t+48;
+			ans=y+ans;
+		}
+		n=n/16;
+	}
+	length=6-ans.length();
+	for(int i=0;i<length;i++) ans='0'+ans;
+	return ans;
+}
+
 string inttoA(int n){   //output is 2 char 
     string ans;
     int t,length;
@@ -354,6 +381,79 @@ int hex_dec(string s){	//Hex to dec
 }
 
 
+//get opcode and use
+void get_op(){			//get opcode
+	int n,k;
+	n=str.find(" ",0);
+	for(int i=n;i<str.length();i++){
+		if(str[i]!=' '){
+			k=i;
+			break;
+		}
+	}
+	for(int i=k;i<str.length();i++){		
+		if(str[i]==' ') break;
+		fo+=str[i]; 
+	}
+}
+
+string get_op2(string x){ 		//no symbol way to catch blanks
+	string fo;
+	int t;
+	for(int i=0;i<x.length();i++){
+		if(x[i]!=' '){
+			t=i;
+			break;
+		}
+	}
+	for(int i=t;i<x.length();i++){
+		if(x[i]==' ')break;
+		fo+=x[i];
+	}
+	return fo;
+}
+
+void get_op3(){			//pass2 get opcode
+	int n,k;
+	n=str.find(" ",5);
+	for(int i=n;i<str.length();i++){
+		if(str[i]!=' '){
+			k=i;
+			break;
+		}
+	}
+	for(int i=k;i<str.length();i++){		
+		if(str[i]==' ') break;
+		fo+=str[i]; 
+	}
+}
+
+string get_op4(string x){ 		//pass2 no symbol way to catch blanks
+	string fo;
+	int t;
+	for(int i=5;i<x.length();i++){
+		if(x[i]!=' '){
+			t=i;
+			break;
+		}
+	}
+	for(int i=t;i<x.length();i++){
+		if(x[i]==' ')break;
+		fo+=x[i];
+	}
+	return fo;
+}
+
+void get_taget(){		//get taget address
+	int n;
+	retadr="";
+	int i=str.find(fo,0)+fo.length();
+	for(;i<str.length();i++){
+		if(str[i]!=32) retadr+=str[i];
+	}
+}
+
+
 //other calculation
 int get_byte(){			//calculation "RESW"
 	int ans,a,j=retadr.length()-1;
@@ -385,30 +485,176 @@ b_tree data2;
 
 
 //check get "START"
-int check_start()
-{	
-	if(str.find("START")!=string::npos) 
-       	{
-       		i=str.length()-1;
-       		while(str[i]!=' ')//為了讀到地址 
-			{		   	
-			   	startadd=str[i]+startadd;
-			   	i=i-1;
-			}
-			//cout<<startadd.length()<<endl;
-			loc=hex_dec(startadd);
-			firstadd=loc;
-			startflag=1;
-			out_f << str << endl;
-			n=str.find(" ",0);//從0開始找到空白 
-			sym.assign(str,0,n);//抓到symbol
-			lo=startadd;
-			data2.b_treeinsert();
-			//cout << loc << endl;
-			
-			return 1;		 
+int check_start(){	
+	if(str.find("START")!=string::npos){
+       	i=str.length()-1;
+       	while(str[i]!=' '){//為了讀到地址 	   	
+		   	startadd=str[i]+startadd;
+		   	i=i-1;
 		}
+		//cout<<startadd.length()<<endl;
+		loc=hex_dec(startadd);
+		firstadd=loc;
+		startflag=1;
+		out_f << str << endl;
+		n=str.find(" ",0);//從0開始找到空白 
+		sym.assign(str,0,n);//抓到symbol
+		lo=startadd;
+		data2.b_treeinsert();
+		//cout << loc << endl;
 		
+		return 1;		 
+	}
+}
+
+int check_start2(){	
+	if(str.find("START")!=string::npos) {
+       	i=str.length()-1;
+       	while(str[i]!=' '){		//為了讀到地址	   	
+		   	startadd=str[i]+startadd;
+		   	i=i-1;
+		}
+		loc=hex_dec(startadd);
+		startflag=1;
+		out_f << str << endl;
+		return 1;		 
+	}
+}
+
+
+//object code area
+void ob_c(){
+	if(data.hash_search()!=0){ 		//check opcode
+		if(retadr.find(",")==string::npos){
+			data2.findloc(data2.tree,retadr);
+			if(data2.i==1){
+				code+=inttoA(data.hash_opcode());
+				code+=data2.treeloc;
+				data2.i=0;
+			}
+		}
+		else{
+			n=retadr.find(",");
+			for(int i=0;i<n;i++){
+				re+=retadr[i];
+			}
+			data2.findloc(data2.tree,re);
+			if(data2.i==1){
+				code+=inttoA(data.hash_opcode());
+				code+=dec_hex(hex_dec(data2.treeloc)+32768);//16**3*8
+				data2.i=0;
+			}
+		}
+		loc+=3;
+	}
+	else if(fo=="WORD"){
+		code=word_change();
+		loc+=3;
+	}
+	else if(fo=="BYTE"){
+		if(retadr[0]=='C'){
+			loc+=retadr.length()-3;		//Minus C and two '
+			for(i=2;i<retadr.length()-1;i++){
+				n=retadr[i];
+				code+=inttoA(retadr[i]);
+			}
+		}
+		else if(retadr[0]=='X'){
+			for(i=2;i<retadr.length()-1;i++){
+				code+=retadr[i];
+			}
+			loc+=(retadr.length()-3+1)/2;
+		}
+	}
+	else if(fo=="RESB"){
+		loc+=get_byte();
+		code="";
+	}
+	else if(fo=="RESW"){
+		byten=get_byte();
+		loc+=byten*3;
+		code="";
+	}
+	else if(fo=="RSUB"){
+		loc+=3;
+		code="4C0000";
+	}
+	else if(fo=="END"){
+		endflag=1;
+	}
+	else {
+		errorflag=1;
+		out_f << "*Error* Erroneous Command Announcementx" << endl; 
+	}
+}
+
+void ob_c2(){
+	if(data.hash_search()!=0){ 		//check opcode
+		if(retadr.find(",")==string::npos){
+			data2.findloc(data2.tree,retadr);
+			if(data2.i==1){
+				code+=inttoA(data.hash_opcode());
+				code+=data2.treeloc;
+				data2.i=0;
+			}
+			else{
+				errorflag=1;
+				out_f << retadr << "沒有被宣告" << endl;
+			}
+		}
+		else{
+			n=retadr.find(",");
+			for(int i=0;i<n;i++){
+				re+=retadr[i];
+			}
+			data2.findloc(data2.tree,re);
+			if(data2.i==1){
+				code+=inttoA(data.hash_opcode());
+				code+=dec_hex(hex_dec(data2.treeloc)+32768);//16**3*8
+				data2.i=0;
+			}
+			else{
+				errorflag=1;
+				out_f << retadr << "沒有被宣告" << endl;
+			}
+		}
+		loc+=3;
+	}
+	else if(fo=="WORD"){
+		code=word_change();
+		loc+=3;
+	}
+	else if(fo=="BYTE"){
+		if(retadr[0]=='C'){
+			loc+=retadr.length()-3;		//diminish C and two '
+			for(i=2;i<retadr.length()-1;i++){
+				n=retadr[i];
+				code+=inttoA(retadr[i]);
+			}
+		}
+		else if(retadr[0]=='X'){
+			for(i=2;i<retadr.length()-1;i++){
+				code+=retadr[i];
+			}
+			loc+=(retadr.length()-3+1)/2;
+		}
+	}
+	else if(fo=="RESW"){
+		byten=get_byte();
+		loc+=byten*3;
+		code="";
+	}
+	else if(fo=="RESB"){
+		loc+=get_byte();
+		code="";
+	}
+	else if(fo=="RSUB"){
+		loc+=3;
+		code="4C0000";
+	}
+	else if(fo=="END"){
+		endflag=1;
+	}
 }
 
 
@@ -437,69 +683,53 @@ void pass(){
 	}
 }
 
-void ob_c(){
-	if(data.hash_search()!=0){ 		//check opcode
-				if(retadr.find(",")==string::npos){
-					data2.findloc(data2.tree,retadr);
-					if(data2.i==1){
-						code+=inttoA(data.hash_opcode());
-						code+=data2.treeloc;
-						data2.i=0;
-					}
-				}
-				else{
-					n=retadr.find(",");
-					for(int i=0;i<n;i++){
-						re+=retadr[i];
-					}
-					data2.findloc(data2.tree,re);
-					if(data2.i==1){
-						code+=inttoA(data.hash_opcode());
-						code+=dec_hex(hex_dec(data2.treeloc)+32768);//16**3*8
-						data2.i=0;
-					}
-				}
-				loc+=3;
-			}
-			else if(fo=="WORD"){
-				code=word_change();
-				loc+=3;
-			}
-			else if(fo=="BYTE"){
-				if(retadr[0]=='C'){
-					loc+=retadr.length()-3;		//Minus C and two '
-					for(i=2;i<retadr.length()-1;i++){
-						n=retadr[i];
-						code+=inttoA(retadr[i]);
-					}
-				}
-				else if(retadr[0]=='X'){
-					for(i=2;i<retadr.length()-1;i++){
-						code+=retadr[i];
-					}
-					loc+=(retadr.length()-3+1)/2;
-				}
-			}
-			else if(fo=="RESB"){
-				loc+=get_byte();
-				code="";
-			}
-			else if(fo=="RESW"){
-				byten=get_byte();
-				loc+=byten*3;
-				code="";
-			}
-			else if(fo=="RSUB"){
-				loc+=3;
-				code="4C0000";
-			}
-			else if(fo=="END"){
-				endflag=1;
-			}
-			else {
-				errorflag=1;
-				out_f << "*Error* Erroneous Command Announcementx" << endl; 
-			}
+void pass2(){
+	if(symbol2()) { 				//if there is a symbol
+			n=str.find(" ",5);		//start from 0 and find the blanks
+			sym.assign(str,5,n);	//get symbol
+			fo=""; code="";re="";
+			get_op3(); 				//get opcode function
+			lo=dec_hex(loc);
+			getretadr();
+			ob_c2();
+		}
+		else {
+			sym="       ";
+			code="";re="";
+			fo=get_op4(str);
+			lo=dec_hex(loc);
+			getretadr();
+			ob_c2();
+		}
+		pro_txt();
+		if(fo=="END") out_f << str;
+}
+
+
+//program output
+void pro_txt(){
+	if(endflag==1){
+		program << inttoA(counter) << pro_t <<endl;
+		program << "E^00" << dec_hex(firstadd);
+	}
+	if(counter<=27 && code!=""){
+		if(counter==0){
+			program << "T^00" << lo << "^";
+		}
+		pro_t=pro_t+"^"+code;
+		counter+=code.length()/2;
+	}
+	else if(fo=="RESW"||fo=="RESB"||fo=="RSUB") {
+		if(counter!=0)program << inttoA(counter) << pro_t << endl;
+		counter=0;
+		pro_t="";
+	}
+	else if(counter>27){
+		program << inttoA(counter) << pro_t << endl;
+		counter=3;
+		pro_t="^"+code;
+		program << "T^00" << lo << "^";
+	}
 }
 
 
@@ -519,6 +749,31 @@ void output(){
 		
 		for(int a=0;a<9;a++){
 			if(a<retadr.length()) out_f << retadr[a];
+		}
+		out_f << endl;
+}
+
+void output2(){
+	out_f << lo << " ";
+		
+		for(int a=0;a<8;a++){
+			if(a<sym.length()) out_f << sym[a];
+			else out_f << " ";
+		}
+		
+		for(int a=0;a<5;a++){
+			if(a<fo.length()) out_f << fo[a];
+			else out_f << " ";
+		}
+		
+		for(int a=0;a<9;a++){
+			if(a<retadr.length()) out_f << retadr[a];
+			else out_f << " ";
+		}
+		
+		for(int a=0;a<8;a++){
+			if(a<code.length()) out_f << code[a];
+			else out_f << " ";
 		}
 		out_f << endl;
 }
