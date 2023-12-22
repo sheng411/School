@@ -4,7 +4,7 @@ using namespace std;
 
 
 int main(){
-	//open file
+	//pass1
 	out_f.open("output.txt");
 	hash_f.open("hash.txt");
 	s.open("tree.txt");
