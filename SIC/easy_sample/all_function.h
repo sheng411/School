@@ -488,7 +488,7 @@ b_tree data2;
 int check_start(){	
 	if(str.find("START")!=string::npos){
        	i=str.length()-1;
-       	while(str[i]!=' '){//為了讀到地址 	   	
+       	while(str[i]!=' '){				//get address	   	
 		   	startadd=str[i]+startadd;
 		   	i=i-1;
 		}
@@ -497,12 +497,10 @@ int check_start(){
 		firstadd=loc;
 		startflag=1;
 		out_f << str << endl;
-		n=str.find(" ",0);//從0開始找到空白 
-		sym.assign(str,0,n);//抓到symbol
+		n=str.find(" ",0);				//Start from 0 and find the blanks
+		sym.assign(str,0,n);			//get symbol
 		lo=startadd;
 		data2.b_treeinsert();
-		//cout << loc << endl;
-		
 		return 1;		 
 	}
 }
@@ -510,7 +508,7 @@ int check_start(){
 int check_start2(){	
 	if(str.find("START")!=string::npos) {
        	i=str.length()-1;
-       	while(str[i]!=' '){		//為了讀到地址	   	
+       	while(str[i]!=' '){		//get address   	
 		   	startadd=str[i]+startadd;
 		   	i=i-1;
 		}
@@ -599,7 +597,7 @@ void ob_c2(){
 			}
 			else{
 				errorflag=1;
-				out_f << retadr << "沒有被宣告" << endl;
+				out_f << retadr << "*Error* Erroneous Command Announcementx" << endl;
 			}
 		}
 		else{
@@ -615,7 +613,7 @@ void ob_c2(){
 			}
 			else{
 				errorflag=1;
-				out_f << retadr << "沒有被宣告" << endl;
+				out_f << retadr << "*Error* Erroneous Command Announcementx" << endl;
 			}
 		}
 		loc+=3;
