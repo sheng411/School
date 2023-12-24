@@ -33,8 +33,12 @@ bool symbol(){
 }
 
 bool symbol2(){
-	if(str[5]!=' ')return true;
-	else return false;
+	if(str[5]!=' '){
+		return true;
+	}
+	else{
+		return false;
+	}
 }
 
 
@@ -110,6 +114,37 @@ string getop2(string x){ 	//there is no symbolic way to catch blanks
 	return fo;
 }
 
+void get_op3(){			//pass2 get opcode
+	int n,k;
+	n=str.find(" ",5);
+	for(int i=n;i<str.length();i++){
+		if(str[i]!=' '){
+			k=i;
+			break;
+		}
+	}
+	for(int i=k;i<str.length();i++){		
+		if(str[i]==' ') break;
+		fo+=str[i]; 
+	}
+}
+
+string get_op4(string x){ 		//pass2 no symbol way to catch blanks
+	string fo;
+	int t;
+	for(int i=5;i<x.length();i++){
+		if(x[i]!=' '){
+			t=i;
+			break;
+		}
+	}
+	for(int i=t;i<x.length();i++){
+		if(x[i]==' ')break;
+		fo+=x[i];
+	}
+	return fo;
+}
+
 void getretadr(){			//function to capture taget address 
 	int n;
 	retadr="";
@@ -118,6 +153,16 @@ void getretadr(){			//function to capture taget address
 		if(str[i]!=32) retadr+=str[i];
 	}
 }
+
+void get_taget(){		//get taget address
+	int n;
+	retadr="";
+	int i=str.find(fo,0)+fo.length();
+	for(;i<str.length();i++){
+		if(str[i]!=32) retadr+=str[i];
+	}
+}
+
 
 
 //binarytree area
@@ -381,79 +426,6 @@ int hex_dec(string s){	//Hex to dec
 }
 
 
-//get opcode and use
-void get_op(){			//get opcode
-	int n,k;
-	n=str.find(" ",0);
-	for(int i=n;i<str.length();i++){
-		if(str[i]!=' '){
-			k=i;
-			break;
-		}
-	}
-	for(int i=k;i<str.length();i++){		
-		if(str[i]==' ') break;
-		fo+=str[i]; 
-	}
-}
-
-string get_op2(string x){ 		//no symbol way to catch blanks
-	string fo;
-	int t;
-	for(int i=0;i<x.length();i++){
-		if(x[i]!=' '){
-			t=i;
-			break;
-		}
-	}
-	for(int i=t;i<x.length();i++){
-		if(x[i]==' ')break;
-		fo+=x[i];
-	}
-	return fo;
-}
-
-void get_op3(){			//pass2 get opcode
-	int n,k;
-	n=str.find(" ",5);
-	for(int i=n;i<str.length();i++){
-		if(str[i]!=' '){
-			k=i;
-			break;
-		}
-	}
-	for(int i=k;i<str.length();i++){		
-		if(str[i]==' ') break;
-		fo+=str[i]; 
-	}
-}
-
-string get_op4(string x){ 		//pass2 no symbol way to catch blanks
-	string fo;
-	int t;
-	for(int i=5;i<x.length();i++){
-		if(x[i]!=' '){
-			t=i;
-			break;
-		}
-	}
-	for(int i=t;i<x.length();i++){
-		if(x[i]==' ')break;
-		fo+=x[i];
-	}
-	return fo;
-}
-
-void get_taget(){		//get taget address
-	int n;
-	retadr="";
-	int i=str.find(fo,0)+fo.length();
-	for(;i<str.length();i++){
-		if(str[i]!=32) retadr+=str[i];
-	}
-}
-
-
 //other calculation
 int get_byte(){			//calculation "RESW"
 	int ans,a,j=retadr.length()-1;
@@ -479,6 +451,7 @@ string word_change(){	//calculation "WORD"
 	}
 	return ans;
 }
+
 
 ha_sh data;
 b_tree data2;
@@ -597,7 +570,7 @@ void ob_c2(){
 			}
 			else{
 				errorflag=1;
-				out_f << retadr << "*Error* Erroneous Command Announcementx" << endl;
+				out_f << retadr << "*Error 1* Erroneous Command Announcementx" << endl;
 			}
 		}
 		else{
@@ -608,12 +581,12 @@ void ob_c2(){
 			data2.findloc(data2.tree,re);
 			if(data2.i==1){
 				code+=inttoA(data.hash_opcode());
-				code+=dec_hex(hex_dec(data2.treeloc)+32768);//16**3*8
+				code+=dec_hex(hex_dec(data2.treeloc)+32768);		//16**3*8	HEX:0x8000
 				data2.i=0;
 			}
 			else{
 				errorflag=1;
-				out_f << retadr << "*Error* Erroneous Command Announcementx" << endl;
+				out_f << retadr << "*Error 2* Erroneous Command Announcementx" << endl;
 			}
 		}
 		loc+=3;
@@ -683,7 +656,7 @@ void pass(){
 
 void pass2(){
 	if(symbol2()) { 				//if there is a symbol
-			n=str.find(" ",5);		//start from 0 and find the blanks
+			n=str.find(" ",5);		//start from 5 and find the blanks
 			sym.assign(str,5,n);	//get symbol
 			fo=""; code="";re="";
 			get_op3(); 				//get opcode function
