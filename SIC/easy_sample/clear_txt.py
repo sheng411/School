@@ -1,5 +1,7 @@
 from time import *
 
+path='D:/code/School/SIC/easy_sample/'
+
 #time
 def t_ime(a):
     t=localtime(a)
@@ -12,11 +14,11 @@ def t_ime(a):
     print(Y,"/",M,"/",D,"  ",h,":",m,":",s,"\n")
 
 try:
-    hash_txt = open('D:/code/School/SIC/easy_sample/hash.txt', 'w')
-    output1_txt = open('D:/code/School/SIC/easy_sample/pass1_output.txt', 'w')
-    output2_txt = open('D:/code/School/SIC/easy_sample/pass2_output.txt', 'w')
-    program_txt = open('D:/code/School/SIC/easy_sample/program.txt', 'w')
-    tree_txt = open('D:/code/School/SIC/easy_sample/tree.txt', 'w')
+    hash_txt = open(f'{path}hash.txt', 'w')
+    output1_txt = open(f'{path}pass1_output.txt', 'w')
+    output2_txt = open(f'{path}pass2_output.txt', 'w')
+    program_txt = open(f'{path}program.txt', 'w')
+    tree_txt = open(f'{path}tree.txt', 'w')
 
     hash_txt.write("")
     output1_txt.write("")
