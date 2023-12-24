@@ -33,8 +33,12 @@ bool symbol(){
 }
 
 bool symbol2(){
-	if(str[5]!=' ')return true;
-	else return false;
+	if(str[5]!=' '){
+		return true;
+	}
+	else{
+		return false;
+	}
 }
 
 
@@ -110,6 +114,37 @@ string getop2(string x){ 	//there is no symbolic way to catch blanks
 	return fo;
 }
 
+void get_op3(){			//pass2 get opcode
+	int n,k;
+	n=str.find(" ",5);
+	for(int i=n;i<str.length();i++){
+		if(str[i]!=' '){
+			k=i;
+			break;
+		}
+	}
+	for(int i=k;i<str.length();i++){		
+		if(str[i]==' ') break;
+		fo+=str[i]; 
+	}
+}
+
+string get_op4(string x){ 		//pass2 no symbol way to catch blanks
+	string fo;
+	int t;
+	for(int i=5;i<x.length();i++){
+		if(x[i]!=' '){
+			t=i;
+			break;
+		}
+	}
+	for(int i=t;i<x.length();i++){
+		if(x[i]==' ')break;
+		fo+=x[i];
+	}
+	return fo;
+}
+
 void getretadr(){			//function to capture taget address 
 	int n;
 	retadr="";
@@ -118,6 +153,16 @@ void getretadr(){			//function to capture taget address
 		if(str[i]!=32) retadr+=str[i];
 	}
 }
+
+void get_taget(){		//get taget address
+	int n;
+	retadr="";
+	int i=str.find(fo,0)+fo.length();
+	for(;i<str.length();i++){
+		if(str[i]!=32) retadr+=str[i];
+	}
+}
+
 
 
 //binarytree area
@@ -381,79 +426,6 @@ int hex_dec(string s){	//Hex to dec
 }
 
 
-//get opcode and use
-void get_op(){			//get opcode
-	int n,k;
-	n=str.find(" ",0);
-	for(int i=n;i<str.length();i++){
-		if(str[i]!=' '){
-			k=i;
-			break;
-		}
-	}
-	for(int i=k;i<str.length();i++){		
-		if(str[i]==' ') break;
-		fo+=str[i]; 
-	}
-}
-
-string get_op2(string x){ 		//no symbol way to catch blanks
-	string fo;
-	int t;
-	for(int i=0;i<x.length();i++){
-		if(x[i]!=' '){
-			t=i;
-			break;
-		}
-	}
-	for(int i=t;i<x.length();i++){
-		if(x[i]==' ')break;
-		fo+=x[i];
-	}
-	return fo;
-}
-
-void get_op3(){			//pass2 get opcode
-	int n,k;
-	n=str.find(" ",5);
-	for(int i=n;i<str.length();i++){
-		if(str[i]!=' '){
-			k=i;
-			break;
-		}
-	}
-	for(int i=k;i<str.length();i++){		
-		if(str[i]==' ') break;
-		fo+=str[i]; 
-	}
-}
-
-string get_op4(string x){ 		//pass2 no symbol way to catch blanks
-	string fo;
-	int t;
-	for(int i=5;i<x.length();i++){
-		if(x[i]!=' '){
-			t=i;
-			break;
-		}
-	}
-	for(int i=t;i<x.length();i++){
-		if(x[i]==' ')break;
-		fo+=x[i];
-	}
-	return fo;
-}
-
-void get_taget(){		//get taget address
-	int n;
-	retadr="";
-	int i=str.find(fo,0)+fo.length();
-	for(;i<str.length();i++){
-		if(str[i]!=32) retadr+=str[i];
-	}
-}
-
-
 //other calculation
 int get_byte(){			//calculation "RESW"
 	int ans,a,j=retadr.length()-1;
@@ -480,6 +452,7 @@ string word_change(){	//calculation "WORD"
 	return ans;
 }
 
+
 ha_sh data;
 b_tree data2;
 
@@ -488,7 +461,7 @@ b_tree data2;
 int check_start(){	
 	if(str.find("START")!=string::npos){
        	i=str.length()-1;
-       	while(str[i]!=' '){//為了讀到地址 	   	
+       	while(str[i]!=' '){				//get address	   	
 		   	startadd=str[i]+startadd;
 		   	i=i-1;
 		}
@@ -497,12 +470,10 @@ int check_start(){
 		firstadd=loc;
 		startflag=1;
 		out_f << str << endl;
-		n=str.find(" ",0);//從0開始找到空白 
-		sym.assign(str,0,n);//抓到symbol
+		n=str.find(" ",0);				//Start from 0 and find the blanks
+		sym.assign(str,0,n);			//get symbol
 		lo=startadd;
 		data2.b_treeinsert();
-		//cout << loc << endl;
-		
 		return 1;		 
 	}
 }
@@ -510,7 +481,7 @@ int check_start(){
 int check_start2(){	
 	if(str.find("START")!=string::npos) {
        	i=str.length()-1;
-       	while(str[i]!=' '){		//為了讀到地址	   	
+       	while(str[i]!=' '){		//get address   	
 		   	startadd=str[i]+startadd;
 		   	i=i-1;
 		}
@@ -599,7 +570,7 @@ void ob_c2(){
 			}
 			else{
 				errorflag=1;
-				out_f << retadr << "沒有被宣告" << endl;
+				out_f << retadr << "*Error* Erroneous Command Announcementx" << endl;
 			}
 		}
 		else{
@@ -615,7 +586,7 @@ void ob_c2(){
 			}
 			else{
 				errorflag=1;
-				out_f << retadr << "沒有被宣告" << endl;
+				out_f << retadr << "*Error* Erroneous Command Announcementx" << endl;
 			}
 		}
 		loc+=3;
@@ -685,7 +656,7 @@ void pass(){
 
 void pass2(){
 	if(symbol2()) { 				//if there is a symbol
-			n=str.find(" ",5);		//start from 0 and find the blanks
+			n=str.find(" ",5);		//start from 5 and find the blanks
 			sym.assign(str,5,n);	//get symbol
 			fo=""; code="";re="";
 			get_op3(); 				//get opcode function
