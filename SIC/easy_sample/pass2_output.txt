@@ -1,0 +1,12 @@
+FIRST START 1000
+1000 LENGTH  RESW 1                
+1003 COUNT   RESB 4                
+1007 ZERO    WORD 0        000000  
+100A TOTAL   RESW 2                
+1010         LDA  ZERO     001007  
+1013         COMP ZERO     281007  
+1016         JEQ  EXIT     30101F  
+1019         TIX  COUNT    2C1003  
+101C         STA  TOTAL    0C100A  
+101F EXIT    STX  LENGTH   101000  
+      END   FIRST
