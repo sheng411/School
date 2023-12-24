@@ -73,7 +73,6 @@ op_c opt[31]={			//optable
     {    "WD", 0xDC},
 };
 
-
 void getop(){				//functions for catching opcodes 
 	int n,t;
 	n=str.find(" ",0);
